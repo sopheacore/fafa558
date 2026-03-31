@@ -1,0 +1,1760 @@
+<!DOCTYPE html><html lang="ca"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="window-target" content="_top">
+<meta content="telephone=no" name="format-detection">
+<meta name="msapplication-TileColor" content="#f55">
+<meta name="msapplication-square150x150logo" content="images/ico.png">
+<title>hanjak.xyz</title>
+<meta name="title" content="hanjak.xyz">
+<meta name="description" content="hanjak.xyz">
+<meta name="keyword" content="hanjak.xyz">
+<meta name="viewport" content="width=1200,initial-scale=0,maximum-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" href="css/mreset_1.css" type="text/css">
+<link rel="stylesheet" href="css/customize.css" type="text/css">
+<link rel="stylesheet" href="css/customize_fafa558.css" type="text/css">
+<script async="" src="js/analytics.js"></script><script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89496205-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/mreset.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/styles_ca.css">
+<link rel="stylesheet" href="css/date_picker.ui.css">
+<script type="text/javascript" src="js/functions.js"></script>
+<script src="js/publicity.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.jslides.js"></script>
+<script src="js/jquery.cookie_1.js"></script>
+<!--<script src="https://d3pjq3rrv5sdh6.cloudfront.net/content/js/optimize/main.js"></script>-->
+<script src="js/jquery.ui.js"></script>
+<script src="js/micgaming.js"></script>
+<script src="js/currency_function.js"></script>
+<script src="js/jquery.paginate.js"></script>
+<script>
+function cl(){document.getElementById("tanbg").style.display="none",document.getElementById("tanpa").style.display="none"}
+$(function(){            
+if(document.getElementById("datepicker1")){              
+			$("#datepicker1").datepicker({dateFormat:"yy-mm-dd 00:00:00"}),$("#datepicker2").datepicker({dateFormat:"yy-mm-dd 23:59:59"})
+	}
+});
+</script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="content/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="content/js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body data-pages="">
+<!---->
+<script language="javascript">
+   function Check_Field_User2(form){
+      if(form.useracc.value == ''){
+         alert("ឈ្មោះគណនីមិនអាចទទេ!");
+         form.useracc.focus();
+         return (false);
+      }
+      if(form.passwd.value == ''){
+         alert("លេខសម្ងាត់មិនអាចទទេ!");
+         form.passwd.focus(); 
+         return (false);
+      }
+      if (form.captcha.value == "" || form.captchaSource.value != form.captcha.value){
+         alert("សូមបញ្ចូលកូដផ្ទៀងផ្ទាត់អោយបានត្រឹមត្រូវ!");
+         form.captcha.focus();
+         return (false);
+      }
+      var encrypted = encrypt.encrypt(form.passwd.value);
+      form.passwd.value = encrypted;
+      return (true);
+   }
+</script>
+<style>
+ .balance-dropdown {
+  position: absolute;
+  top: 90%;
+  left: -4px;
+  width: 230px;
+  background: #333333;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.myBalance-wrap.active .balance-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.balance-card {
+  background: #333333;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}.balance-card-header {
+  margin-bottom: 4px;
+}.wallet-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  text-align: left;
+}.balance-card-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}.amount-balance {
+  color: #ffc107;
+  font-size: 14px;
+  font-weight: bold;
+}.navbar{
+  width: 100%;
+}
+.navbar .subnav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex: auto;
+}.free_event {
+  position: absolute;
+    top: -12px;
+    right: 0px;
+    z-index: 99;
+    background: red;
+    color: white;
+    padding: 0px 8px;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 10px;
+    line-height: 23px;
+}
+</style>
+<div class="main-w">
+<div class="wrapper">
+<div class="head position-fixed fixed-top">
+  <div class="container">
+    <div class="row form-row">
+      <div class="col-md-3">
+        <div class="logo">
+          <ul>
+            <li id="tourCount_ida">
+              <a href="/">
+                                    <img class="fafa-logo-gift" style="width: 170px;" src="images/logo2.gif">
+                            </a>
+            </li>         
+          </ul>
+                  </div>
+      </div>
+      <div class="col-md-9">
+                <div id="containerTopright"> 
+          <!-- Start: Right Member -->
+          <div id="TopMember" style="white-space: nowrap">
+            <div style="float:left; margin-right: 10px;"> <a href="#"><img src="images/notification-after-login.png"> </a> </div>
+            <div style="float:left; margin-right: 10px;position: relative;">
+            <a href="#">
+                 
+                <img src="images/mail-before-login.png">
+            </a> 
+            </div>
+            <div id="language" class="language">
+              <div class="languageMenu">
+                <div id="langSelectLink">
+                  <div id="box"><span class="arrUp" id="arrow"> </span><span id="selectedLang" class="fca" change-class="fca">
+                    កម្ពុជា                    </span></div>
+                </div>
+                <div id="langList" style="display: none;">
+                  <div class="langListTop"></div>
+                  <div class="langListRp">
+                    <div class="langListDiv">
+                                                                                          <li class="th"><a href="/th/" class="fth">ไทย</a></li>
+                                                                    <li class="en"><a href="/en/" class="fen">English</a></li>
+                                                                    <li class="cn"><a href="/cn/" class="fcn">简体中文</a></li>
+                                          </div>
+                  </div>
+                  <div class="langListBottom"></div>
+                </div>
+              </div>
+            </div>
+            <div id="Memberlogin">
+                          <form action="/kh/login_submitter" method="post" enctype="multipart/form-data" onsubmit="return Check_Field_User2(this)">
+                <input id="topID" type="text" class="h-20 placeholderInput" size="11" name="useracc" placeholder="ឈ្មោះប្រេីប្រាស់">
+                <input id="topPW" type="password" class="h-20 placeholderInput" size="10" name="passwd" placeholder="ពាក្យសំងាត់">
+<!--                 <input id="topID" type="text" class="h-20 placeholderInput" size="11" name="captcha" placeholder="លេខកូដ">
+                <input id="topID" type="text" class="h-20 placeholderInput captchaString" size="11" value="4968" style="border:none; background:none; width:40px; color:#fff;pointer-events: none;" disabled="disabled"> -->
+                <input type="hidden" name="captcha" value="4968">
+                <input type="hidden" name="captchaSource" value="4968">
+                <div style="display:inline;" class="forgetLogin">
+                  <div class="forgetLogin-toolTips"><span>Forgot Login Details ?</span></div>
+                  <a href="#"> <img src="images/btn-forget-password-icon.png" style="vertical-align: middle;"> </a> </div>
+                                <div class="Memberlogin-Btn">
+                  <button type="submit" name="save">ចូល</button>
+                </div>
+                                                                                </form>
+                          </div>
+          </div>
+          <div id="memberact">
+                                    <div class="memberact-Btn"> <a href="/kh/promotion"> <img src="images/btn-promotion-icon.png">ការផ្តល់ជូន </a> </div>
+                        <div class="memberact-Btn"> <a href="#" onclick="window.open('http://secure.livechatinc.com/licence//open_chat.cgi', 'Chat Now', 'height=530,width=650,top=200,left=100,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no');"> <img src="images/btn-livechat-icon.png">24/7 ជជែកផ្ទាល់ </a> </div>
+                        <div class="memberact-Btn"> <a href="/kh/affiliate"> <img src="images/btn-livechat-icon.png">
+          បុត្រសម្ព័ន្ធ</a> </div>
+                                               <div class="memberact-Btn"> <a href="/kh/signup"> <img src="images/btn-joinnow-icon.png">ចុះឈ្មោះ </a> </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu" id="show_game">
+    <div class="container nav-icon-th">
+      <div class="navbar"> <a href="/" class="icon active" style="border-right:none!important;"><img src="images/home-icon.png"></a> 
+            <a href="http://m.hanjak.xyz" class="icon">
+            <img src="images/mobile-icon.png"></a>
+        <div class="subnav "> <a href="/kh/sports-lobby" class="subnavbtn">កីឡា</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row">                
+                                                <div class="col-md-3"> <a href="/kh/afbsports2">
+                  <div class="nav4"> <img src="images/afb2_ca.png">
+                                        <div class="nav-casino-title">AFB1188 កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                <div class="col-md-3"> <a href="/kh/saba_sports">
+                  <div class="nav4"> <img src="images/ibc_ca.png">
+                                        <div class="nav-casino-title">SABA កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                <div class="col-md-3"> <a href="/kh/sbo_sports">
+                  <div class="nav4"> <img src="images/sbo_ca.png">
+                                        <div class="nav-casino-title">SBO កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                                                    <div class="col-md-3">
+                    <a href="/kh/afbsports2">
+                      <div class="nav4"> <img src="images/boxing_ca.png">
+                                              </div>
+                    </a>
+                  </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subnav "> <a href="/kh/live-casino" class="subnavbtn">កាស៊ីណូផ្សាយផ្ទាល់</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                                                <div class="col-md-2"> 
+                <a href="/kh/casino_pplay">
+                  <div class="nav4 nav-casino"> <img src="images/pp_ca_ca.png">
+                    <div class="nav-casino-title">PP កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/dg99_casino">
+                  <div class="nav4 nav-casino"> <img src="images/dg99_ca.png">
+                    <div class="nav-casino-title">DG99 កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/sexy">
+                  <div class="nav4 nav-casino"> <img src="images/sexy_ca.png">
+                    <div class="nav-casino-title">SEXY កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/ag_casino">
+                  <div class="nav4 nav-casino"> <img src="images/ag_ca.png">
+                    <div class="nav-casino-title">PLAY ACE កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/casino_allbet">
+                  <div class="nav4 nav-casino"> <img src="images/allbet_ca.png">
+                    <div class="nav-casino-title">ALLBET កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/evo_casino">
+                  <div class="nav4 nav-casino"> <img src="images/evo_ca.png">
+                    <div class="nav-casino-title">EVO កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/ofa_casino">
+                  <div class="nav4 nav-casino"> <img src="images/ofa_casino_ca.png">
+                    <div class="nav-casino-title">OFA កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/maintenance">
+                  <div class="nav4 nav-casino"> <img src="images/tga_ca.png">
+                    <div class="nav-casino-title">AFB កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/maintenance">
+                  <div class="nav4 nav-casino"> <img src="images/gd_ca.png">
+                    <div class="nav-casino-title">GD កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/auto_slots/slots_fish" class="subnavbtn">ស្លតហ្គេម</a>
+          <div class="subnav-content slots-sclo">
+            <div class="nav-container">
+              <div class="row form-row">
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_fish">
+                                    <div class="nav4"> <img src="images/fishing_ca.png">
+                    <div class="nav-casino-title">ហ្គេមបាញ់ត្រី</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_pplay">
+                                    <div class="nav4"> <img src="images/pplay_ca.png">
+                    <div class="nav-casino-title">PPLAY ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_haba_index">
+                                    <div class="nav4"> <img src="images/hb_ca.png">
+                    <div class="nav-casino-title">HABA ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_joker123">
+                                    <div class="nav4"> <img src="images/joker_ca.png">
+                    <div class="nav-casino-title">JOKER123 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_playstar">
+                                    <div class="nav4"> <img src="images/playstar_ca.png">
+                    <div class="nav-casino-title">PLAYSTAR ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_dragoonsoft">
+                                    <div class="nav4"> <img src="images/dragoon_ca.png">
+                    <div class="nav-casino-title">DRAGOON ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_pg">
+                                    <div class="nav4"> <img src="images/pg_ca.png">
+                    <div class="nav-casino-title">PG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_cq9">
+                                    <div class="nav4"> <img src="images/cq9_ca.png">
+                    <div class="nav-casino-title">CQ9 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_fc">
+                                    <div class="nav4"> <img src="images/fc_ca.png">
+                    <div class="nav-casino-title">FC ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_jili">
+                                    <div class="nav4"> <img src="images/jili_ca.png">
+                    <div class="nav-casino-title">JILI ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_kagaming">
+                                    <div class="nav4"> <img src="images/kaslots_ca.png">
+                    <div class="nav-casino-title">KA GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_rich88">
+                                    <div class="nav4"> <img src="images/rich88_ca.png">
+                    <div class="nav-casino-title">RICH88 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_spadegaming">
+                                    <div class="nav4"> <img src="images/spadegaming_ca.png">
+                    <div class="nav-casino-title">SPADEGAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_live22">
+                                    <div class="nav4"> <img src="images/live22_ca.png">
+                    <div class="nav-casino-title">LIVE22 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_redtiger">
+                                    <div class="nav4"> <img src="images/rtg_ca.png">
+                    <div class="nav-casino-title">RED TIGER</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_nlc">
+                                    <div class="nav4"> <img src="images/nlc_ca.png">
+                    <div class="nav-casino-title">NLC ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_netgaming">
+                                    <div class="nav4"> <img src="images/netent_ca.png">
+                    <div class="nav-casino-title">NETENT GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_btg">
+                                    <div class="nav4"> <img src="images/btg_ca.png">
+                    <div class="nav-casino-title">BTG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_playngo">
+                                    <div class="nav4"> <img src="images/png_ca.png">
+                    <div class="nav-casino-title">PLAY & GO</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_relax">
+                                    <div class="nav4"> <img src="images/relax_ca.png">
+                    <div class="nav-casino-title">RELAX GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_hacksaw">
+                                    <div class="nav4"> <img src="images/hacksaw_ca.png">
+                    <div class="nav-casino-title">HACKSAW ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_jdb">
+                                    <div class="nav4"> <img src="images/jdb_ca.png">
+                    <div class="nav-casino-title">JDB ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_advantplay">
+                                    <div class="nav4"> <img src="images/ap_ca.png">
+                    <div class="nav-casino-title">AP ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_bigpot">
+                                    <div class="nav4"> <img src="images/bigpot_ca.png">
+                    <div class="nav-casino-title">BIGPOT ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_play8">
+                                    <div class="nav4"> <img src="images/play8_ca.png">
+                    <div class="nav-casino-title">PLAY8</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_yesbingo">
+                                    <div class="nav4"> <img src="images/yesbingo_ca.png">
+                    <div class="nav-casino-title">YESBINGO</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_yl">
+                                    <div class="nav4"> <img src="images/ylslots_ca.png">
+                    <div class="nav-casino-title">YL GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_bng">
+                                    <div class="nav4"> <img src="images/bng_ca.png">
+                    <div class="nav-casino-title">BNG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_naga">
+                                    <div class="nav4"> <img src="images/nagaslots_ca.png">
+                    <div class="nav-casino-title">NAGA ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_popok">
+                                    <div class="nav4"> <img src="images/popok_ca.png">
+                    <div class="nav-casino-title">POPOK ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/number-lobby" class="subnavbtn">
+          លេខ</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                
+                <div class="col-md-3"> <a href="/kh/auto_numbers">
+                  <div class="nav3"> <img src="images/number_ca.png">
+                                        <div class="nav-casino-title">លេខ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                
+                <div class="col-md-3"> <a href="/kh/live_numbers">
+                  <div class="nav3"> <img src="images/livenumber_ca.png">
+                                        <div class="nav-casino-title">លេខផ្សាយផ្ទាល់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                
+                <div class="col-md-3"> <a href="/kh/keno_new">
+                  <div class="nav3"> <img src="images/keno_new_ca.png">
+                                        <div class="nav-casino-title">គីណូថ្មី</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                              </div>
+            </div>
+          </div>
+        </div>
+                        <div class="subnav "> <a href="/kh/cock-lobby" class="subnavbtn">ជល់មាន់</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                               <div class="col-md-3"> 
+                  <a href="/kh/fight">
+                    <div class="nav3"> <img src="images/sv388_ca.png">
+                                            <div class="nav-casino-title">ជល់មាន់(SV388)</div>
+                      <div class="nav-footer">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                      </div>
+                                          </div>
+                  </a> 
+                </div>
+                                <div class="col-md-3"> 
+                  <a href="/kh/maintenance">
+                    <div class="nav3"> <img src="images/sb24cf_ca.png">
+                                            <div class="nav-casino-title">SABONG24</div>
+                      <div class="nav-footer">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                      </div>
+                                          </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/poker-lobby" class="subnavbtn">ល្បែងបៀរ</a>
+          <div class="subnav-content poker-top-na">
+            <div class="nav-container">
+              <div class="row form-row p_login poker-drop">
+                                <div class="col-md-3">
+                                      <a href="/kh/kh3_poker">
+                                        <div class="nav4"> <img src="images/kh3poker.png">
+                    </div>
+                  </a> 
+                </div>
+                            </div>
+            </div>
+          </div>
+        </div>
+                                                <div class="subnav "><a href="/kh/promotion" class="subnavbtn">ការផ្តល់ជូន</a></div>
+                <div class="subnav "><a href="/kh/challenges" class="subnavbtn">បេសកកម្មពិសេស</a></div>
+        <div class="subnav ">
+          <a href="/kh/rewards" class="subnavbtn">រង្វាន់</a>
+        </div>
+              </div>
+    </div>
+  </div>
+</div>
+  <style>
+    .external-break-line {
+      margin: 10px 20px 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .external-break-line .break-line {
+      height: 0.01rem;
+      background: #000;
+      margin: 0.15rem 0;
+      width: 48%;
+  }
+  .external-break-line span {
+      width: 10%;
+      font-size: 14px;
+      color: #000;
+      text-align: center;
+      text-transform: lowercase;
+  }
+  .external_login_app {
+      margin: auto;
+      text-align: center;
+  }
+  .btn-social {
+      display: inline-flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px 16px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      color: #000;
+      transition: background 0.3s ease;
+  }
+  .btn-social img {
+      margin-right: 10px;
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+  }
+  .spinner_effect1 {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 10px solid #f3f3f3;
+      border-top: 10px solid #3498db;
+      animation: spin 1s linear infinite;
+      margin: 100px auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+      z-index: 99999;
+  }
+  .login-page-box .login-popup .msg-box{margin-top: 0;}
+  .login-page-box .login-popup{    height: 6rem;}
+  .btn-login-social-icon {
+      background: linear-gradient(135deg, #00c300 0%, #00ff00 100%);
+      color: #fff;
+      border: 2px solid #00c300;
+  }
+</style>
+<div class="login-modal-container">
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-form-modal">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="icon-64 btn-close"></i></span></button>
+                  <div class="text-center" style="width: 100%;">
+                      <a class="logo-modal" href="#" title="">
+                        <img src="images/logo_kh.png" style="width:150px;">
+                      </a>    
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <div style="width:355px; display:inline-block; vertical-align: text-bottom;">
+                  <form name="form-login" action="/kh/login_submitter" method="post" enctype="multipart/form-data" onsubmit="return Check_Field_User2(this)">
+                      <div class="form-group">
+                          <label for="login-account-name">ឈ្មោះប្រេីប្រាស់</label>
+                          <input type="text" class="form-control" id="login-account-name" placeholder="ឈ្មោះប្រេីប្រាស់" required="" name="useracc" tabindex="1" oninvalid="this.setCustomValidity('ឈ្មោះគណនីមិនអាចទទេ!')" oninput="setCustomValidity('')">
+                      </div>
+                      <div class="form-group">
+                          <label for="login-password">ពាក្យសំងាត់</label>
+                          <input type="password" class="form-control" id="login-password" placeholder="ពាក្យសំងាត់" required="" name="passwd" tabindex="2" oninvalid="this.setCustomValidity('លេខសម្ងាត់មិនអាចទទេ!')" oninput="setCustomValidity('')">
+                          <input type="hidden" name="captcha" value="4968">
+                          <input type="hidden" name="captchaSource" value="4968">
+                      </div>
+                      <div class="form-group">
+                          <hr>
+                          <button type="submit" class="Memberlogin-Btn" name="save" style="width: 100%;">ចូល</button>
+
+                          <hr>
+                          <p class="text-center">
+                            មិនទាន់មានគណនីនៅឡើយ?                            <a class="sign-up-link Memberlogin-Btn" href="/kh/signup" style="text-shadow:none;background: #051C54 !important;border: 1px solid #051C54;color: #fff;">ចុះឈ្មោះ</a></p>
+                      </div>
+                                        </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div><!--EOF Modal-->
+</div><!--EOF Login Modal-->
+<script>
+$(function(){
+  $(".p_login, .box-slot .middle a, .box-games a").click(function(e) {
+    $(this).attr("data-backdrop","static");
+    $(this).attr("data-keyboard","true");
+    $('#login-modal').modal('show');
+    $(".modal-content").css({"-webkit-animation":"slideInDown 0.4s","animation":"slideInDown 0.4s"});
+    return false;
+  });
+});
+</script>
+
+<style>
+  .slots-sclo .form-row{
+    margin: 30px 0;
+  }
+</style>
+<!--  -->
+<div class="main-container">
+  <div class="container" style="width:100%; max-width:100%;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 60px; width:100%;">
+      <ol class="carousel-indicators">
+                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                                          </ol>
+      <div class="carousel-inner" style="max-height: 500px;">
+                                 <div class="carousel-item active">
+                            <img src="images/banner_20260327180407_2472.png" class="d-block w-100" alt="เว็บ พนัน" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20251202210527_1634.png" class="d-block w-100" alt="slide1" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20251202210453_4638.png" class="d-block w-100" alt="slide2" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20260226201155_8728.png" class="d-block w-100" alt="slide3" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20251202205749_8401.jpg" class="d-block w-100" alt="slide4" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20251202205320_6168.png" class="d-block w-100" alt="slide5" style="height:100%; width:100% !important;">
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="images/banner_20260318180651_7468.jpg" class="d-block w-100" alt="slide6" style="height:100%; width:100% !important;">
+                        </div>
+                                          </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+      </a>
+   </div>
+</div>
+<div class="container">
+   <div id="contentWrap">
+      <div id="mainthumb">
+         <ul id="HomeSmallBanners">
+            <li class="simple-banner-item">
+               <a href="/kh/sports-lobby">
+                  <img src="images/sport.jpg" border="0">
+                  <div class="home-games">កីឡា</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+            <li class="simple-banner-item">
+               <a href="/kh/live-casino">
+                  <img src="images/casino.jpg" border="0">
+                  <div class="home-games">កាស៊ីណូផ្សាយផ្ទាល់</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+            <li class="simple-banner-item">
+               <a href="/kh/auto_slots/slots_pplay">
+                  <img src="images/slot.jpg" border="0">
+                  <div class="home-games">ស្លតហ្គេម</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+            <li class="simple-banner-item">
+               <a href="/kh/togel_lobby">
+                  <img src="images/lottery.jpg" border="0">
+                  <div class="home-games">ឆ្នោត</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+            <li class="simple-banner-item">
+               <a href="/kh/poker-lobby">
+                  <img src="images/poker.jpg" border="0">
+                  <div class="home-games">ល្បែងបៀរ</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+            <li class="simple-banner-item">
+               <a href="/kh/promotion">
+                  <img src="images/promotion.jpg" border="0">
+                  <div class="home-games">ការផ្តល់ជូន</div>
+                  <div class="home-games-button">
+                    <div class="home-games-button-play">លេងឥឡូវនេះ</div>
+                  </div>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <!-- video -->
+            <div id="mainthumb" class="closevd" style="position:relative">
+        <iframe class="videohome lazy" src="https://www.youtube.com/embed/fJC45AhsMWw?si=_K6HfHoRUQqyQwFC" data-src="https://www.youtube.com/embed/fJC45AhsMWw?si=_K6HfHoRUQqyQwFC" allowfullscreen="" style="width: 72% !important;height: 350px;margin-top: 38px;margin-bottom: -36px;"></iframe>
+        <div class="row col-xs-offset-1 home-row-display" style="margin-left: -8.5%;display: flex;position: absolute;right: 10px;top: 38px;">
+          <div style="width: 5px"></div>
+          <div class="slide_container">
+              <div id="myCarousel2" class="carousel" data-ride="carousel" data-interval="3000">
+                 <div class="carousel-inner">
+                    <div class="item active">
+                       <div class="item_container">
+                          <div class="promo_wrap"><span>សេវាកម្មល្អឥតខ្ចោះ</span></div>
+                          <div class="slide_content home-slidebar-text" style="padding: 20px 31px 1px 28px;">
+                             <div class="row">
+                                <div class="col-xs-8">
+                                   <uppercase class="deposit-text">ដាក់ប្រាក់</uppercase>
+                                   <br><small>ពេលវេលាមធ្យម</small>
+                                </div>
+                                <div class="col-xs-4 deposit-avgtime-container">
+                                   <h4>
+                                      <div class="pull-left deposit-avgtime odometer odometer-theme-train-station">
+                                        <div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span></div>
+                                      </div>
+                                      <small class="home-slidebar-text deposit-avgtime-mins">នាទី</small>
+                                   </h4>
+                                </div>
+                             </div>
+                             <div class="row">
+                                <div class="col-xs-12">
+                                   <div class="progress" value="2" max="60">
+                                      <div class="progress-bar" style="width: 3.33%;"></div>
+                                   </div>
+                                </div>
+                             </div>
+                             <br>
+                             <div class="row">
+                                <div class="col-xs-8">
+                                   <uppercase class="withdrawal-text">ដកប្រាក់</uppercase>
+                                   <br><small home-manual-translate="slidebar.serviceAdv.avgtime">ពេលវេលាមធ្យម</small>
+                                </div>
+                                <div class="col-xs-4 withdrawal-avgtime-container">
+                                   <h4>
+                                      <div class="pull-left withdrawal-avgtime odometer odometer-theme-train-station">
+                                         <div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span></div>
+                                      </div>
+                                      <small class="home-slidebar-text withdrawal-avgtime-mins">នាទី</small>
+                                   </h4>
+                                </div>
+                             </div>
+                             <div class="row">
+                                <div class="col-xs-12">
+                                   <div class="progress" value="10" max="60">
+                                      <div class="progress-bar" style="width: 16.67%;"></div>
+                                   </div>
+                                </div>
+                             </div>
+                             <p style="font-size: 13px;margin-left: -10px; line-height: 182%;">
+                              <small>*
+                                ឯកសារយោងមានន័យថាពេលវេលាមិនអាចប្រើបានទេប្រសិនបើធនាគារនៅក្រៅបណ្តាញ។ ការតភ្ជាប់ត្រូវបានបាត់បង់ហើយព័ត៌មានដែលបានផ្តល់មិនពេញលេញទេ។                              </small></p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <ol class="carousel-indicators slide_footer">
+                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                 </ol>
+              </div>
+           </div>
+           <div style="width: 5px"></div>
+          </div>
+        </div>
+      </div>
+            <!-- end video -->
+      <div id="tabs">
+         <div class="box">
+            <div class="box-title"><span>JACKPOTSទាំងអស់</span></div>
+            <div class="box-content jackpot-content">
+               <div class="jackpot-box">
+                  <div class="jackpot-amount"><span>USD  </span><span id="progressive_jackpot"></span> </div>
+               </div>
+               <div class="box-btn-group jackpot-button"><a href="/kh/promotion" class="box-btn">ការផ្តល់ជូន</a>
+                <a href="/kh/signup" class="box-btn">
+                ចុះឈ្មោះ 
+                </a>
+              </div>
+            </div>
+         </div>
+         <div class="box">
+            <div class="box-title">
+               <span>
+                  ប្រវត្តិនៃ FAFABETS គ្រុប               </span>
+            </div>
+            <div class="box-content">
+               <div class="monthly-sliderWrap">
+                  <div id="monthly-slider" class="monthly-slider owl-carousel">
+                     <div class="item">
+                        <div class="monthly-item">
+                                                       <a href="https://rebrand.ly/web1fafa" target="_blank" class="monthly-game">
+                              <img src="images/fafagroup.png">
+                            </a>
+                                                       
+                           <div class="monthly-info">
+                              <!--<h3>សង្វៀនកីឡា</h3>
+                              <p>ទទួលបានអាយុកាលអាយធី ៥០០០ ដងក្នុងមួយសប្តាហ៍ + ការចែកជូននិមិត្តរូបដោយឥតគិតថ្លៃដោយឥតគិតថ្លៃតាមរយៈការចូលរួមក្នុងសង្វៀនកីឡា។ ឥឡូវនេះមានហេតុផលជាច្រើនទៀតដែលត្រូវស្រឡាញ់ការលេងបាល់ទាត់។</p>-->
+                           </div>
+                        </div>
+                        <div class="box-btn-group jackpot-button">
+                                                    <a href="https://rebrand.ly/web1fafa" target="_blank" class="box-btn">
+                            FAFABETS
+                          </a>
+                                                  </div>
+                     </div>
+                     <div class="item">
+                        <div class="monthly-item">
+                                                       <a href="https://rebrand.ly/web1fafa" target="_blank" class="monthly-game">
+                              <img src="images/fafagroup.png">
+                            </a>
+                                                       <div class="monthly-info">
+                              <!-- <h3>FAFA191</h3> -->
+                              <!--<p></p>-->
+                           </div>
+                        </div>
+                        <div class="box-btn-group jackpot-button">
+                                                    <a href="https://rebrand.ly/web1fafa" target="_blank" class="box-btn">
+                            FAFABETS
+                          </a>
+                                                  </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="box">
+            <div class="box-title"><span>ព័ត៌មាន</span>
+               <a href="#" style="position:absolute; right: 10px;"><img src="images/see-all.png" alt="See all"></a>
+            </div>
+            <div class="box-content">
+               <div id="" class="news-ticker" style="overflow: hidden; position: relative; height: 497px;">
+                  <ul class="news-container" style="position: absolute; margin: 0px; padding: 0px; top: 0px;">
+                     <li class="news-content" style="margin: 0px; padding: 2px;">
+                        <div class="news-blurb" style="color: #fff">សូមស្វាគមន៍មកកាន់គេហទំព័រកំសាន្ត FAFA558 សូមរីករាយជាមួយនឹងបទពិសោធន៍នៃការកំសាន្តគ្មានដែនកំណត់របស់យើងនៅទីនេះ សំរាប់ពត៍មានបន្ថែមសូមទាក់ទងផ្នែកបំរើអតិថិជនយើង 24ម៉ោង! ដោយក្តីគោរពពីក្រុមការងារ FAFA558 !!                                                   </div>
+                     </li>
+                  </ul>
+               </div> 
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--﻿-->
+<style type="text/css">
+  .pp_wheel {
+    display: block;
+  pointer-events: auto;
+  transition: transform 0.1s ease;
+        position: fixed;
+  }
+  .gif_footer {position: fixed;top: 56%;left: 0;}
+  .close-icon {
+    z-index: 999999;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    padding: 3px 8px 4px;
+    border-radius: 13px;
+    line-height: 16px;
+    color: #fff;
+     cursor: pointer;
+}
+.poker_popup {display: none;position: fixed;background: rgba(0, 0, 0, .5);top: 0;left: 0;right:0;bottom:0;width: 100%;height: 100%;z-index: 9999999;}
+  .poker_popup .poker_popup_form{position: relative;background: #000;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 340px;border: 2px solid #ffb821;padding: 15px 20px;border-radius: 1em;z-index: 9999999;
+  }
+  .poker_popup .loader {position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);z-index: 999;text-align: center;display: none;}
+  .poker_popup .poker_close {background-color: #fcd004;position: absolute;top: -10px;right: -10px;text-align: center;line-height: 30px;width: 30px;height: 30px;border-radius: 50% !important;font-size: 20px;color: #fff;z-index: 2;}
+  .poker_balance label {width: 100%;}
+  .poker_balance label>*, .transfer_balance label>* {color: #fff;width: 49%;display: inline-block;padding: 0;margin: 0;line-height: inherit;}
+  .poker_balance label span {color: #fff;}
+  .game_transfer-content .transfer-item, .poker_transfer .poker_transfer-item {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;margin: 8px 0;}
+  .poker_transfer-item input, .transfer-item input {height: 35px;border-radius: 3px;margin-right: auto;padding-left: 10px;color: #000;}
+  .poker_transfer-item>input, .transfer-item>* {width: 46%;}
+  .poker_popup .btn {width: 46%;height: 35px;line-height: .4rem;text-align: center;text-transform: capitalize;display: block;color: #fff;border-radius: 0.3rem;position: relative;background-color: #1c79f6;font-size: 14px;}
+  .poker_popup h2{text-align: center;color: #fff;padding-bottom: 10px;font-size: 15px;}
+  .btn.poker_play {width: 100%;margin: 20px 0;height: 35px;line-height: 1.4rem;border-radius: 3px;color: #fff !important;}
+  .poker_popup .loader {position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);z-index: 1;text-align: center;width: 100%;height: 100%;background: rgb(255 255 255 / 50%);border-radius: 10px;display: none;}
+</style>
+<div style="clear: both; height:10px;"></div>
+<div class="gif_footer pp_wheel" id="wheel-panel">
+  <span class="close-icon">x</span>
+  <div class="git_content_wheel">
+    <a class="p_login_" href="/kh/gift/?type=point_wheel">
+      
+<p><img src="images/eHaB7UL.gif" alt="" width="250" height="278"></p>
+    </a>
+  </div>
+</div>
+</div>
+
+<style>
+  .slide-socail {
+    background: #0F1010;
+    border-radius: 16px;
+    color: #fff;
+    text-align: center;
+    padding-top: 5px;
+    display: block;
+    width: 173px;
+    height: 32px;
+    position: absolute;
+    top: 13px;
+    left: -176px;
+    display: none;
+}
+.fb-mess a:hover span.slide-socail {
+    display: block;
+}
+</style>
+<div class="fb-mess" style="position:fixed; right:5px; top:670px; z-index:99999;">
+  <a href="https://m.me/fafa558kh" target="_blank">
+    <img src="images/messager.png" alt="messager" title="messager" style="width:50px;">
+    <span class="slide-socail">
+      ទំនាក់ទំនងទីនេះ    </span>
+  </a>
+
+  <a href="https://t.me/FAFA558VIP" target="_blank">
+    <img src="images/telegram.png" alt="telegram" title="telegram" style="width:50px;">
+    <span class="slide-socail">
+      ទំនាក់ទំនងទីនេះ    </span>
+  </a>
+  <a href="ទូរសព្ទ លេខ: 0978675558">
+    <img src="images/phone.png" alt="phone" title="phone" style="width:50px;">
+    <span class="slide-socail">
+      ទូរសព្ទ លេខ: 0978675558    </span>
+  </a>
+</div>
+
+<div class="footer" style="position: relative;">
+  <!-- seo -->
+  <div class="footer-seo">
+    <div style="display:none;">
+                        <h2>2>
+                  </h2></div>
+      </div>
+  <!-- end seo -->
+    <!-- avalon Page -->
+    <div class="info-footer">
+      <div class="container">
+              <!-- kham chen -->
+        <div class="rvp-col">
+          <a href="https://t.me/FAFA558VIP" target="_blank">
+            <div class="ambassadorImg-fa"></div>
+          </a>
+          <a href="#" target="_blank">
+            <div class="ambassadorImg-mi-faca"></div>
+          </a>
+          <a href="#" target="_blank">
+            <div class="ambassadorImg-redking"></div>
+          </a>
+        </div>
+                    <style>
+          .provider-list, .provider-bank{
+            text-align: left;
+            margin-top: 0;
+            margin-left: 0;
+          }
+          .provider-list li, .provider-bank li{
+            display: inline-block;
+          }
+          .provider-bank li {
+              margin: 6px;
+          }
+          .provider-list li img{width: 100px; padding: 10px;}
+          .provider-bank li img{width: 100px;padding: 6px;}
+          .bank-logo-footer{margin: 0!important;}
+        </style>
+         <div class="title">
+            <img class="provider-title" width="80" src="images/provider.png" alt="provider">
+         </div>
+         <ul class="provider-list">
+           <li class="games-footer-1">
+             <img src="images/afb88.png" alt="afb88">
+           </li>
+           <li class="games-footer-2">
+             <img src="images/sbo.png" alt="sbo">
+           </li>
+           <li class="games-footer-3">
+             <img src="images/ibcbet.png" alt="Ibcbet">
+           </li>
+           <li class="games-footer-4">
+             <img src="images/playace.png" alt="playace">
+           </li>
+           <li class="games-footer-5">
+             <img src="images/pplay.png" alt="pplay">
+           </li>
+           <li class="games-footer-5-5">
+             <img style="width: 72px;" src="images/afb.png" alt="afb">
+           </li>
+           <li class="games-footer-6">
+             <img src="images/sexy.png" alt="afb">
+           </li>
+           <li class="games-footer-7">
+             <img src="images/drangoon.png" alt="drangoon">
+           </li>
+           <li class="games-footer-8">
+             <img src="images/allbet.png" alt="allbet">
+           </li>
+           <li class="games-footer-9">
+             <img src="images/evo.png" alt="evo">
+           </li>
+           <li class="games-footer-10">
+             <img style="width: 73px;" src="images/gd.png" alt="gd">
+           </li>
+           <li class="games-footer-11">
+             <img src="images/pg.png" alt="pg">
+           </li>
+           <li class="games-footer-12">
+             <img src="images/cock_1.png" alt="cock">
+           </li>
+           <li class="games-footer-13">
+             <img src="images/cq9.png" alt="cq9">
+           </li>
+           <li class="games-footer-14">
+             <img src="images/hb.png" alt="hb">
+           </li>
+           <li class="games-footer-15">
+             <img style="width: 73px;" src="images/jili.png" alt="jili">
+           </li>
+           <li class="games-footer-16">
+             <img src="images/nlc.png" alt="nlc">
+           </li>
+           <li class="games-footer-17">
+             <img src="images/joker.png" alt="joker">
+           </li>
+           <li class="games-footer-18">
+             <img src="images/rich88.png" alt="rich88">
+           </li>
+           <li class="games-footer-19">
+             <img style="width: 72px;" src="images/ka.png" alt="ka">
+           </li>
+         </ul>
+         <ul class="provider-list">
+         <li class="product-title">
+             <img style="margin-left: -6px;" src="images/product.png" alt="product">
+           </li>
+           <li class="sportdd-title">
+              <a href="/kh/sports-lobby">
+                <img style="width: 54px;" src="images/sport.png" alt="Sport">
+              </a>
+            </li>
+           <li class="live-casino-title">
+              <a href="/kh/live-casino">
+             <img style="width: 125px;" src="images/live_casino.png" alt="live_casino">
+             </a>  
+            </li>
+           <li class="cock-title">
+            <a href="/kh/cock-lobby">
+              <img style="width: 75px;margin-top: -4px;" src="images/cock.png" alt="cock">
+             </a>
+            </li>
+           <li class="live-slots-title">
+           <a href="/kh/auto_slots/slots_joker123">
+             <img style="width: 74px;margin-top: 7px;" src="images/slots.png" alt="cock">
+             </a>
+            </li>
+           <li class="fish-title">
+           <a href="/kh/auto_slots/slots_fish">
+             <img style="width: 92px;margin-top: -1px;" src="images/fish.png" alt="cock">
+             </a>
+            </li>
+           <li class="live-ke-title">
+           <a href="/kh/number-lobby">
+             <img style="width: 50px;margin-top: -2px;" src="images/kino.png" alt="cock">
+             </a>
+            </li>
+           <li>
+             
+           </li>
+         </ul>
+         <ul class="provider-bank">
+         <li class="transaction-title">
+             <img style="width: 110px;" src="images/transaction.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/aba_round.png" alt="aba_round">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/bitcoin.png" alt="bitcoin">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/wing-bank.png" alt="wing-bank">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/acd.png" alt="acd">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/true.png" alt="true">
+           </li>
+           <li>
+             <img style="width: 110px;" src="images/licence.png" alt="transaction">
+           </li>
+           <li>
+            <a href="javascript:void(0);" id="license">
+              <img src="images/gcb.png" alt="gcb">
+              </a>
+           </li>
+             
+           
+         </ul>
+         <ul class="provider-bank">
+         <li>
+             <img style="width: 134px;" src="images/contract.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+           <a href="https://t.me/FAFA558VIP" target="_blank">
+             <img style="width: 50px;" src="images/telegream.png" alt="aba_round">
+             </a>
+           </li>
+           <li class="bank-logo-footer">
+             <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/line.png" alt="bitcoin">
+             </a>
+            </li>
+           <li class="bank-logo-footer">
+           <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/mess.png" alt="wing-bank">
+             </a>
+            </li>
+           <li class="bank-logo-footer">
+           <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/tele.png" alt="acd">
+             </a>
+            </li>
+           <li>
+             <img style="width: 63px; margin-left: 30px;" src="images/about_us.png" alt="acd">
+           </li>
+           
+           
+         </ul>
+         <ul class="provider-bank">
+         <li class="internet-title">
+             <img style="width: 180px;" src="images/Internet.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/firefox.png" alt="aba_round">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/chrome.png" alt="bitcoin">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/safari.png" alt="wing-bank">
+           </li>
+           <li>
+             <img style="width: 65px; margin-left: 39px;" src="images/condition.png" alt="acd">
+           </li>
+          
+           
+           
+         </ul>
+             </div>
+    </div>
+  <div class="sfooter" style="padding-top: 10px;background: #00154F;color: #fff;text-align:center">
+       © 2026 hanjak.xyz All rights reserved.
+            <br>hanjak.xyz ជាគេហទំព័រល្បែងតាមអ៊ីនធើណេតដែលគួរឱ្យទុកចិត្តបំផុតនៅក្នុងប្រទេសកម្ពុជា<br>
+      បានចុះបញ្ជីស្របច្បាប់ <br>
+      ក្រោមការត្រួតពិនិត្យរបស់ PAGCOR © ២០២០ ។
+      </div>
+</div>
+</div>
+
+<!-- popup -->
+<div class="poker_popup_bollybet poker_popup border-color" id="license_bollybet">
+  <div class="poker_popup_form" style="width:815px; border: none;padding: 0;">
+    <a href="javascript:void(0);" class="poker_close" onclick="$('.poker_popup_bollybet').hide();" style="background: none;">
+      <img src="images/close.png">
+      </a>
+    <img alt="" style="width: 100%; height: auto" src="images/gcb_info.png">
+  </div>
+</div>
+<script type="text/javascript">
+  $('#license').click(function(){
+      $('#license_bollybet').fadeIn('slow');
+  })
+</script>
+<!-- end -->
+<script language="JavaScript" type="text/javascript" src="js/owl.carousel.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.easy-ticker.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+    $(document).ready(function() {
+      function setPanelPosition(panel, cookieName) {
+        var left = $.cookie(cookieName + '_left');
+        var top = $.cookie(cookieName + '_top');
+        if (left && top) {
+          panel.css({
+            left: left + 'px',
+            top: top + 'px'
+          });
+        }
+      }
+
+      setPanelPosition($("#wheel-panel"), 'wheelPanel');
+
+
+      $("#wheel-panel").draggable({
+        stop: function(event, ui) {
+          $.cookie('wheelPanel_left', ui.position.left);
+          $.cookie('wheelPanel_top', ui.position.top);
+        }
+      });
+
+      $(".close-icon").click(function() {
+        $(this).parent().hide();
+      });
+    });
+  </script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var delay = 1000000;
+    var jackpot = 0;
+    pull_jackpot();
+    var timer;
+
+    function pull_jackpot() {
+      var nominal = 67411244.99;
+      if (jackpot == 0) jackpot = parseInt(nominal - 100000);
+      var amount = 100000 / delay * 1;
+      timer = setInterval(function() {
+        jackpot = set_jackpot(jackpot, nominal, amount);
+      }, 10);
+    }
+
+    function set_jackpot(jackpot, nominal, amount) {
+      var jackpot = jackpot + amount;
+      if (jackpot >= nominal) {
+        clearInterval(timer);
+        pull_jackpot();
+      } else {
+        var result = addCommas(parseInt(jackpot));
+        $('#progressive_jackpot').html(result);
+      }
+      return jackpot;
+    }
+
+    function addCommas(nStr) {
+      nStr += '';
+      x = nStr.split('.');
+      x1 = x[0];
+      x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+      return x1 + x2;
+    }
+  });
+</script>
+<script>
+  $(function() {
+    $('.news-ticker').easyTicker({
+      direction: 'up',
+      visible: 2,
+      interval: 2500,
+      controls: {
+        up: '.btnUp',
+        down: '.btnDown',
+        toggle: '.btnToggle'
+      }
+    });
+    $('#monthly-slider').owlCarousel({
+      autoplay: true,
+      loop: true,
+      margin: 10,
+      nav: true,
+      items: 1
+    })
+  });
+</script>
+<script type="text/javascript" src="js/jquery.lazy.min.js"></script>
+<script>
+/*$(function() {
+		$('.lazy').lazy({
+		effect: "fadeIn",
+		effectTime: 500,
+		threshold: 0
+	});
+	$('img.lazy').on('load',function(){
+		$(this).next('.loading_gift').remove();
+	});
+	var framSrc = $('iframe.lazy').data('src');
+	setTimeout(function(){ $('iframe.lazy').attr('src',framSrc); }, 2000);
+});*/
+</script>
+<!-- start popup -->
+<!-- end popup -->
+<script>
+var isTelegramFrame = false;
+
+function openGameLauncher(link, features) {
+    if (isTelegramFrame) {
+        window.location.href = link;
+        return window;
+    }
+
+    return window.open(link, '_blank', features);
+}
+
+function open_slots5(link,top) {
+    openGameLauncher(link, 'width=1350,height=1000,scrollbars=yes,location=1,resizable=yes'+',top='+top+',left='+top);
+}
+</script>
+<script>
+$(document).ready(function(){
+	function alert_(){
+	    alert('ប្រសិនបើត្រូវការភ្នាល់អតិបរិមាខ្ពស់ សូមទាក់ទងផ្នែកបម្រើសេវាកម្មអតិថិជន');
+	}
+	$('a[href$="fight"]').click(function(){
+	    alert_();
+	});
+	$('a[href$="cock-fighting"]').click(function(){
+	    alert_();
+	});
+	$('a[href$="cf361_fight"]').click(function(){
+	    alert_();
+	});
+		$('a[href$="afb_casino"]').click(function(){
+	    alert_();
+	});
+		$('.cock-dgv99, .cock-sv388, .cock-cf361, .cockfight, .cockfight_ca, .cockfight-cf361, .cockfight-cf361_ca').click(function(){
+        alert_();
+    });
+});
+</script>
+<style>
+    .maintenance {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }.maintenance .bi-tools {
+      width: 30%;
+      height: 30%;
+      color: #03acf0;
+    }
+    .popup_maintenance {
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      position: fixed;
+      z-index: 9999999;
+      width: 100%;
+      height: 100%;
+      top: 0;
+   }
+
+   .popup_maintenan_content {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background: #fff;
+      width: 490px;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+   }.popup_maintenan_content p {
+      padding: 20px;
+      color: #333;
+   }.popup_maintenan_content h2 {
+      color: #333;
+   }.closePop2 {
+      display: inline-block;
+      text-align: center;
+      line-height: 17px;
+      cursor: pointer;
+      background: #ff4949;
+      color: #fff;
+      padding: 5px 30px;
+      border-radius: 5px;
+   }
+</style>
+<div class="popup_maintenance" id="popup_maintenance_close">
+   <div class="anime-fade-in popup_maintenan_content">
+      <h2>ហ្គេមត្រូវបានចាក់សោ</h2>
+      <p>
+                     * អ្នកមិនអាចលេងហ្គេមនេះបានទេ ព្រោះប្រូម៉ូសិនដែលអ្នកបានដាក់ស្នើរមិនត្រូវគ្នានឹងប្រភេទហ្គេម។
+            សូមពិនិត្យមើលទៅលើតម្រូវការនៃលក្ខខណ្ឌផ្តល់ជូន។
+            នៅពេលដែលតម្រូវការនៃការផ្តល់ជូនត្រូវបានឈានដល់ ឬសមតុល្យទឹកប្រាក់របស់អ្នក ក្រោម <span id="min_reset_deposit"></span>  វានឹងត្រូវបានកំណត់ឡើងវិញ ហើយហ្គេមទាំងអស់នេះនឹងត្រូវបានដោះសោ។
+               </p>
+      <a href="javascript:void(0)" class="closePop2">យល់ព្រម</a>
+   </div>
+</div>
+<script>
+   $(document).ready(function(e) {
+      $('.closePop2').click(function() {
+         $('.popup_maintenance').hide();
+      });
+      $('a').filter(function() {
+         return /maintenance/g.test($(this).attr('href')) || /maintenance/g.test($(this).attr('data-url'));
+      }).each(function(index, text) {
+         $(this).parent().css('position', 'relative');
+         if ((($(this).attr('href') || '').indexOf("maintenance2") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance2") > -1) || (($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)) {
+               $(this).prepend('<div class="maintenance"></div>');
+         } else {
+               const svgString = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/></svg>';
+               $(this).prepend('<div class="maintenance">' + svgString + '</div>');
+         }
+
+      });
+      $('a').filter(function() {
+         return /maintenance/g.test($(this).attr('href')) || /maintenance/g.test($(this).attr('data-url'));
+      }).click(function(e) {
+         if ((($(this).attr('href') || '').indexOf("maintenance2") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance2") > -1 ) || (($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)) {
+            $('.popup_maintenance').show();
+            if((($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)){
+               $('#min_reset_deposit').text('');
+            }else{
+               $('#min_reset_deposit').text('');
+            }      
+         }
+         return false;
+      });
+   });
+    function maintenance2(type='') {
+      $('.popup_maintenance').show();
+      if(type == 'maintenance3'){
+        $('#min_reset_deposit').text('');
+      }else{
+        $('#min_reset_deposit').text('');
+      }
+   }
+</script>
+<input type="hidden" data-web="1084" data-sweb="-">
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e34582dcdf68071',t:'MTc3NDY3Njg5MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+<script type="text/javascript">$(document).ready(function(){if(document.getElementById("record-pagin")){$("#record-pagin").length&&$("#record-pagin").paginate({total_pages:0,itemsPerPage:10});}});</script>
+
+</body></html>

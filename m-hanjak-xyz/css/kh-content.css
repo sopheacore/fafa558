@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Kh-Content';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/Kh-Content-Regular.woff2) format('woff2');
+    unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* khmer */
+@font-face {
+    font-family: 'Kh-Content';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/Kh-Content-Bold.woff2) format('woff2');
+    unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body,
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+canvas,
+caption,
+center,
+cite,
+code,
+command,
+datalist,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+img,
+ins,
+kbd,
+keygen,
+label,
+legend,
+li,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+s,
+samp,
+section,
+small,
+source,
+span,
+strike,
+input,
+strong,
+sub,
+sup,
+table,
+tbody,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var
+* {
+    font-family: Arial, Helvetica, sans-serif, 'Kh-Content',prompt !important;
+}

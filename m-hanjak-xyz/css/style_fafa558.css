@@ -1,0 +1,268 @@
+:root {
+  --refer-secondary-color:#111;
+  --tooltip-primary: #8A2BE2;
+}
+body {
+  background: #fff;
+}
+
+header {
+  background: #d8d8d8;
+}
+
+.btn-login,
+.footer {
+  border: 1px solid transparent;
+  background: #8a2be2;
+}
+
+.btn-login {
+  border: 1px solid #3a057a;
+}
+
+.login-page #btnSubmit,
+.register-page #btnSubmit,
+.register-page input.btnSubmit {
+  border: 1px solid #3a057a;
+  background: #8a2be2;
+}
+
+.btn-register {
+  background: #f00018;
+  background: -moz-linear-gradient(top, #f00018 1%, #b20000 100%);
+  background: -webkit-linear-gradient(top, #f00018 1%, #b20000 100%);
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(1%, #f00018),
+      to(#b20000));
+  background: -o-linear-gradient(top, #f00018 1%, #b20000 100%);
+  background: linear-gradient(to bottom, #f00018 1%, #b20000 100%);
+}
+
+.title-page {
+  background: #8a2be2;
+}
+
+.footer-link ul li:not(:first-child) {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-link ul li:not(:last-child) {
+  border-right: 1px solid #000;
+}
+
+.footer-link ul li:last-child {
+  border-right: none;
+}
+
+.left-nav__bg {
+  background: #b31bad;
+}
+
+.left-nav ul {
+  background: #b31bad;
+  border-right: 1px solid #3a057a;
+}
+
+.left-nav a {
+  border-bottom: 1px solid #3a057a;
+  background: #b31bad;
+}
+
+.left-nav a:hover {
+  background: rgba(104, 202, 191);
+}
+
+.register-page .item input:focus,
+.register-page .item select:focus {
+  border-color: #3a057a;
+}
+
+.login-page .item label,
+.login-page .item-text-wrap,
+.register-page .item-text-wrap,
+.title-game {
+  color: rgb(0, 48, 43);
+}
+
+.login-page .item input,
+.login-page .item select {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  background: #dfdfdf;
+}
+
+.login-page #code_match {
+  background: rgba(0, 0, 0, 0.9);
+  color: #ccc;
+}
+
+.notice {
+  background-color: #eaeaea;
+}
+
+.notice span {
+  background: rgb(0, 48, 43) url(../images/ann-ico.png) 2px center no-repeat;
+}
+
+.notice marquee a {
+  color: rgb(0, 48, 43);
+}
+
+.gallery-home .btn-danger {
+  background-color: #3a057a;
+  border-color: #b31bad;
+}
+
+.gallery-home img {
+  margin-bottom: 5px;
+}
+
+.game-lobby h2,
+.tel-text a,
+.vip-content p {
+  color: #000;
+}
+
+.center-tab a {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.slots-tab a {
+  background-color: #2a8fbd;
+}
+
+.center-basic td {
+  color: #333;
+}
+
+.center-basic td a {
+  color: blue;
+}
+
+.transfer label span {
+  color: #333;
+}
+
+.transfer a {
+  color: #007bff;
+}
+
+.transfer a.btn {
+  color: #fff;
+}
+
+.turnover-item label span {
+  color: #333 !important;
+}
+
+.deposit p,
+.update_bank label,
+.about_us>*,
+#content .tblBonus td,
+.text-black,
+.fafa-text-primary {
+  color: #000;
+}
+
+.header-right1 span,
+.header-right1 div,
+.header-right1 a{
+  color: #000 !important;
+}
+
+.left-home-menu .left-menu-item.active {
+  background: linear-gradient(to top right, #ccc, #b31bad);
+}
+
+.left-home-menu .left-menu-item {
+  background: linear-gradient(to top right, #fff, #ccc);
+}
+
+.logo img {
+  /* text-align: center !important;
+  margin: 0 auto !important;
+  width: 5rem !important;
+  padding-top: 6px; */
+  margin-top: -10px;
+}
+
+.announcement .achievementBanner:nth-child(3) {
+  display: none;
+}
+
+.announcement .achievementBanner img {
+  width: 100%;
+  object-fit: none;
+}
+
+.right-menu-item {
+  position: relative;
+}
+
+.popular-icon {
+  position: absolute;
+  top: -30px;
+  right: -15px;
+  background-image: url(../images/popular-gif.gif);
+  background-size: contain;
+  background-position: right;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 5rem;
+  max-width: 6rem;
+}
+
+/* New Design fafa */
+.spin_euro {
+  position: absolute;
+  transform: translate(-50%, 0%);
+  z-index: 999;
+  left: 51%;
+  bottom: -18px;
+}
+
+.g-wrap .wheel-body {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin-bottom: 70px;
+}
+
+.wheel-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px 0px -15px;
+  padding: 15px;
+  background-image: url(../images/backfafa558.webp);
+}
+
+.g-wrap .wheel_spin img {
+  position: relative;
+  width: 80% !important;
+  top: 10px;
+}
+.bank-item-wrapper h5{
+  color:#8A2BE2;
+  padding: .325rem .5rem;
+  border: 1px solid #8A2BE2;
+  width: fit-content;
+  border-radius: .5rem;
+}
+.header-right1 #user-svg{
+  fill:#000;
+}
+.bg-img-ba{
+  margin: 0 16px 25px 16px;
+}
+.bg-img-ba img{
+  border-radius: 16px;
+}
+.withdraw p{
+  color:#000
+}
+.header-right1 .balance-dropdown div, .header-right1 .balance-dropdown span{
+  color: #fff !important;
+}

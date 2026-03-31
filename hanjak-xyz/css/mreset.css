@@ -1,0 +1,151 @@
+/* 
+mreset 0.7 (build 20150720)
+https://github.com/mixice/mreset
+http://www.mixice.com
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {margin:0;padding:0;border:0;outline:0;font-size:14px;vertical-align:baseline;background:transparent;}
+html, body {height: 100%;}
+html{-webkit-font-smoothing: antialiased;}
+body, button, input, select, textarea {/*font:14px/1.5 Arial;*/color:#555;background: #fff;border: none;}
+a, button, input, select, span, img, i, cite, tt, em, button{/*transition:all .4s;*/color:#666;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
+audio, canvas, progress, video{display: inline-block; vertical-align: baseline;}
+audio:not([controls]) {display: none;height: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight:bold;}
+img {border:0;vertical-align: middle;-ms-interpolation-mode: bicubic;}
+a {color: #555;}
+a, a:hover {text-decoration:none;outline: 0;}
+b, strong {font-weight: bold;}
+p {margin: 0;line-height: 200%; color: #666;}
+ul, li {margin:0; padding:0; list-style:none;}
+button, optgroup, select, textarea {margin: 0;padding: 0; font: inherit;color: inherit;}
+button, input {outline:none;}
+::-webkit-input-placeholder{color:#ccc;}
+::-moz-placeholder{color:#ccc;}
+:-moz-placeholder{color:#ccc;}
+::-ms-input-placeholder{color:#ccc;}
+input:-moz-placeholder { color:#ccc; }
+textarea:-moz-placeholder { color:#ccc;}
+::selection{background:#333;color:#999;text-shadow:none;}
+.yh {font-family:Microsoft YaHei, '\9ed1\4f53';}
+.jh {font-family:Microsoft JhengHei, '\9ed1\4f53';}
+.hide {display:none !important;}
+.clear {clear:both;}
+.fl {float: left !important;}
+.fr {float: right !important;}
+.black {-webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;}
+.black:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  filter: grayscale(0%);
+  filter:none;}
+ .promo-details-body table tr td{border: 1px solid #fff; padding: 5px;}
+ .videohome{background: #252525;}
+ .register-main{margin-top: 145px!important;}
+ 
+ input[type=checkbox], input[type=radio] {
+    width: 30px!important;;
+    height: 20px!important;;
+}
+.register-contant input.code {
+    width: 422px!important;
+}
+.no_domain, #no_domain{text-align: left;}
+.rvp-col {
+    position: relative;
+    height: 235px;
+    padding-top: 10px;
+    border-bottom: 1px solid #fff;
+}
+.ambassadorImg-fa {
+    background: url(../images/vilbol_1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 11px;
+    left: 0px;
+    width: 395px;
+    height: 222px;
+        background-size: 100%;
+}
+.ambassadorImg-mi-faca {
+    background: url(../images/fafc_1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 11px;
+     top: 11px;
+    right: 400px;
+    width: 395px;
+    height: 222px;
+        background-size: 100%;
+}
+.ambassadorImg-redking{
+    background: url(../images/redking.png);
+    position: relative;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 11px;
+    right: -5px;
+    width: 395px;
+    height: 222px;
+    background-size: 100%;
+        background-size: 100%;
+}
+.git_content_wheel img{
+    width: 150px!important;
+    height: 178px!important;
+}
+img.popular-head-img{width: 75px!important; max-width: 75px!important}
+   .popular-head{position: absolute;top: 0px;z-index: 9999; right: -1px}
+   .subnav-content{z-index:99999 }
+.popular-tma{z-index: 2!important}
+.vip-container{padding-top: 150px}
+.poker-drop div.col-md-3 a div.nav4 img{
+        max-width: 294px;
+    width: 294px;
+  }
+  .poker-top-na{
+        padding: 24px 0;
+  }
+  .radioin-sen{display: none;}
+  .bank_type h3{
+    width: 146px;
+    border: 1px solid #87139b;
+    padding:7px 10px!important;
+    border-radius: 5px;
+   margin-bottom: 10px;
+  }
+.slots-sclo{
+    max-height: 586px;
+    overflow-y: scroll;
+}
+
+#countdown_moday{color: #fff!important;}
+.head-text-number{
+    position: absolute;
+    top: 50px;
+    left: 37px;
+    color: #000 !important;
+}
+.head-text-number span{
+    color: red !important;
+}
+.fafa-logo-gift{width: 220px!important;}

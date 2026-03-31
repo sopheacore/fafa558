@@ -1,0 +1,65 @@
+.nav-container .nav3{
+    float:left;
+}.simple-banner-item{
+    display: flex;
+    flex: 1;
+}.text_shdow, .text_shdow span{
+    position: relative;
+    bottom: 0;
+    font-size: 50px;
+    color: #6bd2ff;
+    text-shadow: #003d7b 0px 0px 5px, #003a76 0px 0px 10px, #0055ad 0px 0px 15px, #2ca9ff 0px 0px 20px, #004f9f 0px 0px 30px, #004994 0px 0px 40px, #003e7d 0px 0px 50px, #003974 0px 0px 75px, 2px 2px 2px rgb(107 210 255 / 0%);
+    text-align: center;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    margin-top: 20px;
+}.text_shdow div{
+    font-family: fangsong !important;
+    font-size: 60px;
+    font-weight: bold;
+    padding-left: 30px;
+    top: -10px;
+    position: relative;
+}/*.simple-banner-item img{
+    height:195px;
+}*/.subnav-content .col-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 13.666667%;
+    max-width: 13.666667%;
+}.subnav-content .btn, .subnav-content .nav-casino-title{
+    font-size:16px;
+}.logo-modal{
+    width:300px;
+}.btn-outline-danger:hover{
+    background-color: rgba(0,0,0,.6);
+}
+.main{height: auto!important;}
+.nrBox{padding-top: 158px!important;}
+.b-sport{
+    height: 252px;
+}
+.logo ul{display:flex}
+.fb-mess a {
+    display: block;
+    margin-top: 10px;
+    position: relative;
+}
+.gif_footer{z-index: 9999}
+#step4{display: none!important;}
+.separator:after,
+.separator:before {
+    border-bottom: 1px solid #000!important;
+}
+.separator{color:#000!important }
+.challenge-card .card-content{height: 213px;}
+#modalBody table tr td{border: 1px solid #fff!important;padding: 5px!important;}
+#termsModal .modal-body{text-align: left!important;}
+
+.challange .close-button{
+    color: #fff !important;
+}
+.slots-sclo {
+    overflow-y: scroll;
+    height: 600px!important;
+}
