@@ -346,7 +346,7 @@ body {
     width: 26px;
     height: 26px;
     border-radius: 0 15px 15px 0;
-    background: #6f0102 url(../images/ann-ico.png) 2px center no-repeat;
+    background: #000000 url(../images/ann-ico.png) 2px center no-repeat;
     display: block;
     float: left;
     position: absolute;

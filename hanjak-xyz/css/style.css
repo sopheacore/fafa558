@@ -4,13 +4,13 @@
 	margin: 0 auto;
 	text-align: center;
 	font-family: Tahoma, Geneva, sans-serif;
-	background: #4f4f4f;
+	background: #000000;
 	display: block
 }
 .head {
 	width: 100%;
 	height: auto;
-	background: #d8d8d8;
+	background: #000000;
 	display: block
 }
 .logo {
