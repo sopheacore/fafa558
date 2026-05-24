@@ -334,6 +334,7 @@
 }
 body {
     font-size: 14px;
+    
 }
 .notice {
     width: 100%;
@@ -4705,6 +4706,10 @@ nav .fa a i {
 }
 #content .wrap-content {
     margin-bottom: 14px;
+    background-image: url("../images/bg-main.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .gallery {
     background: #7a0501;
