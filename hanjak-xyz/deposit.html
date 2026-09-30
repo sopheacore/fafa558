@@ -1052,31 +1052,32 @@ if(document.getElementById("datepicker1")){
   }
   .cat-promo-hero-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
-    padding: 6px 10px;
-    background: linear-gradient(90deg, #fffcf6 0%, #ffffff 100%);
+    text-align: center;
+    padding: 10px 12px 8px 12px;
+    background: linear-gradient(180deg, #fffcf6 0%, #ffffff 100%);
     border: 1px solid #fed7aa;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 6px;
-    gap: 10px;
+    position: relative;
   }
   .cat-promo-gift-wrap {
     position: relative;
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .cat-promo-glow-ring {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, rgba(234, 179, 8, 0.1) 60%, transparent 100%);
-    filter: blur(4px);
+    filter: blur(6px);
     z-index: 1;
     animation: promoGlow 3s ease-in-out infinite alternate;
   }
@@ -1085,8 +1086,8 @@ if(document.getElementById("datepicker1")){
     100% { transform: scale(1.15); opacity: 1; }
   }
   .cat-promo-gift-img {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
     position: relative;
     z-index: 2;
@@ -1098,13 +1099,14 @@ if(document.getElementById("datepicker1")){
   .cat-promo-hero-body {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-    min-width: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
   .cat-promo-tag-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     margin-bottom: 2px;
   }
@@ -1127,24 +1129,27 @@ if(document.getElementById("datepicker1")){
     border-radius: 12px;
   }
   .cat-promo-title-text {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     color: #1e293b;
-    margin: 0;
+    margin: 0 0 2px 0;
     line-height: 1.2;
+    text-align: center;
   }
   .cat-promo-title-text span {
     color: #d97706;
   }
   .cat-promo-subtitle {
-    font-size: 10.5px;
+    font-size: 11px;
     color: #64748b;
     margin: 0;
+    text-align: center;
   }
   .cat-providers-row {
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 6px;
   }
   .provider-pill {
