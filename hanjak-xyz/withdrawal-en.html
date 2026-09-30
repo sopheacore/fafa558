@@ -1,0 +1,853 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="window-target" content="_top">
+<meta content="telephone=no" name="format-detection">
+<meta name="msapplication-TileColor" content="#f55">
+<meta name="msapplication-square150x150logo" content="images/ico.png">
+<title>Withdrawal - hanjak.xyz</title>
+<meta name="title" content="hanjak.xyz">
+<meta name="description" content="hanjak.xyz">
+<meta name="keyword" content="hanjak.xyz">
+<meta name="viewport" content="width=1200,initial-scale=0,maximum-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" href="css/mreset_1.css" type="text/css">
+<link rel="stylesheet" href="css/customize.css" type="text/css">
+<link rel="stylesheet" href="css/customize_fafa558.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async="" src="js/analytics.js"></script>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/mreset.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/styles_ca.css">
+<link rel="stylesheet" href="css/date_picker.ui.css">
+<script type="text/javascript" src="js/functions.js"></script>
+<script src="js/publicity.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.jslides.js"></script>
+<script src="js/jquery.cookie_1.js"></script>
+<script src="js/jquery.ui.js"></script>
+<script src="js/micgaming.js"></script>
+<script src="js/currency_function.js"></script>
+<script src="js/jquery.paginate.js"></script>
+</head>
+<body data-pages="">
+
+<style>
+ .balance-dropdown {
+  position: absolute;
+  top: 90%;
+  left: -4px;
+  width: 230px;
+  background: #333333;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.myBalance-wrap.active .balance-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.navbar{
+  width: 100%;
+}
+.navbar .subnav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex: auto;
+}
+</style>
+
+<div class="main-w">
+<div class="wrapper">
+<div class="head position-fixed fixed-top">
+  <div class="container">
+    <div class="row form-row">
+      <div class="col-md-3">
+        <div class="logo">
+          <ul>
+            <li id="tourCount_ida">
+              <a href="/">
+                <img class="fafa-logo-gift" style="width: 170px;" src="images/logo.png">
+              </a>
+            </li>         
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div id="containerTopright"> 
+          <div id="TopMember" style="white-space: nowrap">
+            <div style="float:left; margin-right: 10px;"> <a href="#"><img src="images/notification-after-login.png"> </a> </div>
+            <div style="float:left; margin-right: 10px;position: relative;">
+              <a href="#"><img src="images/mail-before-login.png"></a> 
+            </div>
+            <div id="language" class="language">
+              <div class="languageMenu">
+                <div id="langSelectLink">
+                  <div id="box"><span class="arrUp" id="arrow"> </span><span id="selectedLang" class="fen" change-class="fen">English</span></div>
+                </div>
+              </div>
+            </div>
+            <div id="Memberlogin">
+              <form action="/en/login_submitter" method="post">
+                <input id="topID" type="text" class="h-20 placeholderInput" size="11" name="useracc" placeholder="Username">
+                <input id="topPW" type="password" class="h-20 placeholderInput" size="10" name="passwd" placeholder="Password">
+                <div class="Memberlogin-Btn">
+                  <button type="submit" name="save">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="memberact">
+            <div class="memberact-Btn"> <a href="/en/promotion"> <img src="images/btn-promotion-icon.png">Promotions </a> </div>
+            <div class="memberact-Btn"> <a href="#" onclick="window.open('http://secure.livechatinc.com/licence//open_chat.cgi', 'Chat Now', 'height=530,width=650,top=200,left=100,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no');"> <img src="images/btn-livechat-icon.png">24/7 Live Chat </a> </div>
+            <div class="memberact-Btn"> <a href="/en/affiliate"> <img src="images/btn-livechat-icon.png">Affiliate</a> </div>
+            <div class="memberact-Btn"> <a href="/en/signup"> <img src="images/btn-joinnow-icon.png">Join Now </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu" id="show_game">
+    <div class="container nav-icon-th">
+      <div class="navbar"> 
+        <a href="/" class="icon" style="border-right:none!important;"><img src="images/home-icon.png"></a> 
+        <a href="http://m.hanjak.xyz/withdrawal-en.html" class="icon"><img src="images/mobile-icon.png"></a>
+        <div class="subnav"><a href="/en/sports-lobby" class="subnavbtn">Sports</a></div>
+        <div class="subnav"><a href="/en/live-casino" class="subnavbtn">Live Casino</a></div>
+        <div class="subnav"><a href="/en/auto_slots/slots_fish" class="subnavbtn">Slots</a></div>
+        <div class="subnav"><a href="/en/cock-lobby" class="subnavbtn">Cockfight</a></div>
+        <div class="subnav"><a href="/en/poker-lobby" class="subnavbtn">Poker</a></div>
+        <div class="subnav"><a href="/en/promotion" class="subnavbtn">Promotions</a></div>
+        <div class="subnav"><a href="deposit.html" class="subnavbtn">Deposit</a></div>
+        <div class="subnav"><a href="withdrawal-en.html" class="subnavbtn" style="color: #ffc107!important;">Withdrawal</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Base Scoped Withdrawal Styles */
+  .withdraw-page-wrapper {
+    background: #f1f5f9;
+    min-height: calc(100vh - 220px);
+    padding: 130px 0 60px 0;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .withdraw-page-wrapper * {
+    box-sizing: border-box;
+  }
+  .withdraw-card-container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+    padding: 30px 34px;
+  }
+
+  /* User Profile Header Card */
+  .d-user-balance-card {
+    background: linear-gradient(135deg, #0036a7, #001f74);
+    border-radius: 18px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 31, 116, 0.22);
+    color: #ffffff;
+  }
+  .d-user-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .d-user-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .d-user-avatar svg {
+    width: 100%;
+    height: 100%;
+  }
+  .d-user-name {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 2px 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-user-sub {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
+  .d-user-right {
+    text-align: right;
+  }
+  .d-balance-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2px;
+    display: block;
+  }
+  .d-balance-val {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+  .d-balance-val span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-left: 3px;
+  }
+
+  /* Navigation Tabs */
+  .d-tab-nav {
+    background: #f1f5f9;
+    border-radius: 14px;
+    padding: 6px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    max-width: 320px;
+  }
+  .d-tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .d-tab-btn.active {
+    background: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  }
+
+  /* Grid Layout */
+  .withdraw-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 32px;
+  }
+
+  .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  /* Bank Card Selected */
+  .d-bank-card {
+    border: 2px solid #2563eb;
+    background: #f8faff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .d-bank-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .d-bank-logo-badge {
+    width: 60px;
+    height: 48px;
+    background: #004f71;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    flex-shrink: 0;
+  }
+  .d-bank-logo-badge.acleda {
+    background: #002e6e;
+  }
+  .d-bank-logo-badge.wing {
+    background: #73be28;
+  }
+  .d-bank-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 3px 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-bank-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-bank-check-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* Dashed Add Bank Button */
+  .d-btn-add-bank {
+    width: 100%;
+    border: 1.5px dashed #cbd5e1;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #2563eb;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 22px;
+    transition: all 0.2s ease;
+  }
+  .d-btn-add-bank:hover {
+    border-color: #3b82f6;
+    background: #f8faff;
+  }
+  .d-add-icon-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* Notice Box */
+  .d-notice-box {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .d-notice-icon {
+    color: #d97706;
+    font-size: 17px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid #d97706;
+    font-weight: bold;
+    font-family: serif;
+  }
+  .d-notice-text {
+    font-size: 13px;
+    color: #78350f;
+    margin: 0;
+    font-weight: 600;
+  }
+  .d-notice-text strong {
+    color: #92400e;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Amount Wrapper */
+  .d-amount-wrapper {
+    border: 1.5px solid #dbeafe;
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+    transition: all 0.2s ease;
+  }
+  .d-amount-wrapper:focus-within {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  .d-amount-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
+  .d-currency-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #64748b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-amount-field {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    outline: none;
+    width: 100%;
+  }
+  .d-btn-withdraw-all {
+    border: none;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .d-btn-withdraw-all:hover {
+    background: #c7d2fe;
+  }
+
+  /* Submit Button */
+  .d-btn-submit-withdraw {
+    width: 100%;
+    height: 50px;
+    background: #cbd5e1;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .d-btn-submit-withdraw.ready {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  }
+
+  /* Right Column Card */
+  .withdraw-info-card {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .withdraw-info-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .withdraw-rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12.5px;
+    color: #475569;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .withdraw-rule-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2563eb;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  /* History Table */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .history-table th {
+    background: #f8fafc;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    border-bottom: 1.5px solid #e2e8f0;
+  }
+  .history-table td {
+    padding: 14px;
+    font-size: 13.5px;
+    color: #1e293b;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  /* Toast Notification */
+  .toast-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 99999;
+    display: none;
+  }
+</style>
+
+<!-- Main Withdrawal Body Container -->
+<div class="withdraw-page-wrapper">
+  <div class="container">
+    <div class="withdraw-card-container">
+      
+      <!-- Top User Profile & Account Balance Card -->
+      <div class="d-user-balance-card">
+        <div class="d-user-left">
+          <div class="d-user-avatar">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="50" fill="#f8fafc"></circle>
+              <circle cx="50" cy="38" r="16" fill="#fbbf24"></circle>
+              <path d="M22 84C22 66.3269 34.536 52 50 52C65.464 52 78 66.3269 78 84" fill="#f59e0b"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="d-user-name" id="user-display-name">phanith29</h3>
+            <p class="d-user-sub">Your Account</p>
+          </div>
+        </div>
+        <div class="d-user-right">
+          <span class="d-balance-label">Account Balance</span>
+          <div class="d-balance-val">0.20 <span>USD</span></div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="d-tab-nav">
+        <button type="button" class="d-tab-btn active" id="d-tab-withdraw-btn" onclick="dSwitchTab('withdraw')">Withdrawal</button>
+        <button type="button" class="d-tab-btn" id="d-tab-history-btn" onclick="dSwitchTab('history')">History</button>
+      </div>
+
+      <!-- Withdrawal Form View -->
+      <div id="d-view-withdraw" class="withdraw-grid">
+        
+        <!-- Left: Form -->
+        <div class="withdraw-col-left">
+          <!-- Bank Selection -->
+          <div class="section-label">Select Bank Account</div>
+          <div id="d-bank-container">
+            <div class="d-bank-card" id="d-bank-1">
+              <div class="d-bank-card-left">
+                <div class="d-bank-logo-badge">ABA</div>
+                <div>
+                  <h4 class="d-bank-title">ABA BANK</h4>
+                  <p class="d-bank-subtitle">phanith · 213213520</p>
+                </div>
+              </div>
+              <div class="d-bank-check-circle">✓</div>
+            </div>
+          </div>
+
+          <!-- Dashed Add Bank Button -->
+          <button type="button" class="d-btn-add-bank" onclick="dOpenAddBankModal()">
+            <div class="d-add-icon-circle">+</div>
+            <span>Add Bank Account</span>
+          </button>
+
+          <!-- Selected Notice -->
+          <div class="section-label">Selected Account Information</div>
+          <div class="d-notice-box">
+            <div class="d-notice-icon">i</div>
+            <p class="d-notice-text">Minimum withdrawal amount <strong>USD 1.00</strong></p>
+          </div>
+
+          <!-- Amount -->
+          <div class="section-label">Withdrawal Amount</div>
+          <div class="d-amount-wrapper">
+            <div class="d-amount-left">
+              <span class="d-currency-label">USD</span>
+              <input type="number" id="d-withdraw-amount" class="d-amount-field" placeholder="0.00" min="1" step="any" oninput="dCheckReady()">
+            </div>
+            <button type="button" class="d-btn-withdraw-all" onclick="dWithdrawAll()">Withdraw All</button>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="button" class="d-btn-submit-withdraw" id="d-btn-submit" onclick="dSubmitWithdraw()">
+            Submit
+          </button>
+        </div>
+
+        <!-- Right: Information & Guidelines -->
+        <div class="withdraw-col-right">
+          <div class="withdraw-info-card">
+            <h4 class="withdraw-info-title">
+              <span>🛡️</span>
+              <span>Withdrawal Guidelines</span>
+            </h4>
+            <div class="withdraw-rule-item">
+              <div class="withdraw-rule-dot"></div>
+              <span>Withdrawals are processed within <strong>1 to 3 minutes</strong>.</span>
+            </div>
+            <div class="withdraw-rule-item">
+              <div class="withdraw-rule-dot"></div>
+              <span>Please make sure your bank account name matches your registered name.</span>
+            </div>
+            <div class="withdraw-rule-item">
+              <div class="withdraw-rule-dot"></div>
+              <span>The minimum withdrawal amount is <strong>1.00 USD</strong>.</span>
+            </div>
+            <div class="withdraw-rule-item">
+              <div class="withdraw-rule-dot"></div>
+              <span>If you have any questions, please contact our 24/7 customer support.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- History Table View -->
+      <div id="d-view-history" style="display: none;">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Amount</th>
+              <th>Bank Account</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-09-28 14:20</td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$20.00 USD</strong></td>
+              <td>ABA BANK (..3520)</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Success ✓</span></td>
+            </tr>
+            <tr>
+              <td>2026-09-15 09:45</td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$50.00 USD</strong></td>
+              <td>ABA BANK (..3520)</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;">Success ✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Add Bank Account -->
+<div class="deposit-modal-overlay" id="d-modal-add-bank" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99999; display: none; align-items: center; justify-content: center;">
+  <div style="background: #ffffff; border-radius: 20px; padding: 26px 28px; width: 100%; max-width: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+    <h4 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 0 0 16px 0; text-align: center;">Add Bank Account</h4>
+    <div style="margin-bottom: 12px;">
+      <label style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; display: block;">Bank Name</label>
+      <select id="d-new-bank-type" style="width: 100%; height: 42px; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 0 12px; font-size: 13.5px; outline: none;">
+        <option value="ABA" data-class="aba">ABA BANK</option>
+        <option value="ACLEDA" data-class="acleda">ACLEDA BANK</option>
+        <option value="Wing" data-class="wing">Wing Bank</option>
+      </select>
+    </div>
+    <div style="margin-bottom: 12px;">
+      <label style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; display: block;">Account Holder Name</label>
+      <input type="text" id="d-new-bank-name" style="width: 100%; height: 42px; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 0 12px; font-size: 13.5px; outline: none;" placeholder="e.g. PHANITH">
+    </div>
+    <div style="margin-bottom: 18px;">
+      <label style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; display: block;">Account Number</label>
+      <input type="text" id="d-new-bank-account" style="width: 100%; height: 42px; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 0 12px; font-size: 13.5px; outline: none;" placeholder="e.g. 001 234 567">
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <button type="button" onclick="dCloseAddBankModal()" style="border: 1.5px solid #cbd5e1; background: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700; color: #64748b; cursor: pointer;">Cancel</button>
+      <button type="button" onclick="dSaveNewBank()" style="border: none; background: #2563eb; color: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700; cursor: pointer;">Save Account</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-notification" id="d-toast">
+  <span id="d-toast-msg"></span>
+</div>
+
+<script>
+  const dUserBalance = 0.20;
+
+  function dShowToast(msg) {
+    $("#d-toast-msg").text(msg);
+    $("#d-toast").fadeIn(200);
+    setTimeout(() => {
+      $("#d-toast").fadeOut(300);
+    }, 2200);
+  }
+
+  function dSwitchTab(tab) {
+    if (tab === 'withdraw') {
+      $('#d-tab-withdraw-btn').addClass('active');
+      $('#d-tab-history-btn').removeClass('active');
+      $('#d-view-withdraw').show();
+      $('#d-view-history').hide();
+    } else {
+      $('#d-tab-history-btn').addClass('active');
+      $('#d-tab-withdraw-btn').removeClass('active');
+      $('#d-view-withdraw').hide();
+      $('#d-view-history').show();
+    }
+  }
+
+  function dWithdrawAll() {
+    $('#d-withdraw-amount').val(dUserBalance.toFixed(2));
+    dCheckReady();
+  }
+
+  function dCheckReady() {
+    const val = parseFloat($('#d-withdraw-amount').val()) || 0;
+    if (val >= 1) {
+      $('#d-btn-submit').addClass('ready');
+    } else {
+      $('#d-btn-submit').removeClass('ready');
+    }
+  }
+
+  function dSubmitWithdraw() {
+    const val = parseFloat($('#d-withdraw-amount').val()) || 0;
+    if (val < 1) {
+      dShowToast('Minimum withdrawal amount is USD 1.00!');
+      $('#d-withdraw-amount').focus();
+      return;
+    }
+    if (val > dUserBalance) {
+      dShowToast('Insufficient account balance!');
+      return;
+    }
+
+    alert('Withdrawal request of $' + val.toFixed(2) + ' submitted successfully!');
+    $('#d-withdraw-amount').val('');
+    dCheckReady();
+  }
+
+  function dOpenAddBankModal() {
+    $('#d-modal-add-bank').css('display', 'flex');
+  }
+
+  function dCloseAddBankModal() {
+    $('#d-modal-add-bank').hide();
+  }
+
+  function dSaveNewBank() {
+    const bType = $('#d-new-bank-type').val();
+    const bClass = $('#d-new-bank-type option:selected').data('class') || '';
+    const bName = $('#d-new-bank-name').val().trim() || 'PHANITH';
+    const bAcc = $('#d-new-bank-account').val().trim();
+
+    if (!bAcc) {
+      dShowToast('Please enter your bank account number!');
+      return;
+    }
+
+    const newHtml = `
+      <div class="d-bank-card" style="border-color: #cbd5e1; background: #ffffff;" onclick="dSelectBank(this)">
+        <div class="d-bank-card-left">
+          <div class="d-bank-logo-badge ${bClass}">${bType}</div>
+          <div>
+            <h4 class="d-bank-title">${bType} BANK</h4>
+            <p class="d-bank-subtitle">${bName} · ${bAcc}</p>
+          </div>
+        </div>
+        <div class="d-bank-check-circle" style="display:none;">✓</div>
+      </div>
+    `;
+    $('#d-bank-container').append(newHtml);
+    dCloseAddBankModal();
+    dShowToast('Bank account added successfully!');
+  }
+
+  function dSelectBank(elem) {
+    $('.d-bank-card').css({ 'border-color': '#cbd5e1', 'background': '#ffffff' });
+    $('.d-bank-check-circle').hide();
+    $(elem).css({ 'border-color': '#2563eb', 'background': '#f8faff' });
+    $(elem).find('.d-bank-check-circle').show();
+  }
+</script>
+
+<div class="footer" style="position: relative;">
+  <div class="info-footer">
+    <div class="container">
+      <div class="rvp-col">
+        <a href="https://t.me/FAFA558VIP" target="_blank">
+          <div class="ambassadorImg-fa"></div>
+        </a>
+        <a href="#" target="_blank">
+          <div class="ambassadorImg-mi-faca"></div>
+        </a>
+        <a href="#" target="_blank">
+          <div class="ambassadorImg-redking"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="sfooter" style="padding-top: 10px;background: #00154F;color: #fff;text-align:center">
+    © 2026 hanjak.xyz All rights reserved.
+  </div>
+</div>
+
+</body>
+</html>
