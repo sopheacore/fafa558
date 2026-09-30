@@ -191,7 +191,7 @@
     }
     .m-quick-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 6px;
     }
     .m-quick-btn {
@@ -560,11 +560,10 @@
                 <div class="m-section-label">ចំនួនទឹកប្រាក់</div>
                 <input type="number" id="m-amount-input" class="m-amount-input" value="10">
                 <div class="m-quick-grid">
-                    <button type="button" class="m-quick-btn" data-amt="1">1</button>
-                    <button type="button" class="m-quick-btn" data-amt="5">5</button>
-                    <button type="button" class="m-quick-btn active" data-amt="10">10</button>
-                    <button type="button" class="m-quick-btn" data-amt="50">50</button>
-                    <button type="button" class="m-quick-btn" data-amt="100">100</button>
+                    <button type="button" class="m-quick-btn active" data-category="sport">កីឡា</button>
+                    <button type="button" class="m-quick-btn" data-category="slot">ស្លត</button>
+                    <button type="button" class="m-quick-btn" data-category="casino">កាស៊ីណូ</button>
+                    <button type="button" class="m-quick-btn" data-category="cockfight">មាន់ជល់</button>
                 </div>
             </div>
 
@@ -775,20 +774,15 @@
         }, 2200);
     }
 
-    // Amount pills
+    // Category Selection
+    let mSelectedCategory = "sport";
     $('.m-quick-btn').on('click', function() {
         $('.m-quick-btn').removeClass('active');
         $(this).addClass('active');
-        $('#m-amount-input').val($(this).data('amt'));
-        mCalculate();
+        mSelectedCategory = $(this).data('category');
     });
 
     $('#m-amount-input').on('input', function() {
-        const val = $(this).val();
-        $('.m-quick-btn').removeClass('active');
-        $('.m-quick-btn').each(function() {
-            if ($(this).data('amt') == val) $(this).addClass('active');
-        });
         mCalculate();
     });
 

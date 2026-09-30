@@ -1007,7 +1007,7 @@ if(document.getElementById("datepicker1")){
   }
   .quick-amounts {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
   }
   .quick-amt-btn {
@@ -1448,13 +1448,12 @@ if(document.getElementById("datepicker1")){
               <input type="number" id="deposit-amount-input" class="amount-input" placeholder="0" min="0" step="any">
             </div>
             
-            <!-- Quick Amount Pills -->
+            <!-- Game Category Selection -->
             <div class="quick-amounts">
-              <button type="button" class="quick-amt-btn" data-amount="1">1</button>
-              <button type="button" class="quick-amt-btn" data-amount="5">5</button>
-              <button type="button" class="quick-amt-btn" data-amount="10">10</button>
-              <button type="button" class="quick-amt-btn" data-amount="50">50</button>
-              <button type="button" class="quick-amt-btn" data-amount="100">100</button>
+              <button type="button" class="quick-amt-btn active" data-category="sport">កីឡា</button>
+              <button type="button" class="quick-amt-btn" data-category="slot">ស្លត</button>
+              <button type="button" class="quick-amt-btn" data-category="casino">កាស៊ីណូ</button>
+              <button type="button" class="quick-amt-btn" data-category="cockfight">មាន់ជល់</button>
             </div>
           </div>
 
@@ -1711,24 +1710,16 @@ if(document.getElementById("datepicker1")){
     }, 2500);
   }
 
-  // Quick Amount Buttons
+  // Category Selection
+  let selectedCategory = "sport";
   $(".quick-amt-btn").on("click", function() {
     $(".quick-amt-btn").removeClass("active");
     $(this).addClass("active");
-    const val = parseFloat($(this).data("amount"));
-    $("#deposit-amount-input").val(val);
-    calculateSummary();
+    selectedCategory = $(this).data("category");
   });
 
   // Manual Amount Input
   $("#deposit-amount-input").on("input", function() {
-    const inputVal = $(this).val();
-    $(".quick-amt-btn").removeClass("active");
-    $(".quick-amt-btn").each(function() {
-      if ($(this).data("amount") == inputVal) {
-        $(this).addClass("active");
-      }
-    });
     calculateSummary();
   });
 
