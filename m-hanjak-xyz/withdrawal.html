@@ -652,33 +652,51 @@
 <div class="m-toast" id="m-toast"></div>
 
 <!-- Mobile Bottom Navigation Bar -->
-<div class="wrap-footer-nav" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;">
-    <ul class="d-flex justify-content-around align-items-center mb-0 p-0" style="background: #ffffff; border-top: 1px solid #e2e8f0; height: 58px; list-style: none;">
-        <li class="text-center">
-            <a href="index.html" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
-                <img src="images/icon-home.png" width="22" height="22" class="d-block mx-auto mb-1">
-                <span>ទំព័រដើម</span>
-            </a>
-        </li>
-        <li class="text-center">
-            <a href="deposit.html" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
-                <img src="images/icon-deposit.png" width="22" height="22" class="d-block mx-auto mb-1">
-                <span>ដាក់ប្រាក់</span>
-            </a>
-        </li>
-        <li class="text-center">
-            <a href="withdrawal.html" class="d-block" style="font-size: 11px; color: #2563eb; font-weight: 700; text-decoration: none;">
-                <img src="images/icon-withdraw.png" width="22" height="22" class="d-block mx-auto mb-1">
-                <span>ដកប្រាក់</span>
-            </a>
-        </li>
-        <li class="text-center">
-            <a href="https://t.me/FAFA558VIP" target="_blank" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
-                <img src="images/icon-telegram.png" width="22" height="22" class="d-block mx-auto mb-1">
-                <span>តេឡេក្រាម</span>
-            </a>
-        </li>
-    </ul>
+<div class="footer">
+    <div class="footer-link">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div class="box-footer-link">
+                        <img src="images/home.png">
+                        <div class="title-link-footer">ទំព័រដើម</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?page=login">
+                    <div class="box-footer-link">
+                        <img src="images/rewards.png">
+                        <div class="title-link-footer">រង្វាន់ផ្សេងៗ</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="deposit.html">
+                    <div class="box-footer-link">
+                        <img src="images/icon-deposit.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer">ការដាក់ប្រាក់</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="withdrawal.html" class="active">
+                    <div class="box-footer-link">
+                        <img src="images/icon-transfer.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer" style="color: #ffc107;">ការដកប្រាក់</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="openChatIcon();return false;">
+                    <div class="box-footer-link">
+                        <img src="images/support.png">
+                        <div class="title-link-footer" style="white-space: nowrap;">ទាក់ទងពួកយើង</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <script>
