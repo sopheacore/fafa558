@@ -1037,75 +1037,152 @@ if(document.getElementById("datepicker1")){
   /* Related Promotion Box under 4 buttons */
   .category-promo-box {
     margin-top: 14px;
-    background: #f8fafc;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 12px 14px;
+    background: #fffef8;
+    border: 1.5px solid #fde047;
+    border-radius: 16px;
+    padding: 14px;
     transition: all 0.2s ease;
-  }
-  .category-promo-box:hover {
-    border-color: #cbd5e1;
   }
   .cat-promo-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
-  .cat-promo-title-text {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1e293b;
+  .cat-promo-header-left {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+  }
+  .cat-promo-icon-badge {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 17px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+  }
+  .cat-promo-title-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
   }
   .cat-promo-title-text span {
-    color: #2563eb;
+    color: #d97706;
+  }
+  .cat-promo-subtitle {
+    font-size: 11px;
+    color: #64748b;
+    margin: 2px 0 0 0;
   }
   .cat-promo-badge {
+    background: #f59e0b;
+    color: #ffffff;
     font-size: 11px;
-    font-weight: 600;
-    color: #2563eb;
-    background: #eff6ff;
-    padding: 2px 8px;
+    font-weight: 700;
+    padding: 3px 9px;
     border-radius: 20px;
-    border: 1px solid #bfdbfe;
-  }
-  .cat-promo-select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #cbd5e1;
-    border-radius: 8px;
-    background: #ffffff;
-    font-size: 13.5px;
-    font-weight: 600;
-    color: #1e293b;
-    cursor: pointer;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    font-family: inherit;
-  }
-  .cat-promo-select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
   }
   .cat-providers-row {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .provider-pill {
-    background: #eff6ff;
-    color: #1d4ed8;
-    font-size: 11px;
+    background: #fef3c7;
+    color: #b45309;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 3px 8px;
+    padding: 2px 8px;
     border-radius: 6px;
-    border: 1px solid #bfdbfe;
+    border: 1px solid #fde68a;
     display: inline-flex;
     align-items: center;
+  }
+  .cat-promo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cat-promo-card {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .cat-promo-card:hover {
+    border-color: #cbd5e1;
+    background: #fcfcfc;
+  }
+  .cat-promo-card.active {
+    border-color: #3b82f6;
+    background: #f0f7ff;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
+  }
+  .cat-promo-card.active .custom-radio {
+    border-color: #2563eb;
+  }
+  .cat-promo-card.active .custom-radio .custom-radio-inner {
+    background: #2563eb;
+  }
+  .cat-promo-card-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cat-promo-card-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .cat-promo-card-desc {
+    font-size: 11px;
+    color: #64748b;
+    margin: 2px 0 0 0;
+    line-height: 1.3;
+  }
+  .cat-provider-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 600;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 1px 5px;
+    border-radius: 4px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .cat-percent-badge {
+    background: #fee2e2;
+    color: #ef4444;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .cat-percent-zero {
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
   }
 
   /* Bonus / Promotion Box */
@@ -1534,16 +1611,20 @@ if(document.getElementById("datepicker1")){
             <!-- Related Promotions for Selected Category -->
             <div class="category-promo-box" id="category-promo-box">
               <div class="cat-promo-header">
-                <span class="cat-promo-title-text">🎁 ប្រូម៉ូសិនពិសេសពី (<span id="cat-promo-name">កីឡា</span>)</span>
-                <span class="cat-promo-badge" id="cat-promo-status">ជ្រើសរើសប្រូម៉ូសិន</span>
+                <div class="cat-promo-header-left">
+                  <div class="cat-promo-icon-badge">🎁</div>
+                  <div>
+                    <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
+                    <p class="cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                  </div>
+                </div>
+                <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
               </div>
               <div class="cat-providers-row" id="cat-providers-row">
                 <!-- Populated dynamically: AFB1188, SABA, SBO, etc. -->
               </div>
-              <div class="cat-promo-select-wrap">
-                <select id="category-promo-select" class="cat-promo-select">
-                  <!-- Populated dynamically based on category -->
-                </select>
+              <div class="cat-promo-list" id="cat-promo-list">
+                <!-- Populated dynamically as promo cards matching "ប្រាក់រង្វាន់បន្ថែម" style -->
               </div>
             </div>
           </div>
@@ -1858,16 +1939,37 @@ if(document.getElementById("datepicker1")){
     });
     $("#cat-providers-row").html(providersHtml);
 
-    // Render options
-    let optionsHtml = "";
-    data.promos.forEach((p) => {
-      optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} [${p.provider}] - ${p.desc}</option>`;
+    // Render promo cards list matching "ប្រាក់រង្វាន់បន្ថែម" style
+    let cardsHtml = "";
+    data.promos.forEach((p, idx) => {
+      const isActive = idx === 0 ? "active" : "";
+      const percentBadge = p.percent > 0 
+        ? `<span class="cat-percent-badge">${p.percent}%</span>`
+        : `<span class="cat-percent-zero">0%</span>`;
+      const providerTag = p.provider && p.provider !== "គ្រប់ហ្គេម" 
+        ? `<span class="cat-provider-tag">${p.provider}</span>` 
+        : "";
+
+      cardsHtml += `
+        <div class="cat-promo-card ${isActive}" data-percent="${p.percent}" data-id="${p.id}">
+          <div class="cat-promo-card-left">
+            <div class="custom-radio">
+              <div class="custom-radio-inner"></div>
+            </div>
+            <div>
+              <div class="cat-promo-card-title">${p.name} ${providerTag}</div>
+              <div class="cat-promo-card-desc">${p.desc}</div>
+            </div>
+          </div>
+          ${percentBadge}
+        </div>
+      `;
     });
-    $("#category-promo-select").html(optionsHtml);
+    $("#cat-promo-list").html(cardsHtml);
 
     const firstVal = parseFloat(data.promos[0].percent) || 0;
     selectedBonusPercent = firstVal;
-    $("#cat-promo-status").text(selectedBonusPercent > 0 ? selectedBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+    $("#cat-promo-status").text(`1/${data.promos.length}`);
 
     calculateSummary();
   }
@@ -1881,9 +1983,14 @@ if(document.getElementById("datepicker1")){
     updateCategoryPromotions(selectedCategory);
   });
 
-  $("#category-promo-select").on("change", function() {
-    selectedBonusPercent = parseFloat($(this).val()) || 0;
-    $("#cat-promo-status").text(selectedBonusPercent > 0 ? selectedBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+  // Category Promo Card Click
+  $(document).on("click", ".cat-promo-card", function() {
+    $(".cat-promo-card").removeClass("active");
+    $(this).addClass("active");
+    selectedBonusPercent = parseFloat($(this).data("percent")) || 0;
+    const totalCount = $(".cat-promo-card").length;
+    const activeIdx = $(".cat-promo-card").index(this) + 1;
+    $("#cat-promo-status").text(`${activeIdx}/${totalCount}`);
     calculateSummary();
   });
 

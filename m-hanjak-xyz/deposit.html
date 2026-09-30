@@ -216,69 +216,147 @@
     /* Related Promotion Box under 4 buttons */
     .m-category-promo-box {
         margin-top: 10px;
-        background: #f8fafc;
-        border: 1.5px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 10px 12px;
+        background: #fffef8;
+        border: 1.5px solid #fde047;
+        border-radius: 14px;
+        padding: 12px;
     }
     .m-cat-promo-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
-    .m-cat-promo-title {
-        font-size: 12px;
-        font-weight: 700;
-        color: #1e293b;
+    .m-cat-promo-header-left {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 8px;
+    }
+    .m-cat-promo-icon {
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #f59e0b, #eab308);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 14px;
+    }
+    .m-cat-promo-title {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
     }
     .m-cat-promo-title span {
-        color: #2563eb;
+        color: #d97706;
+    }
+    .m-cat-promo-subtitle {
+        font-size: 10px;
+        color: #64748b;
+        margin: 1px 0 0 0;
     }
     .m-cat-promo-badge {
-        font-size: 10.5px;
-        font-weight: 600;
-        color: #2563eb;
-        background: #eff6ff;
+        font-size: 10px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #f59e0b;
         padding: 2px 7px;
         border-radius: 20px;
-        border: 1px solid #bfdbfe;
-    }
-    .m-cat-promo-select {
-        width: 100%;
-        padding: 9px 10px;
-        border: 1.5px solid #cbd5e1;
-        border-radius: 8px;
-        background: #ffffff;
-        font-size: 12.5px;
-        font-weight: 600;
-        color: #1e293b;
-        cursor: pointer;
-        outline: none;
-        font-family: inherit;
-    }
-    .m-cat-promo-select:focus {
-        border-color: #2563eb;
     }
     .m-cat-providers-row {
         display: flex;
         gap: 4px;
         flex-wrap: wrap;
-        margin-bottom: 7px;
+        margin-bottom: 8px;
     }
     .m-provider-pill {
-        background: #eff6ff;
-        color: #1d4ed8;
-        font-size: 10px;
+        background: #fef3c7;
+        color: #b45309;
+        font-size: 9.5px;
         font-weight: 700;
         padding: 2px 6px;
         border-radius: 5px;
-        border: 1px solid #bfdbfe;
+        border: 1px solid #fde68a;
         display: inline-flex;
         align-items: center;
+    }
+    .m-cat-promo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .m-cat-promo-card {
+        background: #ffffff;
+        border: 1.5px solid #f1f5f9;
+        border-radius: 10px;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-cat-promo-card:hover {
+        border-color: #cbd5e1;
+    }
+    .m-cat-promo-card.active {
+        border-color: #3b82f6;
+        background: #f0f7ff;
+    }
+    .m-cat-promo-card.active .m-radio {
+        border-color: #2563eb;
+    }
+    .m-cat-promo-card.active .m-radio-dot {
+        background: #2563eb;
+    }
+    .m-cat-promo-card-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .m-cat-promo-name {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+        line-height: 1.3;
+    }
+    .m-cat-promo-desc {
+        font-size: 10px;
+        color: #64748b;
+        margin: 1px 0 0 0;
+        line-height: 1.2;
+    }
+    .m-cat-prov-badge {
+        font-size: 9px;
+        font-weight: 600;
+        background: #e0f2fe;
+        color: #0369a1;
+        padding: 1px 4px;
+        border-radius: 3px;
+        margin-left: 3px;
+        vertical-align: middle;
+    }
+    .m-cat-percent-badge {
+        background: #fee2e2;
+        color: #ef4444;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 6px;
+        white-space: nowrap;
+    }
+    .m-cat-percent-zero {
+        background: #f1f5f9;
+        color: #94a3b8;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 6px;
+        white-space: nowrap;
     }
 
     /* Promotion Box (Mobile Stacked List Layout) */
@@ -638,15 +716,21 @@
                 <!-- Related Promotions for Selected Category -->
                 <div class="m-category-promo-box" id="m-category-promo-box">
                     <div class="m-cat-promo-header">
-                        <span class="m-cat-promo-title">🎁 ប្រូម៉ូសិនពិសេសពី (<span id="m-cat-promo-name">កីឡា</span>)</span>
-                        <span class="m-cat-promo-badge" id="m-cat-promo-status">ជ្រើសរើស</span>
+                        <div class="m-cat-promo-header-left">
+                            <div class="m-cat-promo-icon">🎁</div>
+                            <div>
+                                <h4 class="m-cat-promo-title">ប្រូម៉ូសិនពិសេសពី <span id="m-cat-promo-name">កីឡា</span></h4>
+                                <p class="m-cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                            </div>
+                        </div>
+                        <span class="m-cat-promo-badge" id="m-cat-promo-status">1/5</span>
                     </div>
                     <div class="m-cat-providers-row" id="m-cat-providers-row">
                         <!-- Populated dynamically -->
                     </div>
-                    <select id="m-category-promo-select" class="m-cat-promo-select">
-                        <!-- Populated dynamically -->
-                    </select>
+                    <div class="m-cat-promo-list" id="m-cat-promo-list">
+                        <!-- Populated dynamically as promo cards matching "ប្រាក់រង្វាន់បន្ថែម" style -->
+                    </div>
                 </div>
             </div>
 
@@ -914,16 +998,35 @@
         });
         $('#m-cat-providers-row').html(providersHtml);
 
-        // Render options
-        let optionsHtml = "";
-        data.promos.forEach((p) => {
-            optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} [${p.provider}] - ${p.desc}</option>`;
+        // Render mobile promo cards list matching "ប្រាក់រង្វាន់បន្ថែម" style
+        let cardsHtml = "";
+        data.promos.forEach((p, idx) => {
+            const isActive = idx === 0 ? "active" : "";
+            const percentBadge = p.percent > 0 
+                ? `<span class="m-cat-percent-badge">${p.percent}%</span>`
+                : `<span class="m-cat-percent-zero">0%</span>`;
+            const providerTag = p.provider && p.provider !== "គ្រប់ហ្គេម" 
+                ? `<span class="m-cat-prov-badge">${p.provider}</span>` 
+                : "";
+
+            cardsHtml += `
+                <div class="m-cat-promo-card ${isActive}" data-percent="${p.percent}" data-id="${p.id}">
+                    <div class="m-cat-promo-card-left">
+                        <div class="m-radio"><div class="m-radio-dot"></div></div>
+                        <div>
+                            <div class="m-cat-promo-name">${p.name} ${providerTag}</div>
+                            <div class="m-cat-promo-desc">${p.desc}</div>
+                        </div>
+                    </div>
+                    ${percentBadge}
+                </div>
+            `;
         });
-        $('#m-category-promo-select').html(optionsHtml);
+        $('#m-cat-promo-list').html(cardsHtml);
 
         const firstVal = parseFloat(data.promos[0].percent) || 0;
         mBonusPercent = firstVal;
-        $('#m-cat-promo-status').text(mBonusPercent > 0 ? mBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+        $('#m-cat-promo-status').text(`1/${data.promos.length}`);
         $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
 
         mCalculate();
@@ -938,9 +1041,14 @@
         mUpdateCategoryPromotions(mSelectedCategory);
     });
 
-    $('#m-category-promo-select').on('change', function() {
-        mBonusPercent = parseFloat($(this).val()) || 0;
-        $('#m-cat-promo-status').text(mBonusPercent > 0 ? mBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+    // Mobile Category Promo Card Click
+    $(document).on('click', '.m-cat-promo-card', function() {
+        $('.m-cat-promo-card').removeClass('active');
+        $(this).addClass('active');
+        mBonusPercent = parseFloat($(this).data('percent')) || 0;
+        const totalCount = $('.m-cat-promo-card').length;
+        const activeIdx = $('.m-cat-promo-card').index(this) + 1;
+        $('#m-cat-promo-status').text(`${activeIdx}/${totalCount}`);
         $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
         mCalculate();
     });
