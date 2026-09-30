@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<title>ដកប្រាក់ - HANJAK.XYZ-3G</title>
+<meta name="Keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon-fafa558.png" type="image/x-icon">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_fafa558.css">
+<link rel="stylesheet" href="css/kh-content.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" async=""></script>
+<script src="js/main.js"></script>
+
+<style>
+    /* Scoped Mobile Withdrawal Page Styles */
+    body {
+        background-color: #f1f5f9;
+        font-family: 'Kantumruy Pro', 'Khmer OS Content', sans-serif;
+    }
+    .m-withdraw-page {
+        font-family: 'Kantumruy Pro', 'Khmer OS Content', sans-serif;
+        background: #f1f5f9;
+        min-height: 100vh;
+        padding-top: 52px;
+        padding-bottom: 90px;
+    }
+    .m-withdraw-container {
+        padding: 14px 14px;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    /* Top User Profile Balance Card */
+    .m-user-balance-card {
+        background: linear-gradient(135deg, #0036a7, #001f74);
+        border-radius: 20px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        box-shadow: 0 8px 24px rgba(0, 31, 116, 0.28);
+        color: #ffffff;
+    }
+    .m-user-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .m-user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .m-user-avatar svg {
+        width: 100%;
+        height: 100%;
+    }
+    .m-user-name {
+        font-size: 17px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.2px;
+    }
+    .m-user-sub {
+        font-size: 11.5px;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
+    }
+    .m-user-right {
+        text-align: right;
+    }
+    .m-balance-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 2px;
+        display: block;
+    }
+    .m-balance-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.3px;
+        line-height: 1.1;
+    }
+    .m-balance-val span {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        margin-left: 2px;
+    }
+
+    /* Top Navigation Tabs */
+    .m-tab-nav {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .m-tab-btn {
+        border: none;
+        background: transparent;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #475569;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    .m-tab-btn.active {
+        background: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Main Withdrawal Card */
+    .m-withdraw-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 20px 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .m-section-label {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Bank Cards List */
+    .m-bank-item {
+        border: 2px solid #2563eb;
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-bank-item-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .m-bank-logo-badge {
+        width: 52px;
+        height: 42px;
+        background: #004f71;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 13.5px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        flex-shrink: 0;
+    }
+    .m-bank-logo-badge.acleda {
+        background: #002e6e;
+    }
+    .m-bank-logo-badge.wing {
+        background: #73be28;
+    }
+    .m-bank-title {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-subtitle {
+        font-size: 12px;
+        color: #64748b;
+        margin: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-check-circle {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    /* Dashed Add Bank Button */
+    .m-btn-add-bank {
+        width: 100%;
+        border: 1.5px dashed #cbd5e1;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #2563eb;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.2s ease;
+    }
+    .m-btn-add-bank:hover {
+        border-color: #3b82f6;
+        background: #f8faff;
+    }
+    .m-add-icon-circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    /* Notice Box */
+    .m-notice-box {
+        background: #fffbeb;
+        border: 1px solid #fef3c7;
+        border-radius: 12px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .m-notice-icon {
+        color: #d97706;
+        font-size: 16px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1.5px solid #d97706;
+        font-weight: bold;
+        font-family: serif;
+    }
+    .m-notice-text {
+        font-size: 12px;
+        color: #78350f;
+        margin: 0;
+        font-weight: 600;
+    }
+    .m-notice-text strong {
+        color: #92400e;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Amount Input Box */
+    .m-amount-wrapper {
+        border: 1.5px solid #dbeafe;
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 8px 12px 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        transition: all 0.2s ease;
+    }
+    .m-amount-wrapper:focus-within {
+        border-color: #2563eb;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .m-amount-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+    }
+    .m-currency-label {
+        font-size: 15px;
+        font-weight: 800;
+        color: #64748b;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-amount-field {
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        outline: none;
+        width: 100%;
+    }
+    .m-btn-withdraw-all {
+        border: none;
+        background: #e0e7ff;
+        color: #4338ca;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+    }
+    .m-btn-withdraw-all:hover {
+        background: #c7d2fe;
+    }
+
+    /* Submit Button */
+    .m-btn-submit-withdraw {
+        width: 100%;
+        height: 48px;
+        background: #cbd5e1;
+        color: #ffffff;
+        border: none;
+        border-radius: 14px;
+        font-size: 15.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+    .m-btn-submit-withdraw.ready {
+        background: #2563eb;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Modal Styles */
+    .m-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        padding: 16px;
+    }
+    .m-modal-box {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 22px 18px;
+        width: 100%;
+        max-width: 380px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .m-modal-title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+        text-align: center;
+    }
+    .m-form-group {
+        margin-bottom: 12px;
+    }
+    .m-form-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #475569;
+        margin-bottom: 4px;
+        display: block;
+    }
+    .m-form-control {
+        width: 100%;
+        height: 42px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 0 12px;
+        font-size: 13.5px;
+        outline: none;
+        font-family: inherit;
+    }
+    .m-form-control:focus {
+        border-color: #2563eb;
+    }
+
+    /* History View Container */
+    #view-history {
+        display: none;
+    }
+    .m-history-card {
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: #ffffff;
+    }
+    .m-history-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .m-status-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 20px;
+    }
+    .m-status-badge.pending {
+        background: #fef3c7;
+        color: #b45309;
+    }
+    .m-status-badge.success {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    /* Toast Notification */
+    .m-toast {
+        position: fixed;
+        bottom: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #ffffff;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 999999;
+        display: none;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header>
+    <div class="wrap-header zerogridh">
+        <div class="wrap-content zerogrid">
+            <label id="navigation" class="left">
+                <img src="images/menu.png" width="36" height="21">
+            </label>
+            <div class="logo">
+                <a href="index.html" class="d-block">
+                    <img src="images/logo.png">
+                </a>
+            </div>
+            <div class="header-right1 d-flex align-items-center">
+                <div class="left-in-right"><a href="/index.php?page=login" class="btns btn-login">ចូល</a></div>
+                <div class="left-in-right">
+                    <a href="/index.php?page=register" class="btns btn-register">
+                        <span class="btn-register-blink">ចុះឈ្មោះ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Left Sidebar Navigation Drawer -->
+<nav class="left-nav">
+    <div class="left-nav__bg">
+        <ul>
+            <li class="ho side-item"><a href="index.html">ទំព័រដើម</a></li>
+            <li class="transfer side-item"><a href="deposit.html">ដាក់ប្រាក់</a></li>
+            <li class="transfer side-item"><a class="text-white" href="withdrawal.html" style="color: #ffc107!important;">ដកប្រាក់</a></li>
+            <li class="sports side-item"><a href="/index.php?page=online_football_betting">កីឡា</a></li>
+            <li class="live side-item"><a href="/index.php?page=live-casino">កាស៊ីណូ</a></li>
+            <li class="game side-item"><a href="/index.php?page=slots_lobby">ហ្គេមស្លត់</a></li>
+            <li class="pr side-item"><a href="/index.php?page=promotion">ការផ្តល់ជូន</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Mobile Withdrawal Page -->
+<div class="m-withdraw-page">
+    <div class="m-withdraw-container">
+        
+        <!-- Top User Profile & Account Balance Card -->
+        <div class="m-user-balance-card">
+            <div class="m-user-left">
+                <div class="m-user-avatar">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#f8fafc"></circle>
+                        <circle cx="50" cy="38" r="16" fill="#fbbf24"></circle>
+                        <path d="M22 84C22 66.3269 34.536 52 50 52C65.464 52 78 66.3269 78 84" fill="#f59e0b"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="m-user-name" id="user-display-name">phanith29</h3>
+                    <p class="m-user-sub">គណនីរបស់អ្នក</p>
+                </div>
+            </div>
+            <div class="m-user-right">
+                <span class="m-balance-label">សមតុល្យគណនី</span>
+                <div class="m-balance-val" id="user-balance-disp">0.20 <span>USD</span></div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation (Withdrawal vs History) -->
+        <div class="m-tab-nav">
+            <button type="button" class="m-tab-btn active" id="tab-withdraw-btn" onclick="switchWithdrawTab('withdraw')">ការដកប្រាក់</button>
+            <button type="button" class="m-tab-btn" id="tab-history-btn" onclick="switchWithdrawTab('history')">បញ្ជីដកប្រាក់</button>
+        </div>
+
+        <!-- 1. Withdrawal Form View -->
+        <div id="view-withdraw" class="m-withdraw-card">
+            
+            <!-- Bank Selection Section -->
+            <div class="m-section-label">ជ្រើសរើសគណនីធនាគារ</div>
+            <div id="bank-accounts-container">
+                <!-- Selected Bank Card (ABA Default) -->
+                <div class="m-bank-item" id="bank-card-1">
+                    <div class="m-bank-item-left">
+                        <div class="m-bank-logo-badge">ABA</div>
+                        <div>
+                            <h4 class="m-bank-title">ABA BANK</h4>
+                            <p class="m-bank-subtitle">phanith · 213213520</p>
+                        </div>
+                    </div>
+                    <div class="m-bank-check-circle">✓</div>
+                </div>
+            </div>
+
+            <!-- Dashed Add Bank Button -->
+            <button type="button" class="m-btn-add-bank" onclick="openAddBankModal()">
+                <div class="m-add-icon-circle">+</div>
+                <span>បន្ថែមធនាគារ</span>
+            </button>
+
+            <!-- Selected Account Notice / Info -->
+            <div class="m-section-label">ព័ត៌មានគណនីដែលបានជ្រើស</div>
+            <div class="m-notice-box">
+                <div class="m-notice-icon">i</div>
+                <p class="m-notice-text">ចំនួនទឹកប្រាក់ដកអប្បបរមា <strong>USD 1</strong></p>
+            </div>
+
+            <!-- Amount Section -->
+            <div class="m-section-label">ចំនួនទឹកប្រាក់</div>
+            <div class="m-amount-wrapper">
+                <div class="m-amount-left">
+                    <span class="m-currency-label">USD</span>
+                    <input type="number" id="m-withdraw-amount" class="m-amount-field" placeholder="0.00" min="1" step="any" oninput="checkWithdrawReady()">
+                </div>
+                <button type="button" class="m-btn-withdraw-all" onclick="withdrawAll()">ដកទាំងអស់</button>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" class="m-btn-submit-withdraw" id="btn-submit-withdraw" onclick="submitWithdrawal()">
+                ដាក់ស្នើ
+            </button>
+
+        </div>
+
+        <!-- 2. Withdrawal History View -->
+        <div id="view-history" class="m-withdraw-card">
+            <div class="m-section-label" style="margin-bottom: 14px;">ប្រវត្តិនៃការដកប្រាក់</div>
+            
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$20.00 USD</span>
+                    <span class="m-status-badge success">បានជោគជ័យ ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-28 14:20</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$50.00 USD</span>
+                    <span class="m-status-badge success">បានជោគជ័យ ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-15 09:45</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal: Add Bank Account -->
+<div class="m-modal-backdrop" id="modal-add-bank">
+    <div class="m-modal-box">
+        <h4 class="m-modal-title">បន្ថែមគណនីធនាគារ</h4>
+        <div class="m-form-group">
+            <label class="m-form-label">ធនាគារ</label>
+            <select id="new-bank-type" class="m-form-control">
+                <option value="ABA" data-class="aba">ABA BANK</option>
+                <option value="ACLEDA" data-class="acleda">ACLEDA BANK</option>
+                <option value="Wing" data-class="wing">Wing Bank</option>
+            </select>
+        </div>
+        <div class="m-form-group">
+            <label class="m-form-label">ឈ្មោះគណនី</label>
+            <input type="text" id="new-bank-name" class="m-form-control" placeholder="ឧ. PHANITH">
+        </div>
+        <div class="m-form-group">
+            <label class="m-form-label">លេខគណនី</label>
+            <input type="text" id="new-bank-account" class="m-form-control" placeholder="ឧ. 001 234 567">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px;">
+            <button type="button" onclick="closeAddBankModal()" style="border: 1.5px solid #cbd5e1; background: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700; color: #64748b;">បោះបង់</button>
+            <button type="button" onclick="saveNewBank()" style="border: none; background: #2563eb; color: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700;">រក្សាទុក</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Message -->
+<div class="m-toast" id="m-toast"></div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="wrap-footer-nav" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;">
+    <ul class="d-flex justify-content-around align-items-center mb-0 p-0" style="background: #ffffff; border-top: 1px solid #e2e8f0; height: 58px; list-style: none;">
+        <li class="text-center">
+            <a href="index.html" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
+                <img src="images/icon-home.png" width="22" height="22" class="d-block mx-auto mb-1">
+                <span>ទំព័រដើម</span>
+            </a>
+        </li>
+        <li class="text-center">
+            <a href="deposit.html" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
+                <img src="images/icon-deposit.png" width="22" height="22" class="d-block mx-auto mb-1">
+                <span>ដាក់ប្រាក់</span>
+            </a>
+        </li>
+        <li class="text-center">
+            <a href="withdrawal.html" class="d-block" style="font-size: 11px; color: #2563eb; font-weight: 700; text-decoration: none;">
+                <img src="images/icon-withdraw.png" width="22" height="22" class="d-block mx-auto mb-1">
+                <span>ដកប្រាក់</span>
+            </a>
+        </li>
+        <li class="text-center">
+            <a href="https://t.me/FAFA558VIP" target="_blank" class="d-block text-muted" style="font-size: 11px; text-decoration: none;">
+                <img src="images/icon-telegram.png" width="22" height="22" class="d-block mx-auto mb-1">
+                <span>តេឡេក្រាម</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    const userBalance = 0.20;
+
+    function showToast(msg) {
+        $('#m-toast').text(msg).fadeIn(200);
+        setTimeout(() => {
+            $('#m-toast').fadeOut(300);
+        }, 2200);
+    }
+
+    function switchWithdrawTab(tab) {
+        if (tab === 'withdraw') {
+            $('#tab-withdraw-btn').addClass('active');
+            $('#tab-history-btn').removeClass('active');
+            $('#view-withdraw').show();
+            $('#view-history').hide();
+        } else {
+            $('#tab-history-btn').addClass('active');
+            $('#tab-withdraw-btn').removeClass('active');
+            $('#view-withdraw').hide();
+            $('#view-history').show();
+        }
+    }
+
+    function withdrawAll() {
+        $('#m-withdraw-amount').val(userBalance.toFixed(2));
+        checkWithdrawReady();
+    }
+
+    function checkWithdrawReady() {
+        const val = parseFloat($('#m-withdraw-amount').val()) || 0;
+        if (val >= 1) {
+            $('#btn-submit-withdraw').addClass('ready');
+        } else {
+            $('#btn-submit-withdraw').removeClass('ready');
+        }
+    }
+
+    function submitWithdrawal() {
+        const val = parseFloat($('#m-withdraw-amount').val()) || 0;
+        if (val < 1) {
+            showToast('ចំនួនទឹកប្រាក់ដកអប្បបរមាគឺ USD 1.00!');
+            $('#m-withdraw-amount').focus();
+            return;
+        }
+        if (val > userBalance) {
+            showToast('សមតុល្យក្នុងគណនីមិនគ្រប់គ្រាន់!');
+            return;
+        }
+
+        alert('សំណើដកប្រាក់ចំនួន $' + val.toFixed(2) + ' ត្រូវបានដាក់ស្នើដោយជោគជ័យ!');
+        $('#m-withdraw-amount').val('');
+        checkWithdrawReady();
+    }
+
+    function openAddBankModal() {
+        $('#modal-add-bank').css('display', 'flex');
+    }
+
+    function closeAddBankModal() {
+        $('#modal-add-bank').hide();
+    }
+
+    function saveNewBank() {
+        const bType = $('#new-bank-type').val();
+        const bClass = $('#new-bank-type option:selected').data('class') || '';
+        const bName = $('#new-bank-name').val().trim() || 'PHANITH';
+        const bAcc = $('#new-bank-account').val().trim();
+
+        if (!bAcc) {
+            showToast('សូមបញ្ចូលលេខគណនីធនាគារ!');
+            return;
+        }
+
+        const newHtml = `
+            <div class="m-bank-item" style="border-color: #cbd5e1; background: #ffffff;" onclick="selectBank(this)">
+                <div class="m-bank-item-left">
+                    <div class="m-bank-logo-badge ${bClass}">${bType}</div>
+                    <div>
+                        <h4 class="m-bank-title">${bType} BANK</h4>
+                        <p class="m-bank-subtitle">${bName} · ${bAcc}</p>
+                    </div>
+                </div>
+                <div class="m-bank-check-circle" style="display:none;">✓</div>
+            </div>
+        `;
+        $('#bank-accounts-container').append(newHtml);
+        closeAddBankModal();
+        showToast('បានបន្ថែមគណនីធនាគារដោយជោគជ័យ!');
+    }
+
+    function selectBank(elem) {
+        $('.m-bank-item').css({ 'border-color': '#cbd5e1', 'background': '#ffffff' });
+        $('.m-bank-check-circle').hide();
+        $(elem).css({ 'border-color': '#2563eb', 'background': '#f8faff' });
+        $(elem).find('.m-bank-check-circle').show();
+    }
+
+    // Mobile Navigation Drawer Toggle
+    $('#navigation').on('click', function() {
+        $('.left-nav').toggleClass('active');
+    });
+</script>
+
+</body>
+</html>
