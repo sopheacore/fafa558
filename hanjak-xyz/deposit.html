@@ -790,12 +790,12 @@ if(document.getElementById("datepicker1")){
     box-sizing: border-box;
   }
   .deposit-card-container {
-    max-width: 1020px;
+    max-width: 680px;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 32px 36px;
+    padding: 34px 36px;
   }
   .deposit-header {
     margin-bottom: 24px;
@@ -828,10 +828,11 @@ if(document.getElementById("datepicker1")){
     border-radius: 20px;
   }
 
-  .deposit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  /* Main Unified Flow */
+  .deposit-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .deposit-page-wrapper .section-label {
@@ -1595,12 +1596,10 @@ if(document.getElementById("datepicker1")){
         </div>
       </div>
 
-      <div class="deposit-grid">
+      <div class="deposit-flow">
         
-        <!-- Left Column: Bank Selection, Account Details & Amount -->
-        <div class="deposit-col-left">
-          
-          <!-- Bank Selection -->
+        <!-- 1. Bank Selection -->
+        <div class="bank-section">
           <div class="section-label">ជ្រើសរើសធនាគារ</div>
           <div class="bank-select-grid">
             <!-- ACLEDA -->
@@ -1622,76 +1621,73 @@ if(document.getElementById("datepicker1")){
               <div class="bank-card-name">ABA Mobile</div>
             </div>
           </div>
-
-          <!-- Account Transfer Details -->
-          <div class="account-info-section">
-            <div class="section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
-            
-            <!-- Account Name -->
-            <div class="account-info-box">
-              <div class="account-info-details">
-                <span class="account-info-label">ឈ្មោះគណនី</span>
-                <span class="account-info-value" id="disp-acc-name">CHAB MAKARA</span>
-              </div>
-              <button type="button" class="btn-copy" id="btn-copy-name" onclick="copyText('disp-acc-name', this)">ចម្លង</button>
-            </div>
-
-            <!-- Account Number -->
-            <div class="account-info-box">
-              <div class="account-info-details">
-                <span class="account-info-label">លេខគណនី</span>
-                <span class="account-info-value" id="disp-acc-num">21 000 640731421</span>
-              </div>
-              <button type="button" class="btn-copy" id="btn-copy-num" onclick="copyText('disp-acc-num', this)">ចម្លង</button>
-            </div>
-          </div>
-
-          <!-- Deposit Amount Section -->
-          <div class="amount-section">
-            <div class="section-label">ចំនួនទឹកប្រាក់</div>
-            <div class="amount-input-wrapper">
-              <input type="number" id="deposit-amount-input" class="amount-input" placeholder="0" min="0" step="any">
-            </div>
-            
-            <!-- Game Category Selection -->
-            <div class="quick-amounts">
-              <button type="button" class="quick-amt-btn active" data-category="sport">កីឡា</button>
-              <button type="button" class="quick-amt-btn" data-category="slot">ស្លត</button>
-              <button type="button" class="quick-amt-btn" data-category="casino">កាសុីណូបន្តផ្ទាល់</button>
-              <button type="button" class="quick-amt-btn" data-category="cockfight">មាន់ជល់</button>
-            </div>
-
-            <!-- Related Promotions for Selected Category -->
-            <div class="category-promo-box" id="category-promo-box">
-              <div class="cat-promo-hero-card">
-                <div class="cat-promo-gift-wrap">
-                  <div class="cat-promo-glow-ring"></div>
-                  <img src="images/gift-box-3d.svg" alt="Gift Bonus" class="cat-promo-gift-img">
-                </div>
-                <div class="cat-promo-hero-body">
-                  <div class="cat-promo-tag-row">
-                    <span class="cat-promo-badge-tag">✨ ប្រូម៉ូសិនពិសេស</span>
-                    <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
-                  </div>
-                  <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
-                  <p class="cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
-                </div>
-              </div>
-              <div class="cat-providers-row" id="cat-providers-row">
-                <!-- Populated dynamically: AFB1188, SABA, SBO, etc. -->
-              </div>
-              <div class="cat-promo-list" id="cat-promo-list">
-                <!-- Populated dynamically as promo cards matching "ប្រាក់រង្វាន់បន្ថែម" style -->
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Right Column: Slip Upload & Summary -->
-        <div class="deposit-col-right">
+        <!-- 2. Account Transfer Details -->
+        <div class="account-info-section">
+          <div class="section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
+          
+          <!-- Account Name -->
+          <div class="account-info-box">
+            <div class="account-info-details">
+              <span class="account-info-label">ឈ្មោះគណនី</span>
+              <span class="account-info-value" id="disp-acc-name">CHAB MAKARA</span>
+            </div>
+            <button type="button" class="btn-copy" id="btn-copy-name" onclick="copyText('disp-acc-name', this)">ចម្លង</button>
+          </div>
 
-          <!-- Transfer Slip Upload Section -->
+          <!-- Account Number -->
+          <div class="account-info-box">
+            <div class="account-info-details">
+              <span class="account-info-label">លេខគណនី</span>
+              <span class="account-info-value" id="disp-acc-num">21 000 640731421</span>
+            </div>
+            <button type="button" class="btn-copy" id="btn-copy-num" onclick="copyText('disp-acc-num', this)">ចម្លង</button>
+          </div>
+        </div>
+
+        <!-- 3. Deposit Amount Section -->
+        <div class="amount-section">
+          <div class="section-label">ចំនួនទឹកប្រាក់</div>
+          <div class="amount-input-wrapper">
+            <input type="number" id="deposit-amount-input" class="amount-input" placeholder="0" min="0" step="any">
+          </div>
+          
+          <!-- Game Category Selection -->
+          <div class="quick-amounts">
+            <button type="button" class="quick-amt-btn active" data-category="sport">កីឡា</button>
+            <button type="button" class="quick-amt-btn" data-category="slot">ស្លត</button>
+            <button type="button" class="quick-amt-btn" data-category="casino">កាសុីណូបន្តផ្ទាល់</button>
+            <button type="button" class="quick-amt-btn" data-category="cockfight">មាន់ជល់</button>
+          </div>
+
+          <!-- Related Promotions for Selected Category -->
+          <div class="category-promo-box" id="category-promo-box">
+            <div class="cat-promo-hero-card">
+              <div class="cat-promo-gift-wrap">
+                <div class="cat-promo-glow-ring"></div>
+                <img src="images/gift-box-3d.svg" alt="Gift Bonus" class="cat-promo-gift-img">
+              </div>
+              <div class="cat-promo-hero-body">
+                <div class="cat-promo-tag-row">
+                  <span class="cat-promo-badge-tag">✨ ប្រូម៉ូសិនពិសេស</span>
+                  <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
+                </div>
+                <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
+                <p class="cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+              </div>
+            </div>
+            <div class="cat-providers-row" id="cat-providers-row">
+              <!-- Populated dynamically: AFB1188, SABA, SBO, etc. -->
+            </div>
+            <div class="cat-promo-list" id="cat-promo-list">
+              <!-- Populated dynamically as promo cards matching "ប្រាក់រង្វាន់បន្ថែម" style -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Transfer Slip Upload Section -->
+        <div class="upload-section">
           <div class="section-label">វិក្កយបត្រផ្ទេរប្រាក់</div>
           <div class="upload-box" id="drop-zone" onclick="document.getElementById('file-upload').click()">
             <input type="file" id="file-upload" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
@@ -1719,8 +1715,10 @@ if(document.getElementById("datepicker1")){
               <button type="button" onclick="removeUploadedFile(event)" style="background: none; border: none; color: #ef4444; font-size: 18px; cursor: pointer; padding: 4px;">✕</button>
             </div>
           </div>
+        </div>
 
-          <!-- Calculation Summary -->
+        <!-- 5. Calculation Summary -->
+        <div class="summary-section">
           <div class="summary-box">
             <div class="summary-row">
               <span>ប្រាក់ដាក់</span>
@@ -1741,7 +1739,6 @@ if(document.getElementById("datepicker1")){
           <button type="button" class="btn-submit-deposit" id="btn-submit" onclick="submitDeposit()">
             ដាក់ស្នើ
           </button>
-
         </div>
 
       </div>
