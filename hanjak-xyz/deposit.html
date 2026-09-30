@@ -780,39 +780,42 @@ if(document.getElementById("datepicker1")){
   </div>
 </div>
   <style>
-  /* Base Scoped Deposit Styles */
+  /* Base Scoped Deposit Styles - Compact & Screen Efficient */
   .deposit-page-wrapper {
     background: #f1f5f9;
-    min-height: calc(100vh - 220px);
-    padding: 130px 0 60px 0;
+    min-height: calc(100vh - 180px);
+    padding: 85px 0 30px 0;
   }
   .deposit-page-wrapper * {
     box-sizing: border-box;
   }
   .deposit-card-container {
-    max-width: 680px;
+    max-width: 600px;
     margin: 0 auto;
     background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 34px 36px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 18px 22px;
   }
   .deposit-header {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .deposit-title {
-    font-size: 26px;
+    font-size: 19px;
     font-weight: 700;
     color: #0f172a;
-    margin: 0 0 6px 0;
+    margin: 0;
   }
   .deposit-subtitle-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
   .deposit-subtitle-text {
-    font-size: 13px;
+    font-size: 12px;
     color: #64748b;
     font-weight: 500;
   }
@@ -822,70 +825,67 @@ if(document.getElementById("datepicker1")){
     gap: 4px;
     background: #e0f2fe;
     color: #0284c7;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    padding: 2px 10px;
+    padding: 1px 8px;
     border-radius: 20px;
   }
 
-  /* Main Unified Flow */
+  /* Main Unified Compact Flow */
   .deposit-flow {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
 
   .deposit-page-wrapper .section-label {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #1e293b;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     display: block;
   }
 
-  /* Bank Select Grid */
+  /* Bank Select Grid - Sleek Horizontal Cards */
   .bank-select-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 22px;
+    gap: 8px;
   }
   .bank-card {
     position: relative;
     border: 1.5px solid #e2e8f0;
-    border-radius: 14px;
+    border-radius: 10px;
     background: #ffffff;
-    padding: 16px 8px 12px 8px;
-    text-align: center;
+    padding: 6px 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    text-align: left;
   }
   .bank-card:hover {
     border-color: #93c5fd;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    background: #f8fafc;
   }
   .bank-card.active {
-    border: 2px solid #2563eb;
-    background: #f8faff;
+    border: 1.5px solid #2563eb;
+    background: #f0f7ff;
   }
   .bank-check-icon {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 18px;
-    height: 18px;
+    top: 3px;
+    right: 4px;
+    width: 14px;
+    height: 14px;
     background: #2563eb;
     color: #ffffff;
     border-radius: 50%;
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: bold;
     line-height: 1;
   }
@@ -894,83 +894,89 @@ if(document.getElementById("datepicker1")){
   }
 
   .bank-logo-box {
-    width: 60px;
-    height: 44px;
-    border-radius: 10px;
+    width: 44px;
+    height: 28px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 10px;
     color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-shrink: 0;
   }
   .bank-logo-acleda {
     background: #002e6e;
-    letter-spacing: 0.5px;
-    font-size: 12px;
+    letter-spacing: 0.3px;
+    font-size: 9.5px;
   }
   .bank-logo-wing {
     background: #73be28;
-    font-size: 15px;
+    font-size: 12px;
   }
   .bank-logo-aba {
     background: #004f71;
-    font-size: 15px;
+    font-size: 12px;
   }
   .bank-card-name {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 600;
     color: #334155;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Account Info Cards */
-  .account-info-section {
-    margin-bottom: 22px;
+  /* Account Info 2-Column Grid */
+  .account-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
   .account-info-box {
-    border: 1.5px solid #dbeafe;
-    border-radius: 12px;
-    background: #ffffff;
-    margin-bottom: 12px;
-    padding: 12px 16px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background: #f8fafc;
+    padding: 6px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 6px;
   }
   .account-info-details {
     display: flex;
     flex-direction: column;
+    min-width: 0;
   }
   .account-info-label {
-    font-size: 11px;
-    color: #94a3b8;
+    font-size: 10px;
+    color: #64748b;
     font-weight: 500;
-    margin-bottom: 2px;
   }
   .account-info-value {
-    font-size: 15px;
+    font-size: 12.5px;
     font-weight: 700;
     color: #0f172a;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .btn-copy {
-    border: 1.5px solid #3b82f6;
+    border: 1px solid #3b82f6;
     background: #ffffff;
     color: #2563eb;
-    padding: 5px 18px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
   }
   .btn-copy:hover {
     background: #2563eb;
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
   }
   .btn-copy.copied {
     background: #10b981;
@@ -980,20 +986,20 @@ if(document.getElementById("datepicker1")){
 
   /* Amount Input Section */
   .amount-section {
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
   .amount-input-wrapper {
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
   }
   .amount-input {
     width: 100%;
-    height: 52px;
+    height: 38px;
     background: #f8fafc;
     border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 10px 16px;
-    font-size: 22px;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 16px;
     font-weight: 700;
     color: #1e293b;
     transition: all 0.2s;
@@ -1001,22 +1007,22 @@ if(document.getElementById("datepicker1")){
   .amount-input:focus {
     border-color: #3b82f6;
     background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
     outline: none;
   }
   .quick-amounts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
   .quick-amt-btn {
-    border: 1.5px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
     background: #ffffff;
-    border-radius: 10px;
-    padding: 9px 4px;
+    border-radius: 6px;
+    padding: 5px 2px;
     text-align: center;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 11.5px;
+    font-weight: 600;
     color: #334155;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -1035,51 +1041,40 @@ if(document.getElementById("datepicker1")){
 
   /* Related Promotion Box under 4 buttons */
   .category-promo-box {
-    margin-top: 14px;
-    background: #fffef8;
-    border: 1.5px solid #fde047;
-    border-radius: 16px;
-    padding: 14px;
-    transition: all 0.2s ease;
-  }
-  .category-promo-box {
-    border: 1.5px solid #fed7aa;
+    border: 1px solid #fed7aa;
     background: #ffffff;
-    border-radius: 20px;
-    padding: 16px 16px 14px 16px;
-    margin-top: 16px;
-    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.08);
-    position: relative;
-    overflow: hidden;
+    border-radius: 12px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.05);
   }
   .cat-promo-hero-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 18px 20px 14px 20px;
-    background: linear-gradient(180deg, #fffcf6 0%, #ffffff 100%);
+    text-align: left;
+    padding: 6px 10px;
+    background: linear-gradient(90deg, #fffcf6 0%, #ffffff 100%);
     border: 1px solid #fed7aa;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    position: relative;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    gap: 10px;
   }
   .cat-promo-gift-wrap {
     position: relative;
-    width: 68px;
-    height: 68px;
-    margin-bottom: 8px;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .cat-promo-glow-ring {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(234, 179, 8, 0.08) 60%, transparent 100%);
-    filter: blur(8px);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, rgba(234, 179, 8, 0.1) 60%, transparent 100%);
+    filter: blur(4px);
     z-index: 1;
     animation: promoGlow 3s ease-in-out infinite alternate;
   }
@@ -1088,73 +1083,75 @@ if(document.getElementById("datepicker1")){
     100% { transform: scale(1.15); opacity: 1; }
   }
   .cat-promo-gift-img {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     position: relative;
     z-index: 2;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   .cat-promo-hero-card:hover .cat-promo-gift-img {
-    transform: translateY(-4px) scale(1.06);
+    transform: translateY(-2px) scale(1.08);
   }
   .cat-promo-hero-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
   }
   .cat-promo-tag-row {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
+    gap: 6px;
+    margin-bottom: 2px;
   }
   .cat-promo-badge-tag {
-    font-size: 10.5px;
+    font-size: 9.5px;
     font-weight: 800;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     color: #b45309;
     background: #fef3c7;
     border: 1px solid #fde68a;
-    padding: 2px 9px;
-    border-radius: 20px;
+    padding: 1px 6px;
+    border-radius: 12px;
   }
   .cat-promo-badge {
     background: #f59e0b;
     color: #ffffff;
-    font-size: 11px;
+    font-size: 9.5px;
     font-weight: 700;
-    padding: 2px 9px;
-    border-radius: 20px;
+    padding: 1px 6px;
+    border-radius: 12px;
   }
   .cat-promo-title-text {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     color: #1e293b;
-    margin: 0 0 3px 0;
+    margin: 0;
+    line-height: 1.2;
   }
   .cat-promo-title-text span {
     color: #d97706;
   }
   .cat-promo-subtitle {
-    font-size: 12.5px;
+    font-size: 10.5px;
     color: #64748b;
     margin: 0;
   }
   .cat-providers-row {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
   .provider-pill {
     background: #fef3c7;
     color: #b45309;
-    font-size: 10.5px;
+    font-size: 9.5px;
     font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 6px;
+    padding: 1px 6px;
+    border-radius: 4px;
     border: 1px solid #fde68a;
     display: inline-flex;
     align-items: center;
@@ -1162,19 +1159,19 @@ if(document.getElementById("datepicker1")){
   .cat-promo-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
   }
   .cat-promo-card {
     background: #ffffff;
-    border: 1.5px solid #f1f5f9;
-    border-radius: 12px;
-    padding: 10px 12px;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 6px 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
   }
   .cat-promo-card:hover {
     border-color: #cbd5e1;
@@ -1183,7 +1180,7 @@ if(document.getElementById("datepicker1")){
   .cat-promo-card.active {
     border-color: #3b82f6;
     background: #f0f7ff;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.1);
   }
   .cat-promo-card.active .custom-radio {
     border-color: #2563eb;
@@ -1194,122 +1191,54 @@ if(document.getElementById("datepicker1")){
   .cat-promo-card-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
   .cat-promo-card-title {
-    font-size: 12.5px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #1e293b;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.2;
   }
   .cat-promo-card-desc {
-    font-size: 11px;
+    font-size: 10px;
     color: #64748b;
-    margin: 2px 0 0 0;
-    line-height: 1.3;
+    margin: 1px 0 0 0;
+    line-height: 1.2;
   }
   .cat-provider-tag {
     display: inline-block;
-    font-size: 9.5px;
+    font-size: 8.5px;
     font-weight: 600;
     background: #e0f2fe;
     color: #0369a1;
-    padding: 1px 5px;
-    border-radius: 4px;
-    margin-left: 5px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 4px;
     vertical-align: middle;
   }
   .cat-percent-badge {
     background: #fee2e2;
     color: #ef4444;
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 8px;
+    padding: 2px 6px;
+    border-radius: 6px;
     white-space: nowrap;
   }
   .cat-percent-zero {
     background: #f1f5f9;
     color: #94a3b8;
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 8px;
+    padding: 2px 6px;
+    border-radius: 6px;
     white-space: nowrap;
   }
 
-  /* Bonus / Promotion Box */
-  .bonus-wrapper {
-    border: 1.5px solid #fde047;
-    background: #fffef8;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  .bonus-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-  .bonus-header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .bonus-icon-badge {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, #f59e0b, #eab308);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 18px;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
-  }
-  .bonus-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 0;
-  }
-  .bonus-subtitle {
-    font-size: 11px;
-    color: #64748b;
-    margin: 2px 0 0 0;
-  }
-  .bonus-count-badge {
-    background: #f59e0b;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 20px;
-  }
-
-  .no-bonus-card {
-    border: 1.5px solid #facc15;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: all 0.2s;
-  }
-  .no-bonus-card.active {
-    border-color: #f59e0b;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
-  }
-
   .custom-radio {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     border: 1.5px solid #cbd5e1;
     display: flex;
@@ -1318,114 +1247,23 @@ if(document.getElementById("datepicker1")){
     flex-shrink: 0;
   }
   .custom-radio-inner {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: transparent;
-  }
-  .active .custom-radio {
-    border-color: #f59e0b;
-  }
-  .active .custom-radio .custom-radio-inner {
-    background: #f59e0b;
-  }
-
-  .bonus-card-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 0;
-    white-space: nowrap;
-    letter-spacing: -0.1px;
-  }
-  .bonus-card-desc {
-    font-size: 10.5px;
-    color: #64748b;
-    margin: 2px 0 0 0;
-    line-height: 1.3;
-  }
-
-  .promo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .promo-card {
-    background: #ffffff;
-    border: 1.5px solid #f1f5f9;
-    border-radius: 12px;
-    padding: 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .promo-card:hover {
-    border-color: #cbd5e1;
-    background: #fcfcfc;
-  }
-  .promo-card.active {
-    border-color: #3b82f6;
-    background: #f0f7ff;
-  }
-  .promo-card.active .custom-radio {
-    border-color: #2563eb;
-  }
-  .promo-card.active .custom-radio-inner {
-    background: #2563eb;
-  }
-  .promo-left {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    min-width: 0;
-  }
-  .promo-percent {
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #2563eb;
-    white-space: nowrap;
-    margin-left: auto;
-    padding-left: 4px;
-  }
-
-  .bonus-toggle-btn {
-    text-align: center;
-    color: #2563eb;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 4px 0;
-    margin-bottom: 6px;
-    display: block;
-    text-decoration: none;
-  }
-  .bonus-toggle-btn:hover {
-    text-decoration: underline;
-  }
-  .bonus-notice {
-    font-size: 11px;
-    color: #64748b;
-    text-align: center;
-    line-height: 1.5;
-    margin: 4px 0 0 0;
   }
 
   /* Upload Section */
   .upload-box {
     border: 1.5px dashed #cbd5e1;
     background: #f8fafc;
-    border-radius: 14px;
-    padding: 14px 16px;
+    border-radius: 8px;
+    padding: 7px 10px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     cursor: pointer;
-    transition: all 0.2s;
-    margin-bottom: 18px;
+    transition: all 0.15s;
     position: relative;
   }
   .upload-box:hover {
@@ -1433,27 +1271,29 @@ if(document.getElementById("datepicker1")){
     background: #f0f7ff;
   }
   .upload-icon-box {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
     background: #e0f2fe;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0284c7;
-    font-size: 18px;
+    font-size: 14px;
     flex-shrink: 0;
   }
   .upload-text-title {
-    font-size: 13px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #1e293b;
     margin: 0;
+    line-height: 1.2;
   }
   .upload-text-desc {
-    font-size: 11px;
+    font-size: 10px;
     color: #64748b;
-    margin: 2px 0 0 0;
+    margin: 1px 0 0 0;
+    line-height: 1.2;
   }
   .file-preview {
     display: none;
@@ -1462,17 +1302,23 @@ if(document.getElementById("datepicker1")){
     width: 100%;
   }
 
-  /* Summary Section */
+  /* Summary Section & Bottom Area */
+  .summary-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
   .summary-box {
-    margin-bottom: 18px;
+    margin-bottom: 6px;
   }
   .summary-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 13px;
+    font-size: 11.5px;
     color: #64748b;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
     font-weight: 500;
   }
   .summary-val {
@@ -1486,15 +1332,16 @@ if(document.getElementById("datepicker1")){
   .summary-divider {
     height: 1px;
     background: #e2e8f0;
-    margin: 8px 0;
+    margin: 4px 0;
   }
   .summary-row.total-row {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 800;
     color: #0f172a;
+    margin-bottom: 0;
   }
   .summary-row.total-row .summary-val {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 800;
     color: #0f172a;
   }
@@ -1502,27 +1349,28 @@ if(document.getElementById("datepicker1")){
   /* Submit Button */
   .btn-submit-deposit {
     width: 100%;
-    height: 48px;
+    height: 38px;
     background: #dbeafe;
     color: #1e3a8a;
     border: none;
-    border-radius: 12px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 6px;
   }
   .btn-submit-deposit.ready {
     background: linear-gradient(135deg, #1e40af, #2563eb);
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
   }
   .btn-submit-deposit.ready:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
   }
 
   /* Toast Notification */
@@ -1627,22 +1475,24 @@ if(document.getElementById("datepicker1")){
         <div class="account-info-section">
           <div class="section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
           
-          <!-- Account Name -->
-          <div class="account-info-box">
-            <div class="account-info-details">
-              <span class="account-info-label">ឈ្មោះគណនី</span>
-              <span class="account-info-value" id="disp-acc-name">CHAB MAKARA</span>
+          <div class="account-info-grid">
+            <!-- Account Name -->
+            <div class="account-info-box">
+              <div class="account-info-details">
+                <span class="account-info-label">ឈ្មោះគណនី</span>
+                <span class="account-info-value" id="disp-acc-name">CHAB MAKARA</span>
+              </div>
+              <button type="button" class="btn-copy" id="btn-copy-name" onclick="copyText('disp-acc-name', this)">ចម្លង</button>
             </div>
-            <button type="button" class="btn-copy" id="btn-copy-name" onclick="copyText('disp-acc-name', this)">ចម្លង</button>
-          </div>
 
-          <!-- Account Number -->
-          <div class="account-info-box">
-            <div class="account-info-details">
-              <span class="account-info-label">លេខគណនី</span>
-              <span class="account-info-value" id="disp-acc-num">21 000 640731421</span>
+            <!-- Account Number -->
+            <div class="account-info-box">
+              <div class="account-info-details">
+                <span class="account-info-label">លេខគណនី</span>
+                <span class="account-info-value" id="disp-acc-num">21 000 640731421</span>
+              </div>
+              <button type="button" class="btn-copy" id="btn-copy-num" onclick="copyText('disp-acc-num', this)">ចម្លង</button>
             </div>
-            <button type="button" class="btn-copy" id="btn-copy-num" onclick="copyText('disp-acc-num', this)">ចម្លង</button>
           </div>
         </div>
 
@@ -1693,9 +1543,9 @@ if(document.getElementById("datepicker1")){
             <input type="file" id="file-upload" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
             
             <!-- Default Upload View -->
-            <div id="upload-default-view" style="display: flex; align-items: center; gap: 14px; width: 100%;">
+            <div id="upload-default-view" style="display: flex; align-items: center; gap: 10px; width: 100%;">
               <div class="upload-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
               </div>
               <div>
                 <h4 class="upload-text-title">ជ្រើសរើសឯកសារ</h4>
@@ -1705,19 +1555,19 @@ if(document.getElementById("datepicker1")){
 
             <!-- File Uploaded Preview -->
             <div class="file-preview" id="file-preview-view">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <img id="preview-img" src="" alt="Slip" style="width: 38px; height: 38px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img id="preview-img" src="" alt="Slip" style="width: 28px; height: 28px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
                 <div>
                   <div class="upload-text-title" id="preview-file-name">receipt.jpg</div>
                   <div class="upload-text-desc" id="preview-file-size">1.2 MB</div>
                 </div>
               </div>
-              <button type="button" onclick="removeUploadedFile(event)" style="background: none; border: none; color: #ef4444; font-size: 18px; cursor: pointer; padding: 4px;">✕</button>
+              <button type="button" onclick="removeUploadedFile(event)" style="background: none; border: none; color: #ef4444; font-size: 16px; cursor: pointer; padding: 2px;">✕</button>
             </div>
           </div>
         </div>
 
-        <!-- 5. Calculation Summary -->
+        <!-- 5. Calculation Summary & Submit Button -->
         <div class="summary-section">
           <div class="summary-box">
             <div class="summary-row">
