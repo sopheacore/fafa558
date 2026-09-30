@@ -237,55 +237,65 @@
 
     /* Related Promotion Box under 4 buttons */
     .m-category-promo-box {
-        margin-top: 10px;
-        background: #fffef8;
-        border: 1.5px solid #fde047;
-        border-radius: 14px;
-        padding: 12px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        background: linear-gradient(180deg, #fffbf5 0%, #ffffff 100%);
+        border: 1.5px solid #fed7aa;
+        border-radius: 16px;
+        padding: 14px 14px;
+        box-shadow: 0 3px 12px rgba(245, 158, 11, 0.05);
     }
     .m-cat-promo-header {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 8px;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 10px;
     }
-    .m-cat-promo-header-left {
+    .m-cat-promo-header-top {
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
     }
     .m-cat-promo-icon {
-        width: 28px;
-        height: 28px;
-        background: linear-gradient(135deg, #f59e0b, #eab308);
-        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+        border: 1.5px solid #fde68a;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #ffffff;
-        font-size: 14px;
+        font-size: 17px;
+        box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
+    }
+    .m-cat-promo-header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
     }
     .m-cat-promo-title {
-        font-size: 12.5px;
+        font-size: 13.5px;
         font-weight: 700;
         color: #1e293b;
         margin: 0;
+        line-height: 1.3;
     }
     .m-cat-promo-title span {
         color: #d97706;
     }
     .m-cat-promo-subtitle {
-        font-size: 10px;
+        font-size: 10.5px;
         color: #64748b;
-        margin: 1px 0 0 0;
+        margin: 0;
     }
     .m-cat-promo-badge {
-        font-size: 10px;
+        font-size: 10.5px;
         font-weight: 700;
         color: #ffffff;
         background: #f59e0b;
-        padding: 2px 7px;
-        border-radius: 20px;
+        padding: 2px 8px;
+        border-radius: 12px;
     }
     .m-cat-providers-row {
         display: flex;
@@ -761,14 +771,14 @@
                 <!-- Related Promotions for Selected Category -->
                 <div class="m-category-promo-box" id="m-category-promo-box">
                     <div class="m-cat-promo-header">
-                        <div class="m-cat-promo-header-left">
+                        <div class="m-cat-promo-header-top">
                             <div class="m-cat-promo-icon">🎁</div>
-                            <div>
-                                <h4 class="m-cat-promo-title">ប្រូម៉ូសិនពិសេសពី <span id="m-cat-promo-name">កីឡា</span></h4>
-                                <p class="m-cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
-                            </div>
+                            <span class="m-cat-promo-badge" id="m-cat-promo-status">1/5</span>
                         </div>
-                        <span class="m-cat-promo-badge" id="m-cat-promo-status">1/5</span>
+                        <div class="m-cat-promo-header-content">
+                            <h4 class="m-cat-promo-title">ប្រូម៉ូសិនពិសេសពី <span id="m-cat-promo-name">កីឡា</span></h4>
+                            <p class="m-cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                        </div>
                     </div>
                     <div class="m-cat-providers-row" id="m-cat-providers-row">
                         <!-- Populated dynamically -->

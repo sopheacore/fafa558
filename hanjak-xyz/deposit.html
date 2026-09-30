@@ -1041,50 +1041,66 @@ if(document.getElementById("datepicker1")){
     padding: 14px;
     transition: all 0.2s ease;
   }
+  .category-promo-box {
+    border: 1.5px solid #fed7aa;
+    background: linear-gradient(180deg, #fffbf5 0%, #ffffff 100%);
+    border-radius: 18px;
+    padding: 20px 18px 16px 18px;
+    margin-top: 16px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.05);
+  }
   .cat-promo-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .cat-promo-header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .cat-promo-header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
   .cat-promo-icon-badge {
-    width: 34px;
-    height: 34px;
-    background: linear-gradient(135deg, #f59e0b, #eab308);
-    border-radius: 10px;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+    border: 1.5px solid #fde68a;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 17px;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+  }
+  .cat-promo-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
   .cat-promo-title-text {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: #1e293b;
     margin: 0;
+    line-height: 1.3;
   }
   .cat-promo-title-text span {
     color: #d97706;
   }
   .cat-promo-subtitle {
-    font-size: 11px;
+    font-size: 12px;
     color: #64748b;
-    margin: 2px 0 0 0;
+    margin: 0;
   }
   .cat-promo-badge {
     background: #f59e0b;
     color: #ffffff;
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 700;
-    padding: 3px 9px;
+    padding: 3px 10px;
     border-radius: 20px;
+    letter-spacing: 0.3px;
   }
   .cat-providers-row {
     display: flex;
@@ -1609,14 +1625,14 @@ if(document.getElementById("datepicker1")){
             <!-- Related Promotions for Selected Category -->
             <div class="category-promo-box" id="category-promo-box">
               <div class="cat-promo-header">
-                <div class="cat-promo-header-left">
+                <div class="cat-promo-header-top">
                   <div class="cat-promo-icon-badge">🎁</div>
-                  <div>
-                    <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
-                    <p class="cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
-                  </div>
+                  <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
                 </div>
-                <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
+                <div class="cat-promo-header-content">
+                  <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
+                  <p class="cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                </div>
               </div>
               <div class="cat-providers-row" id="cat-providers-row">
                 <!-- Populated dynamically: AFB1188, SABA, SBO, etc. -->
