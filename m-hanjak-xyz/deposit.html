@@ -213,6 +213,57 @@
         color: #ffffff;
     }
 
+    /* Related Promotion Box under 4 buttons */
+    .m-category-promo-box {
+        margin-top: 10px;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 10px 12px;
+    }
+    .m-cat-promo-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+    .m-cat-promo-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .m-cat-promo-title span {
+        color: #2563eb;
+    }
+    .m-cat-promo-badge {
+        font-size: 10.5px;
+        font-weight: 600;
+        color: #2563eb;
+        background: #eff6ff;
+        padding: 2px 7px;
+        border-radius: 20px;
+        border: 1px solid #bfdbfe;
+    }
+    .m-cat-promo-select {
+        width: 100%;
+        padding: 9px 10px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 8px;
+        background: #ffffff;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #1e293b;
+        cursor: pointer;
+        outline: none;
+        font-family: inherit;
+    }
+    .m-cat-promo-select:focus {
+        border-color: #2563eb;
+    }
+
     /* Promotion Box (Mobile Stacked List Layout) */
     .m-bonus-wrapper {
         border: 1.5px solid #fde047;
@@ -566,6 +617,17 @@
                     <button type="button" class="m-quick-btn" data-category="casino">កាសុីណូបន្តផ្ទាល់</button>
                     <button type="button" class="m-quick-btn" data-category="cockfight">មាន់ជល់</button>
                 </div>
+
+                <!-- Related Promotions for Selected Category -->
+                <div class="m-category-promo-box" id="m-category-promo-box">
+                    <div class="m-cat-promo-header">
+                        <span class="m-cat-promo-title">🎁 ប្រូម៉ូសិនដែលពាក់ព័ន្ធ (<span id="m-cat-promo-name">កីឡា</span>)</span>
+                        <span class="m-cat-promo-badge" id="m-cat-promo-status">ជ្រើសរើស</span>
+                    </div>
+                    <select id="m-category-promo-select" class="m-cat-promo-select">
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
             </div>
 
             <!-- 4. Promotion Box (Vertical Stacked List Matching Red Box) -->
@@ -775,12 +837,78 @@
         }, 2200);
     }
 
+    // Category Promotions Data
+    const mCategoryPromotionsData = {
+        sport: {
+            name: "កីឡា",
+            promos: [
+                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+                { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+                { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+                { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+            ]
+        },
+        slot: {
+            name: "ស្លត",
+            promos: [
+                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+                { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+                { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+                { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, desc: "បង្វិលរាល់ថ្ងៃ" }
+            ]
+        },
+        casino: {
+            name: "កាសុីណូបន្តផ្ទាល់",
+            promos: [
+                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+                { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, desc: "ដាក់ប្រាក់ដំបូង" },
+                { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, desc: "រាល់ការលេង" },
+                { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, desc: "បង្វិលរាល់ថ្ងៃ" }
+            ]
+        },
+        cockfight: {
+            name: "មាន់ជល់",
+            promos: [
+                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+                { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+                { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+                { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+            ]
+        }
+    };
+
+    function mUpdateCategoryPromotions(category) {
+        const data = mCategoryPromotionsData[category] || mCategoryPromotionsData.sport;
+        $('#m-cat-promo-name').text(data.name);
+
+        let optionsHtml = "";
+        data.promos.forEach((p) => {
+            optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} - ${p.desc}</option>`;
+        });
+        $('#m-category-promo-select').html(optionsHtml);
+
+        const firstVal = parseFloat(data.promos[0].percent) || 0;
+        mBonusPercent = firstVal;
+        $('#m-cat-promo-status').text(mBonusPercent > 0 ? mBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+
+        mCalculate();
+    }
+
     // Category Selection
     let mSelectedCategory = "sport";
     $('.m-quick-btn').on('click', function() {
         $('.m-quick-btn').removeClass('active');
         $(this).addClass('active');
         mSelectedCategory = $(this).data('category');
+        mUpdateCategoryPromotions(mSelectedCategory);
+    });
+
+    $('#m-category-promo-select').on('change', function() {
+        mBonusPercent = parseFloat($(this).val()) || 0;
+        $('#m-cat-promo-status').text(mBonusPercent > 0 ? mBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+        mCalculate();
     });
 
     $('#m-amount-input').on('input', function() {
@@ -845,7 +973,8 @@
         $('.left-nav').toggleClass('active');
     });
 
-    // Initial calculation
+    // Initial calculation and promo setup
+    mUpdateCategoryPromotions("sport");
     mCalculate();
 </script>
 

@@ -1034,6 +1034,63 @@ if(document.getElementById("datepicker1")){
     color: #ffffff;
   }
 
+  /* Related Promotion Box under 4 buttons */
+  .category-promo-box {
+    margin-top: 14px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: all 0.2s ease;
+  }
+  .category-promo-box:hover {
+    border-color: #cbd5e1;
+  }
+  .cat-promo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .cat-promo-title-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-promo-title-text span {
+    color: #2563eb;
+  }
+  .cat-promo-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid #bfdbfe;
+  }
+  .cat-promo-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+  }
+  .cat-promo-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+
   /* Bonus / Promotion Box */
   .bonus-wrapper {
     border: 1.5px solid #fde047;
@@ -1456,6 +1513,19 @@ if(document.getElementById("datepicker1")){
               <button type="button" class="quick-amt-btn" data-category="casino">កាសុីណូបន្តផ្ទាល់</button>
               <button type="button" class="quick-amt-btn" data-category="cockfight">មាន់ជល់</button>
             </div>
+
+            <!-- Related Promotions for Selected Category -->
+            <div class="category-promo-box" id="category-promo-box">
+              <div class="cat-promo-header">
+                <span class="cat-promo-title-text">🎁 ប្រូម៉ូសិនដែលពាក់ព័ន្ធ (<span id="cat-promo-name">កីឡា</span>)</span>
+                <span class="cat-promo-badge" id="cat-promo-status">ជ្រើសរើសប្រូម៉ូសិន</span>
+              </div>
+              <div class="cat-promo-select-wrap">
+                <select id="category-promo-select" class="cat-promo-select">
+                  <!-- Populated dynamically based on category -->
+                </select>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -1711,12 +1781,76 @@ if(document.getElementById("datepicker1")){
     }, 2500);
   }
 
+  // Category Promotions Data
+  const categoryPromotionsData = {
+    sport: {
+      name: "កីឡា",
+      promos: [
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+      ]
+    },
+    slot: {
+      name: "ស្លត",
+      promos: [
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, desc: "បង្វិលរាល់ថ្ងៃ" }
+      ]
+    },
+    casino: {
+      name: "កាសុីណូបន្តផ្ទាល់",
+      promos: [
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, desc: "រាល់ការលេង" },
+        { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, desc: "បង្វិលរាល់ថ្ងៃ" }
+      ]
+    },
+    cockfight: {
+      name: "មាន់ជល់",
+      promos: [
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+      ]
+    }
+  };
+
+  function updateCategoryPromotions(category) {
+    const data = categoryPromotionsData[category] || categoryPromotionsData.sport;
+    $("#cat-promo-name").text(data.name);
+    
+    let optionsHtml = "";
+    data.promos.forEach((p) => {
+      optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} - ${p.desc}</option>`;
+    });
+    $("#category-promo-select").html(optionsHtml);
+
+    const firstVal = parseFloat(data.promos[0].percent) || 0;
+    selectedBonusPercent = firstVal;
+    $("#cat-promo-status").text(selectedBonusPercent > 0 ? selectedBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+
+    calculateSummary();
+  }
+
   // Category Selection
   let selectedCategory = "sport";
   $(".quick-amt-btn").on("click", function() {
     $(".quick-amt-btn").removeClass("active");
     $(this).addClass("active");
     selectedCategory = $(this).data("category");
+    updateCategoryPromotions(selectedCategory);
+  });
+
+  $("#category-promo-select").on("change", function() {
+    selectedBonusPercent = parseFloat($(this).val()) || 0;
+    $("#cat-promo-status").text(selectedBonusPercent > 0 ? selectedBonusPercent + "%" : "មិនយកប្រាក់រង្វាន់");
+    calculateSummary();
   });
 
   // Manual Amount Input
@@ -1820,6 +1954,9 @@ if(document.getElementById("datepicker1")){
     removeUploadedFile({ stopPropagation: () => {} });
     calculateSummary();
   }
+
+  // Initial load
+  updateCategoryPromotions("sport");
 </script>
 
 <div class="footer" style="position: relative;">
