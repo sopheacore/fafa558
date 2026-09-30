@@ -1090,6 +1090,23 @@ if(document.getElementById("datepicker1")){
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
   }
+  .cat-providers-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .provider-pill {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #bfdbfe;
+    display: inline-flex;
+    align-items: center;
+  }
 
   /* Bonus / Promotion Box */
   .bonus-wrapper {
@@ -1520,6 +1537,9 @@ if(document.getElementById("datepicker1")){
                 <span class="cat-promo-title-text">🎁 ប្រូម៉ូសិនដែលពាក់ព័ន្ធ (<span id="cat-promo-name">កីឡា</span>)</span>
                 <span class="cat-promo-badge" id="cat-promo-status">ជ្រើសរើសប្រូម៉ូសិន</span>
               </div>
+              <div class="cat-providers-row" id="cat-providers-row">
+                <!-- Populated dynamically: AFB1188, SABA, SBO, etc. -->
+              </div>
               <div class="cat-promo-select-wrap">
                 <select id="category-promo-select" class="cat-promo-select">
                   <!-- Populated dynamically based on category -->
@@ -1785,38 +1805,44 @@ if(document.getElementById("datepicker1")){
   const categoryPromotionsData = {
     sport: {
       name: "កីឡា",
+      providers: ["AFB1188 កីឡា", "SABA កីឡា", "SBO កីឡា", "ប្រដាល់"],
       promos: [
-        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
-        { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
-        { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
-        { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, provider: "AFB1188, SABA, SBO", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, provider: "AFB1188, SABA, SBO", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "sport_boxing", name: "ប្រូម៉ូសិនពិសេសប្រដាល់ 20%", percent: 20, provider: "ប្រដាល់", desc: "រាល់ការភ្នាល់ប្រដាល់" },
+        { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, provider: "AFB1188, SABA, SBO", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
       ]
     },
     slot: {
       name: "ស្លត",
+      providers: ["PP ស្លុត", "PG ស្លុត", "JOKER", "HABA", "CQ9", "ហ្គេមបាញ់ត្រី"],
       promos: [
-        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
-        { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
-        { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, desc: "ម្តងក្នុងមួយថ្ងៃ" },
-        { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, desc: "បង្វិលរាល់ថ្ងៃ" }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, provider: "PG, PP, JOKER, HABA", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, provider: "PG, PP, CQ9", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "slot_fish", name: "រង្វាន់ហ្គេមបាញ់ត្រី 15%", percent: 15, provider: "ហ្គេមបាញ់ត្រី", desc: "រាល់ការដាក់ប្រាក់" },
+        { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, provider: "គ្រប់ស្លុតទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
       ]
     },
     casino: {
       name: "កាសុីណូបន្តផ្ទាល់",
+      providers: ["PP កាស៊ីណូ", "DG99", "SEXY", "PLAY ACE", "ALLBET", "EVO", "OFA", "AFB", "GD"],
       promos: [
-        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
-        { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, desc: "ដាក់ប្រាក់ដំបូង" },
-        { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, desc: "រាល់ការលេង" },
-        { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, desc: "បង្វិលរាល់ថ្ងៃ" }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, provider: "PP, DG99, SEXY, EVO", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, provider: "SEXY, DG99, OFA, GD", desc: "រាល់ការលេង" },
+        { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, provider: "គ្រប់កាស៊ីណូទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
       ]
     },
     cockfight: {
       name: "មាន់ជល់",
+      providers: ["SV388 មាន់ជល់", "RCB988"],
       promos: [
-        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, desc: "គ្មានលក្ខខណ្ឌ" },
-        { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, desc: "ដាក់ប្រាក់ដំបូង" },
-        { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, desc: "ម្តងក្នុងមួយថ្ងៃ" },
-        { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, provider: "SV388 មាន់ជល់", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, provider: "SV388, RCB988", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, provider: "SV388 មាន់ជល់", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
       ]
     }
   };
@@ -1825,9 +1851,17 @@ if(document.getElementById("datepicker1")){
     const data = categoryPromotionsData[category] || categoryPromotionsData.sport;
     $("#cat-promo-name").text(data.name);
     
+    // Render provider pills
+    let providersHtml = "";
+    data.providers.forEach((prov) => {
+      providersHtml += `<span class="provider-pill">${prov}</span>`;
+    });
+    $("#cat-providers-row").html(providersHtml);
+
+    // Render options
     let optionsHtml = "";
     data.promos.forEach((p) => {
-      optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} - ${p.desc}</option>`;
+      optionsHtml += `<option value="${p.percent}" data-id="${p.id}">${p.name} [${p.provider}] - ${p.desc}</option>`;
     });
     $("#category-promo-select").html(optionsHtml);
 
