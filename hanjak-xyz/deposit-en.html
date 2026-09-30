@@ -1122,41 +1122,12 @@
     line-height: 1.2;
   }
   .cat-promo-card-desc {
-    font-size: 10.5px;
+    font-size: 11px;
     color: #64748b;
     margin: 2px 0 0 0;
     line-height: 1.3;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-  .promo-sub-tag {
-    display: inline-flex;
-    align-items: center;
-    background: #f1f5f9;
-    color: #475569;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .promo-sub-tag.highlight {
-    background: #fef3c7;
-    color: #b45309;
-    border: 1px solid #fde68a;
-  }
-  .promo-sub-turnover {
-    display: inline-flex;
-    align-items: center;
-    background: #e0f2fe;
-    color: #0369a1;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
-    white-space: nowrap;
+    text-align: left;
+    display: block;
   }
   .cat-provider-tag {
     font-size: 8.5px;
@@ -1637,186 +1608,42 @@
       name: "Sports",
       providers: ["AFB1188", "SABA Sports", "SBO Sports", "Boxing"],
       promos: [
-        { 
-          id: "0", 
-          name: "No Bonus (0%)", 
-          percent: 0, 
-          provider: "All Games", 
-          desc: "No turnover required • Instant withdrawals",
-          tag: "No Lock",
-          turnover: "1x Wager"
-        },
-        { 
-          id: "sport_100", 
-          name: "Sports Welcome Bonus 100%", 
-          percent: 100, 
-          provider: "AFB, SABA, SBO", 
-          desc: "First deposit only",
-          tag: "New Member",
-          turnover: "15x Turnover"
-        },
-        { 
-          id: "sport_10", 
-          name: "Daily Sports Reload 10%", 
-          percent: 10, 
-          provider: "AFB, SABA, SBO", 
-          desc: "Claimable once per day",
-          tag: "Daily",
-          turnover: "5x Turnover"
-        },
-        { 
-          id: "sport_boxing", 
-          name: "Boxing Special 20%", 
-          percent: 20, 
-          provider: "Kun Khmer Boxing", 
-          desc: "Valid on all boxing matches",
-          tag: "Boxing",
-          turnover: "8x Turnover"
-        },
-        { 
-          id: "sport_rebate", 
-          name: "Weekly Sports Rebate 0.5%", 
-          percent: 0.5, 
-          provider: "AFB, SABA, SBO", 
-          desc: "Automatic weekly cashback • No max limit",
-          tag: "Cashback",
-          turnover: "1x Wager"
-        }
+        { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+        { id: "sport_100", name: "Sports Welcome Bonus 100%", percent: 100, provider: "AFB, SABA, SBO", desc: "First deposit only" },
+        { id: "sport_10", name: "Daily Sports Reload 10%", percent: 10, provider: "AFB, SABA, SBO", desc: "Once per day" },
+        { id: "sport_boxing", name: "Boxing Special 20%", percent: 20, provider: "Kun Khmer Boxing", desc: "All boxing bets" },
+        { id: "sport_rebate", name: "Weekly Sports Rebate 0.5%", percent: 0.5, provider: "AFB, SABA, SBO", desc: "Weekly automatic rebate" }
       ]
     },
     slot: {
       name: "Slots",
       providers: ["PG Slot", "Pragmatic Play", "Joker", "Habanero", "CQ9", "Fish Hunter"],
       promos: [
-        { 
-          id: "0", 
-          name: "No Bonus (0%)", 
-          percent: 0, 
-          provider: "All Slots", 
-          desc: "No turnover required • Instant withdrawals",
-          tag: "No Lock",
-          turnover: "1x Wager"
-        },
-        { 
-          id: "slot_100", 
-          name: "Slots Welcome Bonus 100%", 
-          percent: 100, 
-          provider: "PG, PP, Joker, HABA", 
-          desc: "First deposit only",
-          tag: "New Member",
-          turnover: "12x Turnover"
-        },
-        { 
-          id: "slot_30", 
-          name: "Daily Slots Reload 30%", 
-          percent: 30, 
-          provider: "PG, PP, CQ9", 
-          desc: "Claimable once per day",
-          tag: "Daily",
-          turnover: "8x Turnover"
-        },
-        { 
-          id: "slot_fish", 
-          name: "Fish Hunting Bonus 15%", 
-          percent: 15, 
-          provider: "Fish Hunter", 
-          desc: "Available on all fish shooting games",
-          tag: "Fish Game",
-          turnover: "5x Turnover"
-        },
-        { 
-          id: "slot_rebate", 
-          name: "Daily Slot Rebate 1%", 
-          percent: 1, 
-          provider: "All Slots", 
-          desc: "Automatic daily cashback • No max limit",
-          tag: "Cashback",
-          turnover: "1x Wager"
-        }
+        { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+        { id: "slot_100", name: "Slots Welcome Bonus 100%", percent: 100, provider: "PG, PP, Joker, HABA", desc: "First deposit only" },
+        { id: "slot_30", name: "Daily Slots Reload 30%", percent: 30, provider: "PG, PP, CQ9", desc: "Once per day" },
+        { id: "slot_fish", name: "Fish Hunting Bonus 15%", percent: 15, provider: "Fish Hunter", desc: "Every deposit" },
+        { id: "slot_rebate", name: "Daily Slot Rebate 1%", percent: 1, provider: "All Slots", desc: "Daily automatic rebate" }
       ]
     },
     casino: {
       name: "Live Casino",
       providers: ["Pragmatic Play", "DG99", "Sexy Baccarat", "Evolution", "Allbet", "OFA"],
       promos: [
-        { 
-          id: "0", 
-          name: "No Bonus (0%)", 
-          percent: 0, 
-          provider: "All Casino", 
-          desc: "No turnover required • Instant withdrawals",
-          tag: "No Lock",
-          turnover: "1x Wager"
-        },
-        { 
-          id: "casino_50", 
-          name: "Live Casino Welcome 50%", 
-          percent: 50, 
-          provider: "PP, DG99, Sexy, EVO", 
-          desc: "First deposit only",
-          tag: "New Member",
-          turnover: "18x Turnover"
-        },
-        { 
-          id: "casino_15", 
-          name: "Live Casino Reload 15%", 
-          percent: 15, 
-          provider: "Sexy, DG99, OFA", 
-          desc: "Available on every reload",
-          tag: "Reload",
-          turnover: "10x Turnover"
-        },
-        { 
-          id: "casino_rebate", 
-          name: "Live Casino Rebate 0.8%", 
-          percent: 0.8, 
-          provider: "All Live Casino", 
-          desc: "Automatic daily cashback • No max limit",
-          tag: "Cashback",
-          turnover: "1x Wager"
-        }
+        { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+        { id: "casino_50", name: "Live Casino Welcome 50%", percent: 50, provider: "PP, DG99, Sexy, EVO", desc: "First deposit only" },
+        { id: "casino_15", name: "Live Casino Reload 15%", percent: 15, provider: "Sexy, DG99, OFA", desc: "Every reload" },
+        { id: "casino_rebate", name: "Live Casino Rebate 0.8%", percent: 0.8, provider: "All Live Casino", desc: "Daily automatic rebate" }
       ]
     },
     cockfight: {
       name: "Cockfight",
       providers: ["SV388 Cockfight", "RCB988"],
       promos: [
-        { 
-          id: "0", 
-          name: "No Bonus (0%)", 
-          percent: 0, 
-          provider: "All Matches", 
-          desc: "No turnover required • Instant withdrawals",
-          tag: "No Lock",
-          turnover: "1x Wager"
-        },
-        { 
-          id: "cock_100", 
-          name: "Cockfight Welcome 100%", 
-          percent: 100, 
-          provider: "SV388 Cockfight", 
-          desc: "First deposit only",
-          tag: "New Member",
-          turnover: "15x Turnover"
-        },
-        { 
-          id: "cock_10", 
-          name: "Daily Cockfight Bonus 10%", 
-          percent: 10, 
-          provider: "SV388, RCB988", 
-          desc: "Claimable once per day",
-          tag: "Daily",
-          turnover: "6x Turnover"
-        },
-        { 
-          id: "cock_rebate", 
-          name: "Weekly Cockfight Rebate 0.5%", 
-          percent: 0.5, 
-          provider: "SV388 Cockfight", 
-          desc: "Automatic weekly cashback • No max limit",
-          tag: "Cashback",
-          turnover: "1x Wager"
-        }
+        { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+        { id: "cock_100", name: "Cockfight Welcome 100%", percent: 100, provider: "SV388 Cockfight", desc: "First deposit only" },
+        { id: "cock_10", name: "Daily Cockfight Bonus 10%", percent: 10, provider: "SV388, RCB988", desc: "Once per day" },
+        { id: "cock_rebate", name: "Weekly Cockfight Rebate 0.5%", percent: 0.5, provider: "SV388 Cockfight", desc: "Weekly automatic rebate" }
       ]
     }
   };
@@ -1839,7 +1666,7 @@
       const percentBadge = p.percent > 0 
         ? `<span class="cat-percent-badge">${p.percent}%</span>`
         : `<span class="cat-percent-zero">0%</span>`;
-      const providerTag = p.provider && p.provider !== "All Games" && p.provider !== "All Slots" && p.provider !== "All Casino" && p.provider !== "All Matches" 
+      const providerTag = p.provider && p.provider !== "All Games" 
         ? `<span class="cat-provider-tag">${p.provider}</span>` 
         : "";
 
@@ -1849,13 +1676,9 @@
             <div class="custom-radio">
               <div class="custom-radio-inner"></div>
             </div>
-            <div style="min-width: 0;">
+            <div style="text-align: left; min-width: 0;">
               <div class="cat-promo-card-title">${p.name} ${providerTag}</div>
-              <div class="cat-promo-card-desc">
-                ${p.tag ? `<span class="promo-sub-tag ${p.percent > 0 ? 'highlight' : ''}">${p.tag}</span>` : ''}
-                <span>${p.desc}</span>
-                ${p.turnover ? `<span class="promo-sub-turnover">${p.turnover}</span>` : ''}
-              </div>
+              <div class="cat-promo-card-desc">${p.desc}</div>
             </div>
           </div>
           ${percentBadge}

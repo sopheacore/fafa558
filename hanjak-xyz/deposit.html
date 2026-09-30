@@ -1203,41 +1203,12 @@ if(document.getElementById("datepicker1")){
     line-height: 1.2;
   }
   .cat-promo-card-desc {
-    font-size: 10.5px;
+    font-size: 11px;
     color: #64748b;
     margin: 2px 0 0 0;
     line-height: 1.3;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-  .promo-sub-tag {
-    display: inline-flex;
-    align-items: center;
-    background: #f1f5f9;
-    color: #475569;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .promo-sub-tag.highlight {
-    background: #fef3c7;
-    color: #b45309;
-    border: 1px solid #fde68a;
-  }
-  .promo-sub-turnover {
-    display: inline-flex;
-    align-items: center;
-    background: #e0f2fe;
-    color: #0369a1;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
-    white-space: nowrap;
+    text-align: left;
+    display: block;
   }
   .cat-provider-tag {
     display: inline-block;
@@ -1718,186 +1689,42 @@ if(document.getElementById("datepicker1")){
       name: "កីឡា",
       providers: ["AFB1188", "SABA", "SBO", "ប្រដាល់"],
       promos: [
-        { 
-          id: "0", 
-          name: "មិនយកប្រាក់រង្វាន់ (0%)", 
-          percent: 0, 
-          provider: "គ្រប់ហ្គេម", 
-          desc: "គ្មានលក្ខខណ្ឌវិលជុំ • ដកប្រាក់បានភ្លាមៗ",
-          tag: "ដកប្រាក់សេរី",
-          turnover: "Turnover 1x"
-        },
-        { 
-          id: "sport_100", 
-          name: "រង្វាន់ស្វាគមន៍កីឡា 100%", 
-          percent: 100, 
-          provider: "AFB1188, SABA, SBO", 
-          desc: "សម្រាប់តែការដាក់ប្រាក់លើកដំបូង",
-          tag: "សមាជិកថ្មី",
-          turnover: "Turnover 15x"
-        },
-        { 
-          id: "sport_10", 
-          name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", 
-          percent: 10, 
-          provider: "AFB1188, SABA, SBO", 
-          desc: "ទាមទារបាន 1 ដងក្នុងមួយថ្ងៃ",
-          tag: "រាល់ថ្ងៃ",
-          turnover: "Turnover 5x"
-        },
-        { 
-          id: "sport_boxing", 
-          name: "ប្រូម៉ូសិនពិសេសប្រដាល់ 20%", 
-          percent: 20, 
-          provider: "ប្រដាល់", 
-          desc: "សម្រាប់រាល់ការភ្នាល់ប្រដាល់គុនខ្មែរ",
-          tag: "ប្រដាល់",
-          turnover: "Turnover 8x"
-        },
-        { 
-          id: "sport_rebate", 
-          name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", 
-          percent: 0.5, 
-          provider: "AFB1188, SABA, SBO", 
-          desc: "បង្វិលសងវិញស្វ័យប្រវត្តិ • គ្មានដែនកំណត់",
-          tag: "Cashback",
-          turnover: "Turnover 1x"
-        }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, provider: "AFB1188, SABA, SBO", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, provider: "AFB1188, SABA, SBO", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "sport_boxing", name: "ប្រូម៉ូសិនពិសេសប្រដាល់ 20%", percent: 20, provider: "ប្រដាល់", desc: "រាល់ការភ្នាល់ប្រដាល់" },
+        { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, provider: "AFB1188, SABA, SBO", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
       ]
     },
     slot: {
       name: "ស្លត",
-      providers: ["PG ស្លុត", "PP ស្លុត", "JOKER", "HABA", "CQ9", "បាញ់ត្រី"],
+      providers: ["PG ស្លុត", "PP ស្លុត", "JOKER", "HABA", "CQ9", "ហ្គេមបាញ់ត្រី"],
       promos: [
-        { 
-          id: "0", 
-          name: "មិនយកប្រាក់រង្វាន់ (0%)", 
-          percent: 0, 
-          provider: "គ្រប់ស្លុត", 
-          desc: "គ្មានលក្ខខណ្ឌវិលជុំ • ដកប្រាក់បានភ្លាមៗ",
-          tag: "ដកប្រាក់សេរី",
-          turnover: "Turnover 1x"
-        },
-        { 
-          id: "slot_100", 
-          name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", 
-          percent: 100, 
-          provider: "PG, PP, JOKER, HABA", 
-          desc: "សម្រាប់តែការដាក់ប្រាក់លើកដំបូង",
-          tag: "សមាជិកថ្មី",
-          turnover: "Turnover 12x"
-        },
-        { 
-          id: "slot_30", 
-          name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", 
-          percent: 30, 
-          provider: "PG, PP, CQ9", 
-          desc: "ទាមទារបាន 1 ដងក្នុងមួយថ្ងៃ",
-          tag: "រាល់ថ្ងៃ",
-          turnover: "Turnover 8x"
-        },
-        { 
-          id: "slot_fish", 
-          name: "រង្វាន់ហ្គេមបាញ់ត្រី 15%", 
-          percent: 15, 
-          provider: "ហ្គេមបាញ់ត្រី", 
-          desc: "សម្រាប់រាល់ការដាក់ប្រាក់លេងបាញ់ត្រី",
-          tag: "បាញ់ត្រី",
-          turnover: "Turnover 5x"
-        },
-        { 
-          id: "slot_rebate", 
-          name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", 
-          percent: 1, 
-          provider: "គ្រប់ស្លុតទាំងអស់", 
-          desc: "បង្វិលសងវិញជារៀងរាល់ថ្ងៃ • គ្មានដែនកំណត់",
-          tag: "Cashback",
-          turnover: "Turnover 1x"
-        }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, provider: "PG, PP, JOKER, HABA", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, provider: "PG, PP, CQ9", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "slot_fish", name: "រង្វាន់ហ្គេមបាញ់ត្រី 15%", percent: 15, provider: "ហ្គេមបាញ់ត្រី", desc: "រាល់ការដាក់ប្រាក់" },
+        { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, provider: "គ្រប់ស្លុតទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
       ]
     },
     casino: {
       name: "កាសុីណូបន្តផ្ទាល់",
-      providers: ["PP កាស៊ីណូ", "DG99", "SEXY", "EVO", "ALLBET", "OFA"],
+      providers: ["PP កាស៊ីណូ", "DG99", "SEXY", "PLAY ACE", "ALLBET", "EVO", "OFA", "AFB", "GD"],
       promos: [
-        { 
-          id: "0", 
-          name: "មិនយកប្រាក់រង្វាន់ (0%)", 
-          percent: 0, 
-          provider: "គ្រប់កាស៊ីណូ", 
-          desc: "គ្មានលក្ខខណ្ឌវិលជុំ • ដកប្រាក់បានភ្លាមៗ",
-          tag: "ដកប្រាក់សេរី",
-          turnover: "Turnover 1x"
-        },
-        { 
-          id: "casino_50", 
-          name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", 
-          percent: 50, 
-          provider: "PP, DG99, SEXY, EVO", 
-          desc: "សម្រាប់តែការដាក់ប្រាក់លើកដំបូង",
-          tag: "សមាជិកថ្មី",
-          turnover: "Turnover 18x"
-        },
-        { 
-          id: "casino_15", 
-          name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", 
-          percent: 15, 
-          provider: "SEXY, DG99, OFA", 
-          desc: "សម្រាប់រាល់ការដាក់ប្រាក់បន្ថែម",
-          tag: "Reload",
-          turnover: "Turnover 10x"
-        },
-        { 
-          id: "casino_rebate", 
-          name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", 
-          percent: 0.8, 
-          provider: "គ្រប់កាស៊ីណូទាំងអស់", 
-          desc: "បង្វិលសងវិញជារៀងរាល់ថ្ងៃ • គ្មានដែនកំណត់",
-          tag: "Cashback",
-          turnover: "Turnover 1x"
-        }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, provider: "PP, DG99, SEXY, EVO", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, provider: "SEXY, DG99, OFA, GD", desc: "រាល់ការលេង" },
+        { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, provider: "គ្រប់កាស៊ីណូទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
       ]
     },
     cockfight: {
       name: "មាន់ជល់",
-      providers: ["SV388 有", "RCB988"],
+      providers: ["SV388 មាន់ជល់", "RCB988"],
       promos: [
-        { 
-          id: "0", 
-          name: "មិនយកប្រាក់រង្វាន់ (0%)", 
-          percent: 0, 
-          provider: "គ្រប់ហ្គេម", 
-          desc: "គ្មានលក្ខខណ្ឌវិលជុំ • ដកប្រាក់បានភ្លាមៗ",
-          tag: "ដកប្រាក់សេរី",
-          turnover: "Turnover 1x"
-        },
-        { 
-          id: "cock_100", 
-          name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", 
-          percent: 100, 
-          provider: "SV388 មាន់ជល់", 
-          desc: "សម្រាប់តែការដាក់ប្រាក់លើកដំបូង",
-          tag: "សមាជិកថ្មី",
-          turnover: "Turnover 15x"
-        },
-        { 
-          id: "cock_10", 
-          name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", 
-          percent: 10, 
-          provider: "SV388, RCB988", 
-          desc: "ទាមទារបាន 1 ដងក្នុងមួយថ្ងៃ",
-          tag: "រាល់ថ្ងៃ",
-          turnover: "Turnover 6x"
-        },
-        { 
-          id: "cock_rebate", 
-          name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", 
-          percent: 0.5, 
-          provider: "SV388 មាន់ជល់", 
-          desc: "បង្វិលសងវិញរៀងរាល់សប្តាហ៍ • គ្មានដែនកំណត់",
-          tag: "Cashback",
-          turnover: "Turnover 1x"
-        }
+        { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
+        { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, provider: "SV388 មាន់ជល់", desc: "ដាក់ប្រាក់ដំបូង" },
+        { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, provider: "SV388, RCB988", desc: "ម្តងក្នុងមួយថ្ងៃ" },
+        { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, provider: "SV388 មាន់ជល់", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
       ]
     }
   };
@@ -1920,7 +1747,7 @@ if(document.getElementById("datepicker1")){
       const percentBadge = p.percent > 0 
         ? `<span class="cat-percent-badge">${p.percent}%</span>`
         : `<span class="cat-percent-zero">0%</span>`;
-      const providerTag = p.provider && p.provider !== "គ្រប់ហ្គេម" && p.provider !== "គ្រប់ស្លុត" && p.provider !== "គ្រប់កាស៊ីណូ" 
+      const providerTag = p.provider && p.provider !== "គ្រប់ហ្គេម" 
         ? `<span class="cat-provider-tag">${p.provider}</span>` 
         : "";
 
@@ -1930,13 +1757,9 @@ if(document.getElementById("datepicker1")){
             <div class="custom-radio">
               <div class="custom-radio-inner"></div>
             </div>
-            <div style="min-width: 0;">
+            <div style="text-align: left; min-width: 0;">
               <div class="cat-promo-card-title">${p.name} ${providerTag}</div>
-              <div class="cat-promo-card-desc">
-                ${p.tag ? `<span class="promo-sub-tag ${p.percent > 0 ? 'highlight' : ''}">${p.tag}</span>` : ''}
-                <span>${p.desc}</span>
-                ${p.turnover ? `<span class="promo-sub-turnover">${p.turnover}</span>` : ''}
-              </div>
+              <div class="cat-promo-card-desc">${p.desc}</div>
             </div>
           </div>
           ${percentBadge}
