@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta charset="utf-8">
-<title>ដាក់ប្រាក់ - HANJAK.XYZ-3G</title>
+<title>Deposit - HANJAK.XYZ-3G</title>
 <meta name="Keywords" content="">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,15 +16,15 @@
 <link rel="stylesheet" href="css/kh-content.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js" async=""></script>
 <script src="js/main.js"></script>
 
 <style>
-    /* Scoped Mobile Deposit Page Styles */
+    /* Scoped Mobile Deposit Page Styles (EN) */
     .m-deposit-page {
-        font-family: 'Kantumruy Pro', 'Khmer OS Content', sans-serif;
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
         background: #f4f6fa;
         min-height: 100vh;
         padding-top: 54px;
@@ -140,53 +140,54 @@
         font-size: 14px;
     }
     .m-bank-name {
-        font-size: 11px;
-        font-weight: 600;
-        color: #334155;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #1e293b;
         white-space: nowrap;
     }
 
-    /* Account Details Box */
+    /* Transfer Account Details */
     .m-account-section {
         margin-bottom: 20px;
     }
     .m-account-box {
-        border: 1.5px solid #dbeafe;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
-        background: #ffffff;
-        margin-bottom: 10px;
         padding: 10px 14px;
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     .m-account-label {
-        font-size: 10.5px;
-        color: #94a3b8;
+        font-size: 11px;
+        color: #64748b;
         display: block;
         margin-bottom: 2px;
     }
     .m-account-val {
-        font-size: 14.5px;
-        font-weight: 700;
+        font-size: 14px;
+        font-weight: 800;
         color: #0f172a;
         font-family: 'Plus Jakarta Sans', sans-serif;
         letter-spacing: 0.3px;
     }
     .m-btn-copy {
-        border: 1.5px solid #3b82f6;
+        border: 1px solid #cbd5e1;
         background: #ffffff;
         color: #2563eb;
-        padding: 4px 14px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
+        border-radius: 8px;
+        padding: 5px 12px;
+        font-size: 11.5px;
+        font-weight: 700;
         cursor: pointer;
+        transition: all 0.2s ease;
     }
-    .m-btn-copy.copied {
-        background: #10b981;
-        border-color: #10b981;
+    .m-btn-copy:active, .m-btn-copy.copied {
+        background: #2563eb;
         color: #ffffff;
+        border-color: #2563eb;
     }
 
     /* Deposit Amount Section */
@@ -195,59 +196,60 @@
     }
     .m-amount-input {
         width: 100%;
-        height: 50px;
-        background: #f8fafc;
-        border: 1.5px solid #e2e8f0;
+        height: 48px;
+        border: 1.5px solid #cbd5e1;
         border-radius: 12px;
-        padding: 8px 14px;
-        font-size: 22px;
+        padding: 0 16px;
+        font-size: 18px;
         font-weight: 800;
         color: #0f172a;
         font-family: 'Plus Jakarta Sans', sans-serif;
         margin-bottom: 10px;
+        outline: none;
+        transition: all 0.2s ease;
     }
     .m-amount-input:focus {
-        border-color: #3b82f6;
-        background: #ffffff;
-        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
     .m-quick-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 6px;
+        margin-bottom: 12px;
     }
     .m-quick-btn {
-        border: 1.5px solid #e2e8f0;
-        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        color: #475569;
         border-radius: 10px;
-        padding: 8px 2px;
-        text-align: center;
-        font-size: 11.5px;
+        padding: 8px 4px;
+        font-size: 12px;
         font-weight: 700;
-        color: #334155;
         cursor: pointer;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        white-space: nowrap;
+        text-align: center;
+        transition: all 0.2s ease;
     }
     .m-quick-btn.active {
-        background: #2563eb;
         border-color: #2563eb;
+        background: #2563eb;
         color: #ffffff;
     }
 
-    /* Related Promotion Box under 4 buttons */
+    /* Category Related Promotions Box */
     .m-category-promo-box {
-        margin-top: 10px;
-        background: #fffef8;
-        border: 1.5px solid #fde047;
-        border-radius: 14px;
-        padding: 12px;
+        border: 1.5px solid #dbeafe;
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 14px 12px;
+        margin-top: 14px;
+        margin-bottom: 14px;
     }
     .m-cat-promo-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
     .m-cat-promo-header-left {
         display: flex;
@@ -255,138 +257,111 @@
         gap: 8px;
     }
     .m-cat-promo-icon {
-        width: 28px;
-        height: 28px;
-        background: linear-gradient(135deg, #f59e0b, #eab308);
+        width: 32px;
+        height: 32px;
+        background: #eff6ff;
         border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
-        font-size: 14px;
+        font-size: 16px;
     }
     .m-cat-promo-title {
-        font-size: 12.5px;
-        font-weight: 700;
-        color: #1e293b;
+        font-size: 13px;
+        font-weight: 800;
+        color: #1e3a8a;
         margin: 0;
     }
-    .m-cat-promo-title span {
-        color: #d97706;
-    }
     .m-cat-promo-subtitle {
-        font-size: 10px;
+        font-size: 10.5px;
         color: #64748b;
-        margin: 1px 0 0 0;
+        margin: 0;
     }
     .m-cat-promo-badge {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 700;
-        color: #ffffff;
-        background: #f59e0b;
-        padding: 2px 7px;
-        border-radius: 20px;
+        color: #2563eb;
+        background: #dbeafe;
+        padding: 3px 8px;
+        border-radius: 12px;
     }
     .m-cat-providers-row {
         display: flex;
-        gap: 4px;
         flex-wrap: wrap;
-        margin-bottom: 8px;
+        gap: 6px;
+        margin-bottom: 10px;
     }
     .m-provider-pill {
-        background: #fef3c7;
-        color: #b45309;
-        font-size: 9.5px;
+        font-size: 10.5px;
         font-weight: 700;
-        padding: 2px 6px;
-        border-radius: 5px;
-        border: 1px solid #fde68a;
-        display: inline-flex;
-        align-items: center;
+        color: #334155;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        padding: 4px 8px;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
     .m-cat-promo-list {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 8px;
     }
     .m-cat-promo-card {
+        border: 1.5px solid #e2e8f0;
         background: #ffffff;
-        border: 1.5px solid #f1f5f9;
-        border-radius: 10px;
-        padding: 8px 10px;
+        border-radius: 12px;
+        padding: 10px 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 8px;
         cursor: pointer;
         transition: all 0.2s ease;
     }
-    .m-cat-promo-card:hover {
-        border-color: #cbd5e1;
-    }
     .m-cat-promo-card.active {
-        border-color: #3b82f6;
-        background: #f0f7ff;
-    }
-    .m-cat-promo-card.active .m-radio {
-        border-color: #2563eb;
-    }
-    .m-cat-promo-card.active .m-radio-dot {
-        background: #2563eb;
+        border: 2px solid #2563eb;
+        background: #eff6ff;
     }
     .m-cat-promo-card-left {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
     }
     .m-cat-promo-name {
-        font-size: 11.5px;
+        font-size: 12px;
         font-weight: 700;
-        color: #1e293b;
-        margin: 0;
-        line-height: 1.3;
+        color: #0f172a;
     }
     .m-cat-promo-desc {
         font-size: 10px;
         color: #64748b;
-        margin: 1px 0 0 0;
-        line-height: 1.2;
     }
     .m-cat-prov-badge {
-        font-size: 9px;
+        font-size: 9.5px;
+        background: #e2e8f0;
+        color: #475569;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 4px;
         font-weight: 600;
-        background: #e0f2fe;
-        color: #0369a1;
-        padding: 1px 4px;
-        border-radius: 3px;
-        margin-left: 3px;
-        vertical-align: middle;
     }
     .m-cat-percent-badge {
-        background: #fee2e2;
-        color: #ef4444;
-        font-size: 11px;
-        font-weight: 700;
-        padding: 2px 6px;
-        border-radius: 6px;
-        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 800;
+        color: #2563eb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .m-cat-percent-zero {
-        background: #f1f5f9;
-        color: #94a3b8;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
-        padding: 2px 6px;
-        border-radius: 6px;
-        white-space: nowrap;
+        color: #94a3b8;
     }
 
-    /* Promotion Box (Mobile Stacked List Layout) */
+    /* Bonus Wrapper */
     .m-bonus-wrapper {
-        border: 1.5px solid #fde047;
-        background: #fffef8;
+        border: 1.5px solid #fef3c7;
+        background: #fffdfa;
         border-radius: 16px;
-        padding: 14px;
+        padding: 14px 12px;
         margin-bottom: 20px;
     }
     .m-bonus-header {
@@ -401,58 +376,54 @@
         gap: 8px;
     }
     .m-bonus-icon {
-        width: 34px;
-        height: 34px;
-        background: linear-gradient(135deg, #f59e0b, #eab308);
-        border-radius: 10px;
+        width: 32px;
+        height: 32px;
+        background: #fffbeb;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
-        font-size: 17px;
+        font-size: 16px;
     }
     .m-bonus-title {
-        font-size: 14px;
-        font-weight: 700;
-        color: #1e293b;
+        font-size: 13px;
+        font-weight: 800;
+        color: #92400e;
         margin: 0;
     }
     .m-bonus-subtitle {
         font-size: 10.5px;
         color: #64748b;
-        margin: 1px 0 0 0;
+        margin: 0;
     }
     .m-bonus-badge {
-        background: #f59e0b;
-        color: #ffffff;
-        font-size: 10.5px;
+        font-size: 11px;
         font-weight: 700;
-        padding: 2px 8px;
-        border-radius: 20px;
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #b45309;
+        background: #fef3c7;
+        padding: 3px 8px;
+        border-radius: 12px;
     }
-
-    /* Stacked Promo Rows */
     .m-promo-list {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     .m-promo-item {
+        border: 1.5px solid #e2e8f0;
         background: #ffffff;
-        border: 1.5px solid #f1f5f9;
         border-radius: 12px;
         padding: 10px 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.2s ease;
     }
     .m-promo-item.active {
-        border: 1.5px solid #f59e0b;
-        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.12);
+        border: 2px solid #f59e0b;
+        background: #fffbeb;
     }
     .m-promo-left {
         display: flex;
@@ -460,14 +431,13 @@
         gap: 10px;
     }
     .m-radio {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         border: 1.5px solid #cbd5e1;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
     }
     .m-radio-dot {
         width: 8px;
@@ -648,10 +618,10 @@
                 </a>
             </div>
             <div class="header-right1 d-flex align-items-center">
-                <div class="left-in-right"><a href="/index.php?page=login" class="btns btn-login">ចូល</a></div>
+                <div class="left-in-right"><a href="/en/login" class="btns btn-login">Login</a></div>
                 <div class="left-in-right">
-                    <a href="/index.php?page=register" class="btns btn-register">
-                        <span class="btn-register-blink">ចុះឈ្មោះ</span>
+                    <a href="/en/register" class="btns btn-register">
+                        <span class="btn-register-blink">Register</span>
                     </a>
                 </div>
             </div>
@@ -663,13 +633,13 @@
 <nav class="left-nav">
     <div class="left-nav__bg">
         <ul>
-            <li class="ho side-item"><a href="index.html">ទំព័រដើម</a></li>
-            <li class="transfer side-item"><a class="text-white" href="deposit.html" style="color: #ffc107!important;">ដាក់ប្រាក់</a></li>
-            <li class="transfer side-item"><a href="withdrawal.html">ដកប្រាក់</a></li>
-            <li class="sports side-item"><a href="/index.php?page=online_football_betting">កីឡា</a></li>
-            <li class="live side-item"><a href="/index.php?page=live-casino">កាស៊ីណូ</a></li>
-            <li class="game side-item"><a href="/index.php?page=slots_lobby">ហ្គេមស្លត់</a></li>
-            <li class="pr side-item"><a href="/index.php?page=promotion">ការផ្តល់ជូន</a></li>
+            <li class="ho side-item"><a href="index.html">Home</a></li>
+            <li class="transfer side-item"><a class="text-white" href="deposit-en.html" style="color: #ffc107!important;">Deposit</a></li>
+            <li class="transfer side-item"><a href="withdrawal-en.html">Withdrawal</a></li>
+            <li class="sports side-item"><a href="/en/sports">Sports</a></li>
+            <li class="live side-item"><a href="/en/live-casino">Live Casino</a></li>
+            <li class="game side-item"><a href="/en/slots">Slots</a></li>
+            <li class="pr side-item"><a href="/en/promotions">Promotions</a></li>
         </ul>
     </div>
 </nav>
@@ -680,20 +650,20 @@
         
         <!-- Language Switcher Bar -->
         <div class="m-lang-bar">
-            <a href="deposit.html" class="m-lang-pill active">🇰🇭 ភាសាខ្មែរ</a>
-            <a href="deposit-en.html" class="m-lang-pill">🇬🇧 English</a>
+            <a href="deposit.html" class="m-lang-pill">🇰🇭 ភាសាខ្មែរ</a>
+            <a href="deposit-en.html" class="m-lang-pill active">🇬🇧 English</a>
         </div>
 
         <div class="m-deposit-card">
             
             <!-- 1. Select Bank -->
-            <div class="m-section-label">ជ្រើសរើសធនាគារ</div>
+            <div class="m-section-label">Select Bank</div>
             <div class="m-bank-grid">
                 <!-- ACLEDA -->
                 <div class="m-bank-card active" data-bank="acleda" data-name="CHAB MAKARA" data-account="21 000 640731421">
                     <div class="m-bank-check">✓</div>
                     <div class="m-bank-logo acleda">ACLEDA</div>
-                    <div class="m-bank-name">អេស៊ីលីដា</div>
+                    <div class="m-bank-name">ACLEDA Bank</div>
                 </div>
                 <!-- Wing -->
                 <div class="m-bank-card" data-bank="wing" data-name="CHAB MAKARA" data-account="098 765 432">
@@ -711,36 +681,36 @@
 
             <!-- 2. Transfer Account Details -->
             <div class="m-account-section">
-                <div class="m-section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
+                <div class="m-section-label">Transfer To This Account:</div>
                 
                 <!-- Account Name -->
                 <div class="m-account-box">
                     <div>
-                        <span class="m-account-label">ឈ្មោះគណនី</span>
+                        <span class="m-account-label">Account Name</span>
                         <span class="m-account-val" id="m-disp-name">CHAB MAKARA</span>
                     </div>
-                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-name', this)">ចម្លង</button>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-name', this)">Copy</button>
                 </div>
 
                 <!-- Account Number -->
                 <div class="m-account-box">
                     <div>
-                        <span class="m-account-label">លេខគណនី</span>
+                        <span class="m-account-label">Account Number</span>
                         <span class="m-account-val" id="m-disp-num">21 000 640731421</span>
                     </div>
-                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-num', this)">ចម្លង</button>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-num', this)">Copy</button>
                 </div>
             </div>
 
             <!-- 3. Deposit Amount Section -->
             <div class="m-amount-section">
-                <div class="m-section-label">ចំនួនទឹកប្រាក់</div>
+                <div class="m-section-label">Deposit Amount</div>
                 <input type="number" id="m-amount-input" class="m-amount-input" value="10">
                 <div class="m-quick-grid">
-                    <button type="button" class="m-quick-btn active" data-category="sport">កីឡា</button>
-                    <button type="button" class="m-quick-btn" data-category="slot">ស្លត</button>
-                    <button type="button" class="m-quick-btn" data-category="casino">កាសុីណូបន្តផ្ទាល់</button>
-                    <button type="button" class="m-quick-btn" data-category="cockfight">មាន់ជល់</button>
+                    <button type="button" class="m-quick-btn active" data-category="sport">Sports</button>
+                    <button type="button" class="m-quick-btn" data-category="slot">Slots</button>
+                    <button type="button" class="m-quick-btn" data-category="casino">Live Casino</button>
+                    <button type="button" class="m-quick-btn" data-category="cockfight">Cockfight</button>
                 </div>
 
                 <!-- Related Promotions for Selected Category -->
@@ -749,8 +719,8 @@
                         <div class="m-cat-promo-header-left">
                             <div class="m-cat-promo-icon">🎁</div>
                             <div>
-                                <h4 class="m-cat-promo-title">ប្រូម៉ូសិនពិសេសពី <span id="m-cat-promo-name">កីឡា</span></h4>
-                                <p class="m-cat-promo-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                                <h4 class="m-cat-promo-title">Special Promotions from <span id="m-cat-promo-name">Sports</span></h4>
+                                <p class="m-cat-promo-subtitle">Select a promotion before submitting</p>
                             </div>
                         </div>
                         <span class="m-cat-promo-badge" id="m-cat-promo-status">1/5</span>
@@ -759,19 +729,19 @@
                         <!-- Populated dynamically -->
                     </div>
                     <div class="m-cat-promo-list" id="m-cat-promo-list">
-                        <!-- Populated dynamically as promo cards matching "ប្រាក់រង្វាន់បន្ថែម" style -->
+                        <!-- Populated dynamically -->
                     </div>
                 </div>
             </div>
 
-            <!-- 4. Promotion Box (Vertical Stacked List Matching Red Box) -->
+            <!-- 4. Promotion Box (Vertical Stacked List) -->
             <div class="m-bonus-wrapper">
                 <div class="m-bonus-header">
                     <div class="m-bonus-header-left">
                         <div class="m-bonus-icon">🎁</div>
                         <div>
-                            <h4 class="m-bonus-title">ប្រាក់រង្វាន់បន្ថែម</h4>
-                            <p class="m-bonus-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                            <h4 class="m-bonus-title">Extra Bonus</h4>
+                            <p class="m-bonus-subtitle">Select a bonus promotion before submitting</p>
                         </div>
                     </div>
                     <span class="m-bonus-badge" id="m-bonus-count">1/23</span>
@@ -783,8 +753,8 @@
                         <div class="m-promo-left">
                             <div class="m-radio"><div class="m-radio-dot"></div></div>
                             <div>
-                                <div class="m-promo-name">មិនយកប្រាក់រង្វាន់</div>
-                                <div class="m-promo-desc">ដាក់ប្រាក់ដោយគ្មានលក្ខខណ្ឌ</div>
+                                <div class="m-promo-name">No Bonus</div>
+                                <div class="m-promo-desc">Deposit with zero wagering requirement</div>
                             </div>
                         </div>
                     </div>
@@ -794,8 +764,8 @@
                         <div class="m-promo-left">
                             <div class="m-radio"><div class="m-radio-dot"></div></div>
                             <div>
-                                <div class="m-promo-name">រង្វាន់ស្វាគមន៍ដំបូង</div>
-                                <div class="m-promo-desc">សម្រាប់ការដាក់ប្រាក់លើកដំបូង</div>
+                                <div class="m-promo-name">Welcome Bonus</div>
+                                <div class="m-promo-desc">For the very first deposit</div>
                             </div>
                         </div>
                         <span class="m-promo-percent">100%</span>
@@ -806,32 +776,32 @@
                         <div class="m-promo-left">
                             <div class="m-radio"><div class="m-radio-dot"></div></div>
                             <div>
-                                <div class="m-promo-name">រង្វាន់ដាក់ប្រាក់ប្រចាំថ្ងៃ</div>
-                                <div class="m-promo-desc">ទទួលបានម្តងក្នុងមួយថ្ងៃ</div>
+                                <div class="m-promo-name">Daily Deposit Bonus</div>
+                                <div class="m-promo-desc">Claim once every day</div>
                             </div>
                         </div>
                         <span class="m-promo-percent">20%</span>
                     </div>
 
-                    <!-- Option 4 (Hidden by default / expandable): Sports -->
+                    <!-- Option 4 (Hidden by default): Sports -->
                     <div class="m-promo-item m-extra-promo" data-promo="3" data-percent="10" style="display: none;">
                         <div class="m-promo-left">
                             <div class="m-radio"><div class="m-radio-dot"></div></div>
                             <div>
-                                <div class="m-promo-name">រង្វាន់កីឡា</div>
-                                <div class="m-promo-desc">សម្រាប់ការភ្នាល់កីឡា</div>
+                                <div class="m-promo-name">Sports Bonus</div>
+                                <div class="m-promo-desc">For sports betting</div>
                             </div>
                         </div>
                         <span class="m-promo-percent">10%</span>
                     </div>
 
-                    <!-- Option 5 (Hidden by default / expandable): Slots -->
+                    <!-- Option 5 (Hidden by default): Slots -->
                     <div class="m-promo-item m-extra-promo" data-promo="4" data-percent="30" style="display: none;">
                         <div class="m-promo-left">
                             <div class="m-radio"><div class="m-radio-dot"></div></div>
                             <div>
-                                <div class="m-promo-name">រង្វាន់ស្លុត</div>
-                                <div class="m-promo-desc">សម្រាប់ហ្គេមស្លុត</div>
+                                <div class="m-promo-name">Slots Bonus</div>
+                                <div class="m-promo-desc">For slot games</div>
                             </div>
                         </div>
                         <span class="m-promo-percent">30%</span>
@@ -839,25 +809,25 @@
                 </div>
 
                 <!-- Toggle Link -->
-                <a href="javascript:void(0)" class="m-bonus-toggle" id="m-btn-toggle-promos">មើលប្រូម៉ូសិនទាំងអស់ (23)</a>
+                <a href="javascript:void(0)" class="m-bonus-toggle" id="m-btn-toggle-promos">View All Promotions (23)</a>
 
                 <!-- Notice -->
                 <p class="m-bonus-notice">
-                    ចង់ទទួលបានការផ្តល់ជូននានា? សូមផ្ញើឈ្មោះគណនីធនាគាររបស់អ្នកជាមុនសិន ដើម្បីភ្ជាប់ទៅគណនីរបស់អ្នក។
+                    Want to receive promotional offers? Please send your verified bank account details to link to your profile.
                 </p>
             </div>
 
             <!-- 5. Slip Upload Section -->
             <div class="m-upload-section">
-                <div class="m-section-label">វិក្កយបត្រផ្ទេរប្រាក់</div>
+                <div class="m-section-label">Transfer Receipt / Slip</div>
                 <div class="m-upload-card" onclick="document.getElementById('m-file-input').click()">
                     <input type="file" id="m-file-input" accept="image/*" style="display: none;" onchange="mHandleFile(event)">
                     <div class="m-upload-icon-box">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
                     </div>
                     <div style="flex-grow: 1;">
-                        <div class="m-upload-title" id="m-file-name">ជ្រើសរើសឯកសារ</div>
-                        <div class="m-upload-status" id="m-file-status" style="color: #64748b; font-weight: normal;">សូមផ្ទុកឡើងរូបភាពវិក្កយបត្ររបស់អ្នកនៅទីនេះ</div>
+                        <div class="m-upload-title" id="m-file-name">Choose File</div>
+                        <div class="m-upload-status" id="m-file-status" style="color: #64748b; font-weight: normal;">Upload your payment receipt image here</div>
                     </div>
                 </div>
             </div>
@@ -865,23 +835,23 @@
             <!-- 6. Summary Calculation -->
             <div class="m-summary-box">
                 <div class="m-summary-row">
-                    <span>ប្រាក់ដាក់</span>
+                    <span>Deposit Amount</span>
                     <span class="m-summary-num" id="m-sum-deposit">10</span>
                 </div>
                 <div class="m-summary-row">
-                    <span>ប្រាក់រង្វាន់</span>
+                    <span>Bonus Amount</span>
                     <span class="m-summary-num bonus" id="m-sum-bonus">+10</span>
                 </div>
                 <div class="m-summary-divider"></div>
                 <div class="m-summary-row total">
-                    <span>សរុប</span>
+                    <span>Total Received</span>
                     <span class="m-summary-num" id="m-sum-total">20</span>
                 </div>
             </div>
 
             <!-- 7. Submit Button -->
             <button type="button" class="m-btn-submit" onclick="mSubmitDeposit()">
-                ដាក់ស្នើ
+                Submit Deposit
             </button>
 
         </div>
@@ -896,31 +866,31 @@
                 <a href="index.html">
                     <div class="box-footer-link">
                         <img src="images/home.png">
-                        <div class="title-link-footer">ទំព័រដើម</div>
+                        <div class="title-link-footer">Home</div>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="/index.php?page=login">
+                <a href="/en/rewards">
                     <div class="box-footer-link">
                         <img src="images/rewards.png">
-                        <div class="title-link-footer">រង្វាន់ផ្សេងៗ</div>
+                        <div class="title-link-footer">Rewards</div>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="deposit.html" class="active">
+                <a href="deposit-en.html" class="active">
                     <div class="box-footer-link">
                         <img src="images/icon-deposit.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
-                        <div class="title-link-footer" style="color: #ffc107;">ការដាក់ប្រាក់</div>
+                        <div class="title-link-footer" style="color: #ffc107;">Deposit</div>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="withdrawal.html">
+                <a href="withdrawal-en.html">
                     <div class="box-footer-link">
                         <img src="images/icon-transfer.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
-                        <div class="title-link-footer">ការដកប្រាក់</div>
+                        <div class="title-link-footer">Withdrawal</div>
                     </div>
                 </a>
             </li>
@@ -928,7 +898,7 @@
                 <a href="javascript:void(0)" onclick="openChatIcon();return false;">
                     <div class="box-footer-link">
                         <img src="images/support.png">
-                        <div class="title-link-footer" style="white-space: nowrap;">ទាក់ទងពួកយើង</div>
+                        <div class="title-link-footer" style="white-space: nowrap;">Support</div>
                     </div>
                 </a>
             </li>
@@ -937,7 +907,7 @@
 </div>
 
 <!-- Toast -->
-<div class="m-toast" id="m-toast">បានចម្លងដោយជោគជ័យ!</div>
+<div class="m-toast" id="m-toast">Copied successfully!</div>
 
 <script>
     let mBonusPercent = 100;
@@ -954,13 +924,13 @@
     function mCopyText(elementId, btn) {
         const text = document.getElementById(elementId).innerText;
         navigator.clipboard.writeText(text).then(() => {
-            $(btn).addClass('copied').text('បានចម្លង');
-            mShowToast('បានចម្លង: ' + text);
+            $(btn).addClass('copied').text('Copied');
+            mShowToast('Copied: ' + text);
             setTimeout(() => {
-                $(btn).removeClass('copied').text('ចម្លង');
+                $(btn).removeClass('copied').text('Copy');
             }, 2000);
         }).catch(() => {
-            mShowToast('បានចម្លង: ' + text);
+            mShowToast('Copied: ' + text);
         });
     }
 
@@ -974,45 +944,45 @@
     // Category Promotions Data
     const mCategoryPromotionsData = {
         sport: {
-            name: "កីឡា",
-            providers: ["AFB1188 កីឡា", "SABA កីឡា", "SBO កីឡា", "ប្រដាល់"],
+            name: "Sports",
+            providers: ["AFB1188 Sports", "SABA Sports", "SBO Sports", "Boxing"],
             promos: [
-                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
-                { id: "sport_100", name: "រង្វាន់ស្វាគមន៍កីឡា 100%", percent: 100, provider: "AFB1188, SABA, SBO", desc: "ដាក់ប្រាក់ដំបូង" },
-                { id: "sport_10", name: "រង្វាន់ដាក់ប្រាក់កីឡាប្រចាំថ្ងៃ 10%", percent: 10, provider: "AFB1188, SABA, SBO", desc: "ម្តងក្នុងមួយថ្ងៃ" },
-                { id: "sport_boxing", name: "ប្រូម៉ូសិនពិសេសប្រដាល់ 20%", percent: 20, provider: "ប្រដាល់", desc: "រាល់ការភ្នាល់ប្រដាល់" },
-                { id: "sport_rebate", name: "ប្រាក់បង្វិលកីឡាប្រចាំសប្តាហ៍ 0.5%", percent: 0.5, provider: "AFB1188, SABA, SBO", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "sport_100", name: "Sports Welcome Bonus 100%", percent: 100, provider: "AFB1188, SABA, SBO", desc: "First deposit only" },
+                { id: "sport_10", name: "Daily Sports Deposit Bonus 10%", percent: 10, provider: "AFB1188, SABA, SBO", desc: "Once per day" },
+                { id: "sport_boxing", name: "Special Boxing Bonus 20%", percent: 20, provider: "Boxing", desc: "All boxing bets" },
+                { id: "sport_rebate", name: "Weekly Sports Rebate 0.5%", percent: 0.5, provider: "AFB1188, SABA, SBO", desc: "Weekly automatic rebate" }
             ]
         },
         slot: {
-            name: "ស្លត",
-            providers: ["PP ស្លុត", "PG ស្លុត", "JOKER", "HABA", "CQ9", "ហ្គេមបាញ់ត្រី"],
+            name: "Slots",
+            providers: ["PP Slots", "PG Slots", "JOKER", "HABA", "CQ9", "Fish Hunter"],
             promos: [
-                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
-                { id: "slot_100", name: "រង្វាន់ស្វាគមន៍ស្លុត 100%", percent: 100, provider: "PG, PP, JOKER, HABA", desc: "ដាក់ប្រាក់ដំបូង" },
-                { id: "slot_30", name: "រង្វាន់ស្លុតប្រចាំថ្ងៃ 30%", percent: 30, provider: "PG, PP, CQ9", desc: "ម្តងក្នុងមួយថ្ងៃ" },
-                { id: "slot_fish", name: "រង្វាន់ហ្គេមបាញ់ត្រី 15%", percent: 15, provider: "ហ្គេមបាញ់ត្រី", desc: "រាល់ការដាក់ប្រាក់" },
-                { id: "slot_rebate", name: "ប្រាក់បង្វិលស្លុតប្រចាំថ្ងៃ 1%", percent: 1, provider: "គ្រប់ស្លុតទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "slot_100", name: "Slots Welcome Bonus 100%", percent: 100, provider: "PG, PP, JOKER, HABA", desc: "First deposit only" },
+                { id: "slot_30", name: "Daily Slots Bonus 30%", percent: 30, provider: "PG, PP, CQ9", desc: "Once per day" },
+                { id: "slot_fish", name: "Fish Hunter Bonus 15%", percent: 15, provider: "Fish Hunter", desc: "Every deposit" },
+                { id: "slot_rebate", name: "Daily Slot Rebate 1%", percent: 1, provider: "All Slots", desc: "Daily automatic rebate" }
             ]
         },
         casino: {
-            name: "កាសុីណូបន្តផ្ទាល់",
-            providers: ["PP កាស៊ីណូ", "DG99", "SEXY", "PLAY ACE", "ALLBET", "EVO", "OFA", "AFB", "GD"],
+            name: "Live Casino",
+            providers: ["PP Casino", "DG99", "SEXY", "PLAY ACE", "ALLBET", "EVO", "OFA", "AFB", "GD"],
             promos: [
-                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
-                { id: "casino_50", name: "រង្វាន់ស្វាគមន៍កាស៊ីណូ 50%", percent: 50, provider: "PP, DG99, SEXY, EVO", desc: "ដាក់ប្រាក់ដំបូង" },
-                { id: "casino_15", name: "រង្វាន់កាស៊ីណូបន្តផ្ទាល់ 15%", percent: 15, provider: "SEXY, DG99, OFA, GD", desc: "រាល់ការលេង" },
-                { id: "casino_rebate", name: "ប្រាក់បង្វិលកាស៊ីណូ 0.8%", percent: 0.8, provider: "គ្រប់កាស៊ីណូទាំងអស់", desc: "បង្វិលរាល់ថ្ងៃ" }
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "casino_50", name: "Live Casino Welcome Bonus 50%", percent: 50, provider: "PP, DG99, SEXY, EVO", desc: "First deposit only" },
+                { id: "casino_15", name: "Live Casino Reload 15%", percent: 15, provider: "SEXY, DG99, OFA, GD", desc: "Every reload" },
+                { id: "casino_rebate", name: "Live Casino Rebate 0.8%", percent: 0.8, provider: "All Live Casino", desc: "Daily automatic rebate" }
             ]
         },
         cockfight: {
-            name: "មាន់ជល់",
-            providers: ["SV388 មាន់ជល់", "RCB988"],
+            name: "Cockfight",
+            providers: ["SV388 Cockfight", "RCB988"],
             promos: [
-                { id: "0", name: "មិនយកប្រាក់រង្វាន់ (0%)", percent: 0, provider: "គ្រប់ហ្គេម", desc: "គ្មានលក្ខខណ្ឌ" },
-                { id: "cock_100", name: "រង្វាន់ស្វាគមន៍មាន់ជល់ 100%", percent: 100, provider: "SV388 មាន់ជល់", desc: "ដាក់ប្រាក់ដំបូង" },
-                { id: "cock_10", name: "រង្វាន់មាន់ជល់ប្រចាំថ្ងៃ 10%", percent: 10, provider: "SV388, RCB988", desc: "ម្តងក្នុងមួយថ្ងៃ" },
-                { id: "cock_rebate", name: "ប្រាក់បង្វិលមាន់ជល់ 0.5%", percent: 0.5, provider: "SV388 មាន់ជល់", desc: "បង្វិលរៀងរាល់សប្តាហ៍" }
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "cock_100", name: "Cockfight Welcome Bonus 100%", percent: 100, provider: "SV388 Cockfight", desc: "First deposit only" },
+                { id: "cock_10", name: "Daily Cockfight Bonus 10%", percent: 10, provider: "SV388, RCB988", desc: "Once per day" },
+                { id: "cock_rebate", name: "Weekly Cockfight Rebate 0.5%", percent: 0.5, provider: "SV388 Cockfight", desc: "Weekly automatic rebate" }
             ]
         }
     };
@@ -1028,14 +998,14 @@
         });
         $('#m-cat-providers-row').html(providersHtml);
 
-        // Render mobile promo cards list matching "ប្រាក់រង្វាន់បន្ថែម" style
+        // Render mobile promo cards list
         let cardsHtml = "";
         data.promos.forEach((p, idx) => {
             const isActive = idx === 0 ? "active" : "";
             const percentBadge = p.percent > 0 
                 ? `<span class="m-cat-percent-badge">${p.percent}%</span>`
                 : `<span class="m-cat-percent-zero">0%</span>`;
-            const providerTag = p.provider && p.provider !== "គ្រប់ហ្គេម" 
+            const providerTag = p.provider && p.provider !== "All Games" 
                 ? `<span class="m-cat-prov-badge">${p.provider}</span>` 
                 : "";
 
@@ -1102,10 +1072,10 @@
         mExpanded = !mExpanded;
         if (mExpanded) {
             $('.m-extra-promo').slideDown(200);
-            $(this).text('បង្ហាញតិចជាងនេះ');
+            $(this).text('Show Less');
         } else {
             $('.m-extra-promo').slideUp(200);
-            $(this).text('មើលប្រូម៉ូសិនទាំងអស់ (23)');
+            $(this).text('View All Promotions (23)');
         }
     });
 
@@ -1125,8 +1095,8 @@
         const file = e.target.files[0];
         if (file) {
             $('#m-file-name').text(file.name);
-            $('#m-file-status').text('បានជ្រើសរើសរួចរាល់ ✓').css({ 'color': '#10b981', 'font-weight': '600' });
-            mShowToast('បានផ្ទុកឡើង: ' + file.name);
+            $('#m-file-status').text('Selected successfully ✓').css({ 'color': '#10b981', 'font-weight': '600' });
+            mShowToast('Uploaded: ' + file.name);
         }
     }
 
@@ -1134,10 +1104,10 @@
     function mSubmitDeposit() {
         const amt = parseFloat($('#m-amount-input').val()) || 0;
         if (amt <= 0) {
-            mShowToast('សូមបញ្ចូលចំនួនទឹកប្រាក់!');
+            mShowToast('Please enter deposit amount!');
             return;
         }
-        alert('សំណើដាក់ប្រាក់ចំនួន $' + amt + ' ត្រូវបានផ្ញើដោយជោគជ័យ!');
+        alert('Deposit request of $' + amt + ' submitted successfully!');
     }
 
     // Mobile Navigation Drawer Toggle
