@@ -1,0 +1,2372 @@
+<!DOCTYPE html><html lang="ca"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="window-target" content="_top">
+<meta content="telephone=no" name="format-detection">
+<meta name="msapplication-TileColor" content="#f55">
+<meta name="msapplication-square150x150logo" content="images/ico.png">
+<title>hanjak.xyz</title>
+<meta name="title" content="hanjak.xyz">
+<meta name="description" content="hanjak.xyz">
+<meta name="keyword" content="hanjak.xyz">
+<meta name="viewport" content="width=1200,initial-scale=0,maximum-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+<link rel="stylesheet" href="css/mreset_1.css" type="text/css">
+<link rel="stylesheet" href="css/customize.css" type="text/css">
+<link rel="stylesheet" href="css/customize_fafa558.css" type="text/css">
+<script async="" src="js/analytics.js"></script><script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89496205-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/mreset.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/styles_ca.css">
+<link rel="stylesheet" href="css/date_picker.ui.css">
+<script type="text/javascript" src="js/functions.js"></script>
+<script src="js/publicity.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.jslides.js"></script>
+<script src="js/jquery.cookie_1.js"></script>
+<!--<script src="https://d3pjq3rrv5sdh6.cloudfront.net/content/js/optimize/main.js"></script>-->
+<script src="js/jquery.ui.js"></script>
+<script src="js/micgaming.js"></script>
+<script src="js/currency_function.js"></script>
+<script src="js/jquery.paginate.js"></script>
+<script>
+function cl(){document.getElementById("tanbg").style.display="none",document.getElementById("tanpa").style.display="none"}
+$(function(){            
+if(document.getElementById("datepicker1")){              
+			$("#datepicker1").datepicker({dateFormat:"yy-mm-dd 00:00:00"}),$("#datepicker2").datepicker({dateFormat:"yy-mm-dd 23:59:59"})
+	}
+});
+</script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="content/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="content/js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body data-pages="">
+<!---->
+<script language="javascript">
+   function Check_Field_User2(form){
+      if(form.useracc.value == ''){
+         alert("ឈ្មោះគណនីមិនអាចទទេ!");
+         form.useracc.focus();
+         return (false);
+      }
+      if(form.passwd.value == ''){
+         alert("លេខសម្ងាត់មិនអាចទទេ!");
+         form.passwd.focus(); 
+         return (false);
+      }
+      if (form.captcha.value == "" || form.captchaSource.value != form.captcha.value){
+         alert("សូមបញ្ចូលកូដផ្ទៀងផ្ទាត់អោយបានត្រឹមត្រូវ!");
+         form.captcha.focus();
+         return (false);
+      }
+      var encrypted = encrypt.encrypt(form.passwd.value);
+      form.passwd.value = encrypted;
+      return (true);
+   }
+</script>
+<style>
+ .balance-dropdown {
+  position: absolute;
+  top: 90%;
+  left: -4px;
+  width: 230px;
+  background: #333333;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.myBalance-wrap.active .balance-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.balance-card {
+  background: #333333;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}.balance-card-header {
+  margin-bottom: 4px;
+}.wallet-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  text-align: left;
+}.balance-card-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}.amount-balance {
+  color: #ffc107;
+  font-size: 14px;
+  font-weight: bold;
+}.navbar{
+  width: 100%;
+}
+.navbar .subnav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex: auto;
+}.free_event {
+  position: absolute;
+    top: -12px;
+    right: 0px;
+    z-index: 99;
+    background: red;
+    color: white;
+    padding: 0px 8px;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 10px;
+    line-height: 23px;
+}
+</style>
+<div class="main-w">
+<div class="wrapper">
+<div class="head position-fixed fixed-top">
+  <div class="container">
+    <div class="row form-row">
+      <div class="col-md-3">
+        <div class="logo">
+          <ul>
+            <li id="tourCount_ida">
+              <a href="/">
+                                    <img class="fafa-logo-gift" style="width: 170px;" src="images/logo.png">
+                            </a>
+            </li>         
+          </ul>
+                  </div>
+      </div>
+      <div class="col-md-9">
+                <div id="containerTopright"> 
+          <!-- Start: Right Member -->
+          <div id="TopMember" style="white-space: nowrap">
+            <div style="float:left; margin-right: 10px;"> <a href="#"><img src="images/notification-after-login.png"> </a> </div>
+            <div style="float:left; margin-right: 10px;position: relative;">
+            <a href="#">
+                 
+                <img src="images/mail-before-login.png">
+            </a> 
+            </div>
+            <div id="language" class="language">
+              <div class="languageMenu">
+                <div id="langSelectLink">
+                  <div id="box"><span class="arrUp" id="arrow"> </span><span id="selectedLang" class="fca" change-class="fca">
+                    កម្ពុជា                    </span></div>
+                </div>
+                <div id="langList" style="display: none;">
+                  <div class="langListTop"></div>
+                  <div class="langListRp">
+                    <div class="langListDiv">
+                                                                                          <li class="th"><a href="/th/" class="fth">ไทย</a></li>
+                                                                    <li class="en"><a href="/en/" class="fen">English</a></li>
+                                                                    <li class="cn"><a href="/cn/" class="fcn">简体中文</a></li>
+                                          </div>
+                  </div>
+                  <div class="langListBottom"></div>
+                </div>
+              </div>
+            </div>
+            <div id="Memberlogin">
+                          <form action="/kh/login_submitter" method="post" enctype="multipart/form-data" onsubmit="return Check_Field_User2(this)">
+                <input id="topID" type="text" class="h-20 placeholderInput" size="11" name="useracc" placeholder="ឈ្មោះប្រេីប្រាស់">
+                <input id="topPW" type="password" class="h-20 placeholderInput" size="10" name="passwd" placeholder="ពាក្យសំងាត់">
+<!--                 <input id="topID" type="text" class="h-20 placeholderInput" size="11" name="captcha" placeholder="លេខកូដ">
+                <input id="topID" type="text" class="h-20 placeholderInput captchaString" size="11" value="4968" style="border:none; background:none; width:40px; color:#fff;pointer-events: none;" disabled="disabled"> -->
+                <input type="hidden" name="captcha" value="4968">
+                <input type="hidden" name="captchaSource" value="4968">
+                <div style="display:inline;" class="forgetLogin">
+                  <div class="forgetLogin-toolTips"><span>Forgot Login Details ?</span></div>
+                  <a href="#"> <img src="images/btn-forget-password-icon.png" style="vertical-align: middle;"> </a> </div>
+                                <div class="Memberlogin-Btn">
+                  <button type="submit" name="save">ចូល</button>
+                </div>
+                                                                                </form>
+                          </div>
+          </div>
+          <div id="memberact">
+                                    <div class="memberact-Btn"> <a href="/kh/promotion"> <img src="images/btn-promotion-icon.png">ការផ្តល់ជូន </a> </div>
+                        <div class="memberact-Btn"> <a href="#" onclick="window.open('http://secure.livechatinc.com/licence//open_chat.cgi', 'Chat Now', 'height=530,width=650,top=200,left=100,menubar=no,scrollbars=yes,toolbar=no,location=no,directories=no,resizable=no');"> <img src="images/btn-livechat-icon.png">24/7 ជជែកផ្ទាល់ </a> </div>
+                        <div class="memberact-Btn"> <a href="/kh/affiliate"> <img src="images/btn-livechat-icon.png">
+          បុត្រសម្ព័ន្ធ</a> </div>
+                                               <div class="memberact-Btn"> <a href="/kh/signup"> <img src="images/btn-joinnow-icon.png">ចុះឈ្មោះ </a> </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu" id="show_game">
+    <div class="container nav-icon-th">
+      <div class="navbar"> <a href="/" class="icon active" style="border-right:none!important;"><img src="images/home-icon.png"></a> 
+            <a href="http://m.hanjak.xyz" class="icon">
+            <img src="images/mobile-icon.png"></a>
+        <div class="subnav "> <a href="/kh/sports-lobby" class="subnavbtn">កីឡា</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row">                
+                                                <div class="col-md-3"> <a href="/kh/afbsports2">
+                  <div class="nav4"> <img src="images/pc-afb.png">
+                                        <div class="nav-casino-title">AFB1188 កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                <div class="col-md-3"> <a href="/kh/saba_sports">
+                  <div class="nav4"> <img src="images/pc-ibc.png">
+                                        <div class="nav-casino-title">SABA កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                <div class="col-md-3"> <a href="/kh/sbo_sports">
+                  <div class="nav4"> <img src="images/pc-sbo.png">
+                                        <div class="nav-casino-title">SBO កីទ្បា</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a>
+                </div>
+                                                                    <div class="col-md-3">
+                    <a href="/kh/afbsports2">
+                      <div class="nav4"> <img src="images/boxing_ca.png">
+                                              </div>
+                    </a>
+                  </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subnav "> <a href="/kh/live-casino" class="subnavbtn">កាស៊ីណូផ្សាយផ្ទាល់</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                                                <div class="col-md-2"> 
+                <a href="/kh/casino_pplay">
+                  <div class="nav4 nav-casino"> <img src="images/pp_ca_ca.png">
+                    <div class="nav-casino-title">PP កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/dg99_casino">
+                  <div class="nav4 nav-casino"> <img src="images/dg99_ca.png">
+                    <div class="nav-casino-title">DG99 កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/sexy">
+                  <div class="nav4 nav-casino"> <img src="images/sexy_ca.png">
+                    <div class="nav-casino-title">SEXY កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/ag_casino">
+                  <div class="nav4 nav-casino"> <img src="images/ag_ca.png">
+                    <div class="nav-casino-title">PLAY ACE កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/casino_allbet">
+                  <div class="nav4 nav-casino"> <img src="images/allbet_ca.png">
+                    <div class="nav-casino-title">ALLBET កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/evo_casino">
+                  <div class="nav4 nav-casino"> <img src="images/evo_ca.png">
+                    <div class="nav-casino-title">EVO កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/ofa_casino">
+                  <div class="nav4 nav-casino"> <img src="images/ofa_casino_ca.png">
+                    <div class="nav-casino-title">OFA កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/maintenance">
+                  <div class="nav4 nav-casino"> <img src="images/tga_ca.png">
+                    <div class="nav-casino-title">AFB កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2"> 
+                <a href="/kh/maintenance">
+                  <div class="nav4 nav-casino"> <img src="images/gd_ca.png">
+                    <div class="nav-casino-title">GD កាស៊ីណូ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/auto_slots/slots_fish" class="subnavbtn">ស្លតហ្គេម</a>
+          <div class="subnav-content slots-sclo">
+            <div class="nav-container">
+              <div class="row form-row">
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_fish">
+                                    <div class="nav4"> <img src="images/pc slot menu/fishing.png">
+                    <div class="nav-casino-title">ហ្គេមបាញ់ត្រី</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_pplay">
+                                    <div class="nav4"> <img src="images/pc slot menu/pp-play.png">
+                    <div class="nav-casino-title">PPLAY ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_haba_index">
+                                    <div class="nav4"> <img src="images/pc slot menu/habanero.png">
+                    <div class="nav-casino-title">HABA ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_joker123">
+                                    <div class="nav4"> <img src="images/pc slot menu/joker.png">
+                    <div class="nav-casino-title">JOKER123 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_playstar">
+                                    <div class="nav4"> <img src="images/pc slot menu/playstar.png">
+                    <div class="nav-casino-title">PLAYSTAR ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_dragoonsoft">
+                                    <div class="nav4"> <img src="images/pc slot menu/dragon-soft.png">
+                    <div class="nav-casino-title">DRAGOON ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_pg">
+                                    <div class="nav4"> <img src="images/pc slot menu/pg.png">
+                    <div class="nav-casino-title">PG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_cq9">
+                                    <div class="nav4"> <img src="images/pc slot menu/cq.png">
+                    <div class="nav-casino-title">CQ9 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_fc">
+                                    <div class="nav4"> <img src="images/pc slot menu/fachai.png">
+                    <div class="nav-casino-title">FC ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                    <div class="popular-head">
+                      <img class="popular-head-img" src="images/pop.gif">
+                  </div>
+                                                      <a href="/kh/auto_slots/slots_jili">
+                                    <div class="nav4"> <img src="images/pc slot menu/jili.png">
+                    <div class="nav-casino-title">JILI ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_kagaming">
+                                    <div class="nav4"> <img src="images/pc slot menu/kagaming.png">
+                    <div class="nav-casino-title">KA GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_rich88">
+                                    <div class="nav4"> <img src="images/pc slot menu/rich-88.png">
+                    <div class="nav-casino-title">RICH88 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_spadegaming">
+                                    <div class="nav4"> <img src="images/pc slot menu/spade-gaming.png">
+                    <div class="nav-casino-title">SPADEGAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_live22">
+                                    <div class="nav4"> <img src="images/pc slot menu/live-22.png">
+                    <div class="nav-casino-title">LIVE22 ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_redtiger">
+                                    <div class="nav4"> <img src="images/pc slot menu/red-tighter.png">
+                    <div class="nav-casino-title">RED TIGER</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_nlc">
+                                    <div class="nav4"> <img src="images/pc slot menu/nolimit.png">
+                    <div class="nav-casino-title">NLC ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_netgaming">
+                                    <div class="nav4"> <img src="images/pc slot menu/nettent.png">
+                    <div class="nav-casino-title">NETENT GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_btg">
+                                    <div class="nav4"> <img src="images/pc slot menu/big.png">
+                    <div class="nav-casino-title">BTG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_playngo">
+                                    <div class="nav4"> <img src="images/pc slot menu/playngo.png">
+                    <div class="nav-casino-title">PLAY & GO</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_relax">
+                                    <div class="nav4"> <img src="images/pc slot menu/releax-gaming.png">
+                    <div class="nav-casino-title">RELAX GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_hacksaw">
+                                    <div class="nav4"> <img src="images/pc slot menu/hackshaw.png">
+                    <div class="nav-casino-title">HACKSAW ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_jdb">
+                                    <div class="nav4"> <img src="images/pc slot menu/jdb.png">
+                    <div class="nav-casino-title">JDB ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_advantplay">
+                                    <div class="nav4"> <img src="images/pc slot menu/ap.png">
+                    <div class="nav-casino-title">AP ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_bigpot">
+                                    <div class="nav4"> <img src="images/pc slot menu/big-pot.png">
+                    <div class="nav-casino-title">BIGPOT ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_play8">
+                                    <div class="nav4"> <img src="images/pc slot menu/play8.png">
+                    <div class="nav-casino-title">PLAY8</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_yesbingo">
+                                    <div class="nav4"> <img src="images/pc slot menu/yellow-bet.png">
+                    <div class="nav-casino-title">YESBINGO</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_yl">
+                                    <div class="nav4"> <img src="images/pc slot menu/yl.png">
+                    <div class="nav-casino-title">YL GAMING</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_bng">
+                                    <div class="nav4"> <img src="images/pc slot menu/bng.png">
+                    <div class="nav-casino-title">BNG ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_naga">
+                                    <div class="nav4"> <img src="images/pc slot menu/naga.png">
+                    <div class="nav-casino-title">NAGA ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                                                <div class="col-md-2">
+                                                      <a href="/kh/auto_slots/slots_popok">
+                                    <div class="nav4"> <img src="images/pc slot menu/pop-ok.png">
+                    <div class="nav-casino-title">POPOK ស្លត់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                  </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/number-lobby" class="subnavbtn">
+          លេខ</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                
+                <div class="col-md-3"> <a href="/kh/auto_numbers">
+                  <div class="nav3"> <img src="images/number_ca.png">
+                                        <div class="nav-casino-title">លេខ</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                
+                <div class="col-md-3"> <a href="/kh/live_numbers">
+                  <div class="nav3"> <img src="images/livenumber_ca.png">
+                                        <div class="nav-casino-title">លេខផ្សាយផ្ទាល់</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                
+                <div class="col-md-3"> <a href="/kh/keno_new">
+                  <div class="nav3"> <img src="images/keno_new_ca.png">
+                                        <div class="nav-casino-title">គីណូថ្មី</div>
+                    <div class="nav-footer">
+                      <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                    </div>
+                                      </div>
+                  </a> 
+                </div>
+
+                              </div>
+            </div>
+          </div>
+        </div>
+                        <div class="subnav "> <a href="/kh/cock-lobby" class="subnavbtn">ជល់មាន់</a>
+          <div class="subnav-content">
+            <div class="nav-container">
+              <div class="row form-row p_login">
+                               <div class="col-md-3"> 
+                  <a href="/kh/fight">
+                    <div class="nav3"> <img src="images/sv388_ca.png">
+                                            <div class="nav-casino-title">ជល់មាន់(SV388)</div>
+                      <div class="nav-footer">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                      </div>
+                                          </div>
+                  </a> 
+                </div>
+                                <div class="col-md-3"> 
+                  <a href="/kh/maintenance">
+                    <div class="nav3"> <img src="images/sb24cf_ca.png">
+                                            <div class="nav-casino-title">SABONG24</div>
+                      <div class="nav-footer">
+                        <button type="button" class="btn btn-outline-danger btn-rounded waves-effect">លេងឥឡូវនេះ</button>
+                      </div>
+                                          </div>
+                  </a> 
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+                <div class="subnav "> <a href="/kh/poker-lobby" class="subnavbtn">ល្បែងបៀរ</a>
+          <div class="subnav-content poker-top-na">
+            <div class="nav-container">
+              <div class="row form-row p_login poker-drop">
+                                <div class="col-md-3">
+                                      <a href="/kh/kh3_poker">
+                                        <div class="nav4"> <img src="images/kh3poker.png">
+                    </div>
+                  </a> 
+                </div>
+                            </div>
+            </div>
+          </div>
+        </div>
+                                                <div class="subnav "><a href="/kh/promotion" class="subnavbtn">ការផ្តល់ជូន</a></div>
+                <div class="subnav "><a href="/kh/challenges" class="subnavbtn">បេសកកម្មពិសេស</a></div>
+        <div class="subnav ">
+          <a href="/kh/rewards" class="subnavbtn">រង្វាន់</a>
+        </div>
+              </div>
+    </div>
+  </div>
+</div>
+  <style>
+  /* Base Scoped Deposit Styles */
+  .deposit-page-wrapper {
+    background: #f1f5f9;
+    min-height: calc(100vh - 220px);
+    padding: 130px 0 60px 0;
+  }
+  .deposit-page-wrapper * {
+    box-sizing: border-box;
+  }
+  .deposit-card-container {
+    max-width: 1020px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 32px 36px;
+  }
+  .deposit-header {
+    margin-bottom: 24px;
+  }
+  .deposit-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+  .deposit-subtitle-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .deposit-subtitle-text {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .deposit-time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #e0f2fe;
+    color: #0284c7;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+
+  .deposit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .deposit-page-wrapper .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  /* Bank Select Grid */
+  .bank-select-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .bank-card {
+    position: relative;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 16px 8px 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .bank-card:hover {
+    border-color: #93c5fd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  }
+  .bank-card.active {
+    border: 2px solid #2563eb;
+    background: #f8faff;
+  }
+  .bank-check-icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 18px;
+    height: 18px;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .bank-card.active .bank-check-icon {
+    display: flex;
+  }
+
+  .bank-logo-box {
+    width: 60px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-size: 13px;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .bank-logo-acleda {
+    background: #002e6e;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+  }
+  .bank-logo-wing {
+    background: #73be28;
+    font-size: 15px;
+  }
+  .bank-logo-aba {
+    background: #004f71;
+    font-size: 15px;
+  }
+  .bank-card-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+  }
+
+  /* Account Info Cards */
+  .account-info-section {
+    margin-bottom: 22px;
+  }
+  .account-info-box {
+    border: 1.5px solid #dbeafe;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .account-info-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .account-info-label {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .account-info-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.3px;
+  }
+  .btn-copy {
+    border: 1.5px solid #3b82f6;
+    background: #ffffff;
+    color: #2563eb;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-copy:hover {
+    background: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  }
+  .btn-copy.copied {
+    background: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+  }
+
+  /* Amount Input Section */
+  .amount-section {
+    margin-bottom: 16px;
+  }
+  .amount-input-wrapper {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .amount-input {
+    width: 100%;
+    height: 52px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    transition: all 0.2s;
+  }
+  .amount-input:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    outline: none;
+  }
+  .quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .quick-amt-btn {
+    border: 1.5px solid #e2e8f0;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 9px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .quick-amt-btn:hover {
+    border-color: #3b82f6;
+    color: #2563eb;
+    background: #f0f7ff;
+  }
+  .quick-amt-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+  }
+
+  /* Bonus / Promotion Box */
+  .bonus-wrapper {
+    border: 1.5px solid #fde047;
+    background: #fffef8;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .bonus-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .bonus-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bonus-icon-badge {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+  }
+  .bonus-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+  }
+  .bonus-subtitle {
+    font-size: 11px;
+    color: #64748b;
+    margin: 2px 0 0 0;
+  }
+  .bonus-count-badge {
+    background: #f59e0b;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .no-bonus-card {
+    border: 1.5px solid #facc15;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  .no-bonus-card.active {
+    border-color: #f59e0b;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+  }
+
+  .custom-radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .custom-radio-inner {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+  }
+  .active .custom-radio {
+    border-color: #f59e0b;
+  }
+  .active .custom-radio .custom-radio-inner {
+    background: #f59e0b;
+  }
+
+  .bonus-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: -0.1px;
+  }
+  .bonus-card-desc {
+    font-size: 10.5px;
+    color: #64748b;
+    margin: 2px 0 0 0;
+    line-height: 1.3;
+  }
+
+  .promo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .promo-card {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .promo-card:hover {
+    border-color: #cbd5e1;
+    background: #fcfcfc;
+  }
+  .promo-card.active {
+    border-color: #3b82f6;
+    background: #f0f7ff;
+  }
+  .promo-card.active .custom-radio {
+    border-color: #2563eb;
+  }
+  .promo-card.active .custom-radio-inner {
+    background: #2563eb;
+  }
+  .promo-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+  .promo-percent {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #2563eb;
+    white-space: nowrap;
+    margin-left: auto;
+    padding-left: 4px;
+  }
+
+  .bonus-toggle-btn {
+    text-align: center;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 0;
+    margin-bottom: 6px;
+    display: block;
+    text-decoration: none;
+  }
+  .bonus-toggle-btn:hover {
+    text-decoration: underline;
+  }
+  .bonus-notice {
+    font-size: 11px;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.5;
+    margin: 4px 0 0 0;
+  }
+
+  /* Upload Section */
+  .upload-box {
+    border: 1.5px dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .upload-box:hover {
+    border-color: #3b82f6;
+    background: #f0f7ff;
+  }
+  .upload-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #e0f2fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0284c7;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .upload-text-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+  }
+  .upload-text-desc {
+    font-size: 11px;
+    color: #64748b;
+    margin: 2px 0 0 0;
+  }
+  .file-preview {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Summary Section */
+  .summary-box {
+    margin-bottom: 18px;
+  }
+  .summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .summary-val {
+    font-weight: 600;
+    color: #334155;
+  }
+  .summary-val.bonus-val {
+    color: #f59e0b;
+    font-weight: 700;
+  }
+  .summary-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 8px 0;
+  }
+  .summary-row.total-row {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  .summary-row.total-row .summary-val {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  /* Submit Button */
+  .btn-submit-deposit {
+    width: 100%;
+    height: 48px;
+    background: #dbeafe;
+    color: #1e3a8a;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-submit-deposit.ready {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  }
+  .btn-submit-deposit.ready:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+  }
+
+  /* Toast Notification */
+  .toast-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Modal */
+  .deposit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .deposit-modal-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+  .modal-success-icon {
+    width: 60px;
+    height: 60px;
+    background: #ecfdf5;
+    color: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 16px auto;
+  }
+</style>
+
+<!-- Main Deposit Body Container -->
+<div class="deposit-page-wrapper">
+  <div class="container">
+    <div class="deposit-card-container">
+      
+      <!-- Top Header -->
+      <div class="deposit-header">
+        <h1 class="deposit-title">ដាក់ប្រាក់</h1>
+        <div class="deposit-subtitle-row">
+          <span class="deposit-subtitle-text">ផ្ទេរប្រាក់ធម្មតា</span>
+          <span class="deposit-time-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            3 នាទី
+          </span>
+        </div>
+      </div>
+
+      <div class="deposit-grid">
+        
+        <!-- Left Column: Bank Selection, Account Details & Amount -->
+        <div class="deposit-col-left">
+          
+          <!-- Bank Selection -->
+          <div class="section-label">ជ្រើសរើសធនាគារ</div>
+          <div class="bank-select-grid">
+            <!-- ACLEDA -->
+            <div class="bank-card active" data-bank="acleda" data-name="CHAB MAKARA" data-account="21 000 640731421">
+              <div class="bank-check-icon">✓</div>
+              <div class="bank-logo-box bank-logo-acleda">ACLEDA</div>
+              <div class="bank-card-name">អេស៊ីលីដា</div>
+            </div>
+            <!-- Wing -->
+            <div class="bank-card" data-bank="wing" data-name="CHAB MAKARA" data-account="098 765 432">
+              <div class="bank-check-icon">✓</div>
+              <div class="bank-logo-box bank-logo-wing">Wing</div>
+              <div class="bank-card-name">Wing Bank</div>
+            </div>
+            <!-- ABA -->
+            <div class="bank-card" data-bank="aba" data-name="CHAB MAKARA" data-account="001 234 567">
+              <div class="bank-check-icon">✓</div>
+              <div class="bank-logo-box bank-logo-aba">ABA</div>
+              <div class="bank-card-name">ABA Mobile</div>
+            </div>
+          </div>
+
+          <!-- Account Transfer Details -->
+          <div class="account-info-section">
+            <div class="section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
+            
+            <!-- Account Name -->
+            <div class="account-info-box">
+              <div class="account-info-details">
+                <span class="account-info-label">ឈ្មោះគណនី</span>
+                <span class="account-info-value" id="disp-acc-name">CHAB MAKARA</span>
+              </div>
+              <button type="button" class="btn-copy" id="btn-copy-name" onclick="copyText('disp-acc-name', this)">ចម្លង</button>
+            </div>
+
+            <!-- Account Number -->
+            <div class="account-info-box">
+              <div class="account-info-details">
+                <span class="account-info-label">លេខគណនី</span>
+                <span class="account-info-value" id="disp-acc-num">21 000 640731421</span>
+              </div>
+              <button type="button" class="btn-copy" id="btn-copy-num" onclick="copyText('disp-acc-num', this)">ចម្លង</button>
+            </div>
+          </div>
+
+          <!-- Deposit Amount Section -->
+          <div class="amount-section">
+            <div class="section-label">ចំនួនទឹកប្រាក់</div>
+            <div class="amount-input-wrapper">
+              <input type="number" id="deposit-amount-input" class="amount-input" placeholder="0" min="0" step="any">
+            </div>
+            
+            <!-- Quick Amount Pills -->
+            <div class="quick-amounts">
+              <button type="button" class="quick-amt-btn" data-amount="1">1</button>
+              <button type="button" class="quick-amt-btn" data-amount="5">5</button>
+              <button type="button" class="quick-amt-btn" data-amount="10">10</button>
+              <button type="button" class="quick-amt-btn" data-amount="50">50</button>
+              <button type="button" class="quick-amt-btn" data-amount="100">100</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Promotion, Slip Upload & Summary -->
+        <div class="deposit-col-right">
+          
+          <!-- Bonus Highlight Box -->
+          <div class="bonus-wrapper">
+            <div class="bonus-header">
+              <div class="bonus-header-left">
+                <div class="bonus-icon-badge">
+                  🎁
+                </div>
+                <div>
+                  <h3 class="bonus-title">ប្រាក់រង្វាន់បន្ថែម</h3>
+                  <p class="bonus-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                </div>
+              </div>
+              <span class="bonus-count-badge">0/23</span>
+            </div>
+
+            <!-- Default Option: No Bonus -->
+            <div class="no-bonus-card active" data-promo="0" data-percent="0">
+              <div class="custom-radio">
+                <div class="custom-radio-inner"></div>
+              </div>
+              <div>
+                <div class="bonus-card-title">មិនយកប្រាក់រង្វាន់</div>
+                <div class="bonus-card-desc">ដាក់ប្រាក់ដោយគ្មានលក្ខខណ្ឌ</div>
+              </div>
+            </div>
+
+            <!-- Promotion Grid -->
+            <div class="promo-grid">
+              <!-- Promo 1 -->
+              <div class="promo-card" data-promo="1" data-percent="100">
+                <div class="promo-left">
+                  <div class="custom-radio">
+                    <div class="custom-radio-inner"></div>
+                  </div>
+                  <div>
+                    <div class="bonus-card-title">រង្វាន់ស្វាគមន៍ដំបូង</div>
+                    <div class="bonus-card-desc">សម្រាប់ការដាក់ប្រាក់លើកដំបូង</div>
+                  </div>
+                </div>
+                <span class="promo-percent">100%</span>
+              </div>
+
+              <!-- Promo 2 -->
+              <div class="promo-card" data-promo="2" data-percent="20">
+                <div class="promo-left">
+                  <div class="custom-radio">
+                    <div class="custom-radio-inner"></div>
+                  </div>
+                  <div>
+                    <div class="bonus-card-title">រង្វាន់ដាក់ប្រាក់ប្រចាំថ្ងៃ</div>
+                    <div class="bonus-card-desc">ទទួលបានម្តងក្នុងមួយថ្ងៃ</div>
+                  </div>
+                </div>
+                <span class="promo-percent">20%</span>
+              </div>
+
+              <!-- Promo 3 -->
+              <div class="promo-card" data-promo="3" data-percent="10">
+                <div class="promo-left">
+                  <div class="custom-radio">
+                    <div class="custom-radio-inner"></div>
+                  </div>
+                  <div>
+                    <div class="bonus-card-title">រង្វាន់កីឡា</div>
+                    <div class="bonus-card-desc">សម្រាប់ការភ្នាល់កីឡា</div>
+                  </div>
+                </div>
+                <span class="promo-percent">10%</span>
+              </div>
+
+              <!-- Promo 4 -->
+              <div class="promo-card" data-promo="4" data-percent="30">
+                <div class="promo-left">
+                  <div class="custom-radio">
+                    <div class="custom-radio-inner"></div>
+                  </div>
+                  <div>
+                    <div class="bonus-card-title">រង្វាន់ស្លុត</div>
+                    <div class="bonus-card-desc">សម្រាប់ហ្គេមស្លុត</div>
+                  </div>
+                </div>
+                <span class="promo-percent">30%</span>
+              </div>
+
+              <!-- Promo 5 -->
+              <div class="promo-card extra-promo" data-promo="5" data-percent="15">
+                <div class="promo-left">
+                  <div class="custom-radio">
+                    <div class="custom-radio-inner"></div>
+                  </div>
+                  <div>
+                    <div class="bonus-card-title">រង្វាន់កាស៊ីណូផ្ទាល់</div>
+                    <div class="bonus-card-desc">សម្រាប់ការកាស៊ីណូផ្ទាល់</div>
+                  </div>
+                </div>
+                <span class="promo-percent">15%</span>
+              </div>
+            </div>
+
+            <!-- Toggle View -->
+            <a href="javascript:void(0)" class="bonus-toggle-btn" id="btn-toggle-promos">បង្ហាញតិចជាងនេះ</a>
+
+            <!-- Helper Notice -->
+            <div class="bonus-notice">
+              ចង់ទទួលបានការផ្តល់ជូននានា? សូមផ្ញើឈ្មោះគណនីធនាគាររបស់អ្នកជាមុនសិន ដើម្បីភ្ជាប់ទៅគណនីរបស់អ្នក។
+            </div>
+          </div>
+
+          <!-- Transfer Slip Upload Section -->
+          <div class="section-label">វិក្កយបត្រផ្ទេរប្រាក់</div>
+          <div class="upload-box" id="drop-zone" onclick="document.getElementById('file-upload').click()">
+            <input type="file" id="file-upload" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+            
+            <!-- Default Upload View -->
+            <div id="upload-default-view" style="display: flex; align-items: center; gap: 14px; width: 100%;">
+              <div class="upload-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+              </div>
+              <div>
+                <h4 class="upload-text-title">ជ្រើសរើសឯកសារ</h4>
+                <p class="upload-text-desc">សូមផ្ទុកឡើងរូបភាពវិក្កយបត្ររបស់អ្នកនៅទីនេះ</p>
+              </div>
+            </div>
+
+            <!-- File Uploaded Preview -->
+            <div class="file-preview" id="file-preview-view">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <img id="preview-img" src="" alt="Slip" style="width: 38px; height: 38px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <div>
+                  <div class="upload-text-title" id="preview-file-name">receipt.jpg</div>
+                  <div class="upload-text-desc" id="preview-file-size">1.2 MB</div>
+                </div>
+              </div>
+              <button type="button" onclick="removeUploadedFile(event)" style="background: none; border: none; color: #ef4444; font-size: 18px; cursor: pointer; padding: 4px;">✕</button>
+            </div>
+          </div>
+
+          <!-- Calculation Summary -->
+          <div class="summary-box">
+            <div class="summary-row">
+              <span>ប្រាក់ដាក់</span>
+              <span class="summary-val" id="summary-deposit">0</span>
+            </div>
+            <div class="summary-row">
+              <span>ប្រាក់រង្វាន់</span>
+              <span class="summary-val bonus-val" id="summary-bonus">+0</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row">
+              <span>សរុប</span>
+              <span class="summary-val" id="summary-total">0</span>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="button" class="btn-submit-deposit" id="btn-submit" onclick="submitDeposit()">
+            ដាក់ស្នើ
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-notification" id="toast">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+  <span id="toast-msg">បានចម្លងដោយជោគជ័យ!</span>
+</div>
+
+<!-- Success Confirmation Modal -->
+<div class="deposit-modal-overlay" id="success-modal">
+  <div class="deposit-modal-card">
+    <div class="modal-success-icon">✓</div>
+    <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">សំណើដាក់ប្រាក់ត្រូវបានផ្ញើ!</h3>
+    <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin-bottom: 20px;">
+      ប្រព័ន្ធកំពុងដំណើរការផ្ទៀងផ្ទាត់ប្រតិបត្តិការរបស់អ្នក។ ទឹកប្រាក់នឹងត្រូវបានបញ្ចូលទៅក្នុងគណនីរបស់អ្នកក្នុងរយៈពេល <strong style="color: #2563eb;">3 នាទី</strong>។
+    </p>
+    
+    <div style="background: #f8fafc; border-radius: 12px; padding: 14px; text-align: left; margin-bottom: 20px; font-size: 13px;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:#64748b;">
+        <span>ធនាគារ:</span>
+        <strong style="color:#0f172a;" id="modal-bank-name">អេស៊ីលីដា</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:#64748b;">
+        <span>ចំនួនទឹកប្រាក់:</span>
+        <strong style="color:#0f172a;" id="modal-amount">$0</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:#64748b;">
+        <span>ប្រាក់រង្វាន់:</span>
+        <strong style="color:#f59e0b;" id="modal-bonus">+$0</strong>
+      </div>
+      <div style="display:flex; justify-content:space-between; border-top:1px solid #e2e8f0; padding-top:6px; font-weight:700;">
+        <span>សរុបទទួលបាន:</span>
+        <strong style="color:#2563eb;" id="modal-total">$0</strong>
+      </div>
+    </div>
+
+    <button type="button" onclick="closeSuccessModal()" style="width: 100%; height: 44px; background: #2563eb; color: #ffffff; border: none; border-radius: 10px; font-weight: 700; cursor: pointer;">
+      យល់ព្រម
+    </button>
+  </div>
+</div>
+
+<!-- Scripts for Interactivity -->
+<script>
+  let selectedBonusPercent = 0;
+  let selectedBankName = "អេស៊ីលីដា";
+
+  // Bank Selection
+  $(".bank-card").on("click", function() {
+    $(".bank-card").removeClass("active");
+    $(this).addClass("active");
+
+    const bankName = $(this).find(".bank-card-name").text();
+    const accName = $(this).data("name");
+    const accNum = $(this).data("account");
+
+    selectedBankName = bankName;
+    $("#disp-acc-name").text(accName);
+    $("#disp-acc-num").text(accNum);
+  });
+
+  // Copy Functionality
+  function copyText(elementId, btn) {
+    const textToCopy = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      $(btn).addClass("copied").text("បានចម្លង");
+      showToast("បានចម្លងលេខ/ឈ្មោះគណនី: " + textToCopy);
+      setTimeout(() => {
+        $(btn).removeClass("copied").text("ចម្លង");
+      }, 2000);
+    }).catch(err => {
+      showToast("បានចម្លង: " + textToCopy);
+    });
+  }
+
+  function showToast(msg) {
+    $("#toast-msg").text(msg);
+    $("#toast").fadeIn(200);
+    setTimeout(() => {
+      $("#toast").fadeOut(300);
+    }, 2500);
+  }
+
+  // Quick Amount Buttons
+  $(".quick-amt-btn").on("click", function() {
+    $(".quick-amt-btn").removeClass("active");
+    $(this).addClass("active");
+    const val = parseFloat($(this).data("amount"));
+    $("#deposit-amount-input").val(val);
+    calculateSummary();
+  });
+
+  // Manual Amount Input
+  $("#deposit-amount-input").on("input", function() {
+    const inputVal = $(this).val();
+    $(".quick-amt-btn").removeClass("active");
+    $(".quick-amt-btn").each(function() {
+      if ($(this).data("amount") == inputVal) {
+        $(this).addClass("active");
+      }
+    });
+    calculateSummary();
+  });
+
+  // Promotion Selection
+  $(".no-bonus-card").on("click", function() {
+    $(".promo-card").removeClass("active");
+    $(this).addClass("active");
+    selectedBonusPercent = 0;
+    calculateSummary();
+  });
+
+  $(".promo-card").on("click", function() {
+    $(".no-bonus-card").removeClass("active");
+    $(".promo-card").removeClass("active");
+    $(this).addClass("active");
+    selectedBonusPercent = parseFloat($(this).data("percent")) || 0;
+    calculateSummary();
+  });
+
+  // Toggle Promo Display
+  let promosExpanded = true;
+  $("#btn-toggle-promos").on("click", function() {
+    promosExpanded = !promosExpanded;
+    if (promosExpanded) {
+      $(".extra-promo").slideDown(200);
+      $(this).text("បង្ហាញតិចជាងនេះ");
+    } else {
+      $(".extra-promo").slideUp(200);
+      $(this).text("បង្ហាញបន្ថែម");
+    }
+  });
+
+  // Calculate Summary
+  function calculateSummary() {
+    const amountVal = parseFloat($("#deposit-amount-input").val()) || 0;
+    const bonusVal = (amountVal * selectedBonusPercent) / 100;
+    const totalVal = amountVal + bonusVal;
+
+    $("#summary-deposit").text(amountVal > 0 ? "$" + amountVal.toLocaleString() : "0");
+    $("#summary-bonus").text(bonusVal > 0 ? "+$" + bonusVal.toLocaleString() : "+0");
+    $("#summary-total").text(totalVal > 0 ? "$" + totalVal.toLocaleString() : "0");
+
+    if (amountVal > 0) {
+      $("#btn-submit").addClass("ready");
+    } else {
+      $("#btn-submit").removeClass("ready");
+    }
+  }
+
+  // Handle File Upload
+  function handleFileSelect(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        $("#preview-img").attr("src", e.target.result);
+        $("#preview-file-name").text(file.name);
+        $("#preview-file-size").text((file.size / (1024 * 1024)).toFixed(2) + " MB");
+        $("#upload-default-view").hide();
+        $("#file-preview-view").css("display", "flex");
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function removeUploadedFile(e) {
+    e.stopPropagation();
+    $("#file-upload").val("");
+    $("#upload-default-view").show();
+    $("#file-preview-view").hide();
+  }
+
+  // Submit Deposit
+  function submitDeposit() {
+    const amountVal = parseFloat($("#deposit-amount-input").val()) || 0;
+    if (amountVal <= 0) {
+      showToast("សូមបញ្ចូលចំនួនទឹកប្រាក់ដែលត្រូវដាក់!");
+      $("#deposit-amount-input").focus();
+      return;
+    }
+
+    const bonusVal = (amountVal * selectedBonusPercent) / 100;
+    const totalVal = amountVal + bonusVal;
+
+    $("#modal-bank-name").text(selectedBankName);
+    $("#modal-amount").text("$" + amountVal.toLocaleString());
+    $("#modal-bonus").text("+$" + bonusVal.toLocaleString());
+    $("#modal-total").text("$" + totalVal.toLocaleString());
+
+    $("#success-modal").css("display", "flex");
+  }
+
+  function closeSuccessModal() {
+    $("#success-modal").hide();
+    $("#deposit-amount-input").val("");
+    $(".quick-amt-btn").removeClass("active");
+    removeUploadedFile({ stopPropagation: () => {} });
+    calculateSummary();
+  }
+</script>
+
+<div class="footer" style="position: relative;">
+  <!-- seo -->
+  <div class="footer-seo">
+    <div style="display:none;">
+                        <h2>2>
+                  </h2></div>
+      </div>
+  <!-- end seo -->
+    <!-- avalon Page -->
+    <div class="info-footer">
+      <div class="container">
+              <!-- kham chen -->
+        <div class="rvp-col">
+          <a href="https://t.me/FAFA558VIP" target="_blank">
+            <div class="ambassadorImg-fa"></div>
+          </a>
+          <a href="#" target="_blank">
+            <div class="ambassadorImg-mi-faca"></div>
+          </a>
+          <a href="#" target="_blank">
+            <div class="ambassadorImg-redking"></div>
+          </a>
+        </div>
+                    <style>
+          .provider-list, .provider-bank{
+            text-align: left;
+            margin-top: 0;
+            margin-left: 0;
+          }
+          .provider-list li, .provider-bank li{
+            display: inline-block;
+          }
+          .provider-bank li {
+              margin: 6px;
+          }
+          .provider-list li img{width: 100px; padding: 10px;}
+          .provider-bank li img{width: 100px;padding: 6px;}
+          .bank-logo-footer{margin: 0!important;}
+        </style>
+         <div class="title">
+            <img class="provider-title" width="80" src="images/provider.png" alt="provider">
+         </div>
+         <ul class="provider-list">
+           <li class="games-footer-1">
+             <img src="images/afb88.png" alt="afb88">
+           </li>
+           <li class="games-footer-2">
+             <img src="images/sbo.png" alt="sbo">
+           </li>
+           <li class="games-footer-3">
+             <img src="images/ibcbet.png" alt="Ibcbet">
+           </li>
+           <li class="games-footer-4">
+             <img src="images/playace.png" alt="playace">
+           </li>
+           <li class="games-footer-5">
+             <img src="images/pplay.png" alt="pplay">
+           </li>
+           <li class="games-footer-5-5">
+             <img style="width: 72px;" src="images/afb.png" alt="afb">
+           </li>
+           <li class="games-footer-6">
+             <img src="images/sexy.png" alt="afb">
+           </li>
+           <li class="games-footer-7">
+             <img src="images/drangoon.png" alt="drangoon">
+           </li>
+           <li class="games-footer-8">
+             <img src="images/allbet.png" alt="allbet">
+           </li>
+           <li class="games-footer-9">
+             <img src="images/evo.png" alt="evo">
+           </li>
+           <li class="games-footer-10">
+             <img style="width: 73px;" src="images/gd.png" alt="gd">
+           </li>
+           <li class="games-footer-11">
+             <img src="images/pg.png" alt="pg">
+           </li>
+           <li class="games-footer-12">
+             <img src="images/cock_1.png" alt="cock">
+           </li>
+           <li class="games-footer-13">
+             <img src="images/cq9.png" alt="cq9">
+           </li>
+           <li class="games-footer-14">
+             <img src="images/hb.png" alt="hb">
+           </li>
+           <li class="games-footer-15">
+             <img style="width: 73px;" src="images/jili.png" alt="jili">
+           </li>
+           <li class="games-footer-16">
+             <img src="images/nlc.png" alt="nlc">
+           </li>
+           <li class="games-footer-17">
+             <img src="images/joker.png" alt="joker">
+           </li>
+           <li class="games-footer-18">
+             <img src="images/rich88.png" alt="rich88">
+           </li>
+           <li class="games-footer-19">
+             <img style="width: 72px;" src="images/ka.png" alt="ka">
+           </li>
+         </ul>
+         <ul class="provider-list">
+         <li class="product-title">
+             <img style="margin-left: -6px;" src="images/product.png" alt="product">
+           </li>
+           <li class="sportdd-title">
+              <a href="/kh/sports-lobby">
+                <img style="width: 54px;" src="images/sport.png" alt="Sport">
+              </a>
+            </li>
+           <li class="live-casino-title">
+              <a href="/kh/live-casino">
+             <img style="width: 125px;" src="images/live_casino.png" alt="live_casino">
+             </a>  
+            </li>
+           <li class="cock-title">
+            <a href="/kh/cock-lobby">
+              <img style="width: 75px;margin-top: -4px;" src="images/cock.png" alt="cock">
+             </a>
+            </li>
+           <li class="live-slots-title">
+           <a href="/kh/auto_slots/slots_joker123">
+             <img style="width: 74px;margin-top: 7px;" src="images/slots.png" alt="cock">
+             </a>
+            </li>
+           <li class="fish-title">
+           <a href="/kh/auto_slots/slots_fish">
+             <img style="width: 92px;margin-top: -1px;" src="images/fish.png" alt="cock">
+             </a>
+            </li>
+           <li class="live-ke-title">
+           <a href="/kh/number-lobby">
+             <img style="width: 50px;margin-top: -2px;" src="images/kino.png" alt="cock">
+             </a>
+            </li>
+           <li>
+             
+           </li>
+         </ul>
+         <ul class="provider-bank">
+         <li class="transaction-title">
+             <img style="width: 110px;" src="images/transaction.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/aba_round.png" alt="aba_round">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/bitcoin.png" alt="bitcoin">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/wing-bank.png" alt="wing-bank">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/acd.png" alt="acd">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/true.png" alt="true">
+           </li>
+           <li>
+             <img style="width: 110px;" src="images/licence.png" alt="transaction">
+           </li>
+           <li>
+            <a href="javascript:void(0);" id="license">
+              <img src="images/gcb.png" alt="gcb">
+              </a>
+           </li>
+             
+           
+         </ul>
+         <ul class="provider-bank">
+         <li>
+             <img style="width: 134px;" src="images/contract.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+           <a href="https://t.me/FAFA558VIP" target="_blank">
+             <img style="width: 50px;" src="images/telegream.png" alt="aba_round">
+             </a>
+           </li>
+           <li class="bank-logo-footer">
+             <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/line.png" alt="bitcoin">
+             </a>
+            </li>
+           <li class="bank-logo-footer">
+           <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/mess.png" alt="wing-bank">
+             </a>
+            </li>
+           <li class="bank-logo-footer">
+           <a href="#" target="_blank">
+             <img style="width: 50px;" src="images/tele.png" alt="acd">
+             </a>
+            </li>
+           <li>
+             <img style="width: 63px; margin-left: 30px;" src="images/about_us.png" alt="acd">
+           </li>
+           
+           
+         </ul>
+         <ul class="provider-bank">
+         <li class="internet-title">
+             <img style="width: 180px;" src="images/Internet.png" alt="transaction">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/firefox.png" alt="aba_round">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/chrome.png" alt="bitcoin">
+           </li>
+           <li class="bank-logo-footer">
+             <img style="width: 50px;" src="images/safari.png" alt="wing-bank">
+           </li>
+           <li>
+             <img style="width: 65px; margin-left: 39px;" src="images/condition.png" alt="acd">
+           </li>
+          
+           
+           
+         </ul>
+             </div>
+    </div>
+  <div class="sfooter" style="padding-top: 10px;background: #00154F;color: #fff;text-align:center">
+       © 2026 hanjak.xyz All rights reserved.
+            <br>hanjak.xyz ជាគេហទំព័រល្បែងតាមអ៊ីនធើណេតដែលគួរឱ្យទុកចិត្តបំផុតនៅក្នុងប្រទេសកម្ពុជា<br>
+      បានចុះបញ្ជីស្របច្បាប់ <br>
+      ក្រោមការត្រួតពិនិត្យរបស់ PAGCOR © ២០២០ ។
+      </div>
+</div>
+</div>
+
+<!-- popup -->
+<style>
+.poker_popup {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+}
+.poker_popup .poker_popup_form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+}
+.poker_popup .poker_close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  z-index: 2;
+}
+</style>
+<div class="poker_popup_bollybet poker_popup border-color" id="license_bollybet" style="display: none;">
+  <div class="poker_popup_form" style="width:815px; border: none;padding: 0;">
+    <a href="javascript:void(0);" class="poker_close" onclick="$('#license_bollybet').fadeOut('fast');" style="background: none;">
+      <img src="images/close.png">
+    </a>
+    <img alt="" style="width: 100%; height: auto" src="images/gcb_info.png">
+  </div>
+</div>
+<script type="text/javascript">
+  $('#license').click(function(){
+      $('#license_bollybet').fadeIn('slow');
+  })
+</script>
+<!-- end -->
+<script language="JavaScript" type="text/javascript" src="js/owl.carousel.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.easy-ticker.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+    $(document).ready(function() {
+      function setPanelPosition(panel, cookieName) {
+        var left = $.cookie(cookieName + '_left');
+        var top = $.cookie(cookieName + '_top');
+        if (left && top) {
+          panel.css({
+            left: left + 'px',
+            top: top + 'px'
+          });
+        }
+      }
+
+      setPanelPosition($("#wheel-panel"), 'wheelPanel');
+
+
+      $("#wheel-panel").draggable({
+        stop: function(event, ui) {
+          $.cookie('wheelPanel_left', ui.position.left);
+          $.cookie('wheelPanel_top', ui.position.top);
+        }
+      });
+
+      $(".close-icon").click(function() {
+        $(this).parent().hide();
+      });
+    });
+  </script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var delay = 1000000;
+    var jackpot = 0;
+    pull_jackpot();
+    var timer;
+
+    function pull_jackpot() {
+      var nominal = 67411244.99;
+      if (jackpot == 0) jackpot = parseInt(nominal - 100000);
+      var amount = 100000 / delay * 1;
+      timer = setInterval(function() {
+        jackpot = set_jackpot(jackpot, nominal, amount);
+      }, 10);
+    }
+
+    function set_jackpot(jackpot, nominal, amount) {
+      var jackpot = jackpot + amount;
+      if (jackpot >= nominal) {
+        clearInterval(timer);
+        pull_jackpot();
+      } else {
+        var result = addCommas(parseInt(jackpot));
+        $('#progressive_jackpot').html(result);
+      }
+      return jackpot;
+    }
+
+    function addCommas(nStr) {
+      nStr += '';
+      x = nStr.split('.');
+      x1 = x[0];
+      x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+      return x1 + x2;
+    }
+  });
+</script>
+<script>
+  $(function() {
+    $('.news-ticker').easyTicker({
+      direction: 'up',
+      visible: 2,
+      interval: 2500,
+      controls: {
+        up: '.btnUp',
+        down: '.btnDown',
+        toggle: '.btnToggle'
+      }
+    });
+    $('#monthly-slider').owlCarousel({
+      autoplay: true,
+      loop: true,
+      margin: 10,
+      nav: true,
+      items: 1
+    })
+  });
+</script>
+<script type="text/javascript" src="js/jquery.lazy.min.js"></script>
+<script>
+/*$(function() {
+		$('.lazy').lazy({
+		effect: "fadeIn",
+		effectTime: 500,
+		threshold: 0
+	});
+	$('img.lazy').on('load',function(){
+		$(this).next('.loading_gift').remove();
+	});
+	var framSrc = $('iframe.lazy').data('src');
+	setTimeout(function(){ $('iframe.lazy').attr('src',framSrc); }, 2000);
+});*/
+</script>
+<!-- start popup -->
+<!-- end popup -->
+<script>
+var isTelegramFrame = false;
+
+function openGameLauncher(link, features) {
+    if (isTelegramFrame) {
+        window.location.href = link;
+        return window;
+    }
+
+    return window.open(link, '_blank', features);
+}
+
+function open_slots5(link,top) {
+    openGameLauncher(link, 'width=1350,height=1000,scrollbars=yes,location=1,resizable=yes'+',top='+top+',left='+top);
+}
+</script>
+<script>
+$(document).ready(function(){
+	function alert_(){
+	    alert('ប្រសិនបើត្រូវការភ្នាល់អតិបរិមាខ្ពស់ សូមទាក់ទងផ្នែកបម្រើសេវាកម្មអតិថិជន');
+	}
+	$('a[href$="fight"]').click(function(){
+	    alert_();
+	});
+	$('a[href$="cock-fighting"]').click(function(){
+	    alert_();
+	});
+	$('a[href$="cf361_fight"]').click(function(){
+	    alert_();
+	});
+		$('a[href$="afb_casino"]').click(function(){
+	    alert_();
+	});
+		$('.cock-dgv99, .cock-sv388, .cock-cf361, .cockfight, .cockfight_ca, .cockfight-cf361, .cockfight-cf361_ca').click(function(){
+        alert_();
+    });
+});
+</script>
+<style>
+    .maintenance {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }.maintenance .bi-tools {
+      width: 30%;
+      height: 30%;
+      color: #03acf0;
+    }
+    .popup_maintenance {
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      position: fixed;
+      z-index: 9999999;
+      width: 100%;
+      height: 100%;
+      top: 0;
+   }
+
+   .popup_maintenan_content {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background: #fff;
+      width: 490px;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+   }.popup_maintenan_content p {
+      padding: 20px;
+      color: #333;
+   }.popup_maintenan_content h2 {
+      color: #333;
+   }.closePop2 {
+      display: inline-block;
+      text-align: center;
+      line-height: 17px;
+      cursor: pointer;
+      background: #ff4949;
+      color: #fff;
+      padding: 5px 30px;
+      border-radius: 5px;
+   }
+</style>
+<div class="popup_maintenance" id="popup_maintenance_close">
+   <div class="anime-fade-in popup_maintenan_content">
+      <h2>ហ្គេមត្រូវបានចាក់សោ</h2>
+      <p>
+                     * អ្នកមិនអាចលេងហ្គេមនេះបានទេ ព្រោះប្រូម៉ូសិនដែលអ្នកបានដាក់ស្នើរមិនត្រូវគ្នានឹងប្រភេទហ្គេម។
+            សូមពិនិត្យមើលទៅលើតម្រូវការនៃលក្ខខណ្ឌផ្តល់ជូន។
+            នៅពេលដែលតម្រូវការនៃការផ្តល់ជូនត្រូវបានឈានដល់ ឬសមតុល្យទឹកប្រាក់របស់អ្នក ក្រោម <span id="min_reset_deposit"></span>  វានឹងត្រូវបានកំណត់ឡើងវិញ ហើយហ្គេមទាំងអស់នេះនឹងត្រូវបានដោះសោ។
+               </p>
+      <a href="javascript:void(0)" class="closePop2">យល់ព្រម</a>
+   </div>
+</div>
+<script>
+   $(document).ready(function(e) {
+      $('.closePop2').click(function() {
+         $('.popup_maintenance').hide();
+      });
+      $('a').filter(function() {
+         return /maintenance/g.test($(this).attr('href')) || /maintenance/g.test($(this).attr('data-url'));
+      }).each(function(index, text) {
+         $(this).parent().css('position', 'relative');
+         if ((($(this).attr('href') || '').indexOf("maintenance2") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance2") > -1) || (($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)) {
+               $(this).prepend('<div class="maintenance"></div>');
+         } else {
+               const svgString = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/></svg>';
+               $(this).prepend('<div class="maintenance">' + svgString + '</div>');
+         }
+
+      });
+      $('a').filter(function() {
+         return /maintenance/g.test($(this).attr('href')) || /maintenance/g.test($(this).attr('data-url'));
+      }).click(function(e) {
+         if ((($(this).attr('href') || '').indexOf("maintenance2") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance2") > -1 ) || (($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)) {
+            $('.popup_maintenance').show();
+            if((($(this).attr('href') || '').indexOf("maintenance3") > -1) || (($(this).attr('data-url') || '').indexOf("maintenance3") > -1)){
+               $('#min_reset_deposit').text('');
+            }else{
+               $('#min_reset_deposit').text('');
+            }      
+         }
+         return false;
+      });
+   });
+    function maintenance2(type='') {
+      $('.popup_maintenance').show();
+      if(type == 'maintenance3'){
+        $('#min_reset_deposit').text('');
+      }else{
+        $('#min_reset_deposit').text('');
+      }
+   }
+</script>
+<input type="hidden" data-web="1084" data-sweb="-">
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e34582dcdf68071',t:'MTc3NDY3Njg5MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+<script type="text/javascript">$(document).ready(function(){if(document.getElementById("record-pagin")){$("#record-pagin").length&&$("#record-pagin").paginate({total_pages:0,itemsPerPage:10});}});</script>
+
+</body></html>

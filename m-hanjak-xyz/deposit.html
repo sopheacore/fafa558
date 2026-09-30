@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<title>ដាក់ប្រាក់ - HANJAK.XYZ-3G</title>
+<meta name="Keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon-fafa558.png" type="image/x-icon">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_fafa558.css">
+<link rel="stylesheet" href="css/kh-content.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" async=""></script>
+<script src="js/main.js"></script>
+
+<style>
+    /* Scoped Mobile Deposit Page Styles */
+    .m-deposit-page {
+        font-family: 'Kantumruy Pro', 'Khmer OS Content', sans-serif;
+        background: #f4f6fa;
+        min-height: 100vh;
+        padding-top: 54px;
+        padding-bottom: 90px;
+    }
+    .m-deposit-container {
+        padding: 12px 14px;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .m-deposit-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 20px 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .m-section-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Bank Selector (3 in a row) */
+    .m-bank-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .m-bank-card {
+        position: relative;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 14px 6px 10px 6px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .m-bank-card.active {
+        border: 2px solid #2563eb;
+        background: #f8faff;
+    }
+    .m-bank-check {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 17px;
+        height: 17px;
+        background: #2563eb;
+        color: #ffffff;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .m-bank-card.active .m-bank-check {
+        display: flex;
+    }
+    .m-bank-logo {
+        width: 54px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6px;
+        font-weight: 800;
+        font-size: 12px;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-logo.acleda {
+        background: #002e6e;
+    }
+    .m-bank-logo.wing {
+        background: #73be28;
+        font-size: 14px;
+    }
+    .m-bank-logo.aba {
+        background: #004f71;
+        font-size: 14px;
+    }
+    .m-bank-name {
+        font-size: 11px;
+        font-weight: 600;
+        color: #334155;
+        white-space: nowrap;
+    }
+
+    /* Account Details Box */
+    .m-account-section {
+        margin-bottom: 20px;
+    }
+    .m-account-box {
+        border: 1.5px solid #dbeafe;
+        border-radius: 12px;
+        background: #ffffff;
+        margin-bottom: 10px;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .m-account-label {
+        font-size: 10.5px;
+        color: #94a3b8;
+        display: block;
+        margin-bottom: 2px;
+    }
+    .m-account-val {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: 0.3px;
+    }
+    .m-btn-copy {
+        border: 1.5px solid #3b82f6;
+        background: #ffffff;
+        color: #2563eb;
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .m-btn-copy.copied {
+        background: #10b981;
+        border-color: #10b981;
+        color: #ffffff;
+    }
+
+    /* Deposit Amount Section */
+    .m-amount-section {
+        margin-bottom: 20px;
+    }
+    .m-amount-input {
+        width: 100%;
+        height: 50px;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 8px 14px;
+        font-size: 22px;
+        font-weight: 800;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin-bottom: 10px;
+    }
+    .m-amount-input:focus {
+        border-color: #3b82f6;
+        background: #ffffff;
+        outline: none;
+    }
+    .m-quick-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+    .m-quick-btn {
+        border: 1.5px solid #e2e8f0;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 8px 0;
+        text-align: center;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #334155;
+        cursor: pointer;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-quick-btn.active {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+    }
+
+    /* Promotion Box (Mobile Stacked List Layout) */
+    .m-bonus-wrapper {
+        border: 1.5px solid #fde047;
+        background: #fffef8;
+        border-radius: 16px;
+        padding: 14px;
+        margin-bottom: 20px;
+    }
+    .m-bonus-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    .m-bonus-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .m-bonus-icon {
+        width: 34px;
+        height: 34px;
+        background: linear-gradient(135deg, #f59e0b, #eab308);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 17px;
+    }
+    .m-bonus-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+    }
+    .m-bonus-subtitle {
+        font-size: 10.5px;
+        color: #64748b;
+        margin: 1px 0 0 0;
+    }
+    .m-bonus-badge {
+        background: #f59e0b;
+        color: #ffffff;
+        font-size: 10.5px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Stacked Promo Rows */
+    .m-promo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .m-promo-item {
+        background: #ffffff;
+        border: 1.5px solid #f1f5f9;
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .m-promo-item.active {
+        border: 1.5px solid #f59e0b;
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.12);
+    }
+    .m-promo-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .m-radio {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1.5px solid #cbd5e1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .m-radio-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: transparent;
+    }
+    .m-promo-item.active .m-radio {
+        border-color: #f59e0b;
+    }
+    .m-promo-item.active .m-radio-dot {
+        background: #f59e0b;
+    }
+    .m-promo-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: #1e293b;
+        white-space: nowrap;
+    }
+    .m-promo-desc {
+        font-size: 10px;
+        color: #64748b;
+        margin-top: 1px;
+    }
+    .m-promo-percent {
+        font-size: 14px;
+        font-weight: 800;
+        color: #2563eb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        white-space: nowrap;
+    }
+
+    .m-bonus-toggle {
+        text-align: center;
+        color: #2563eb;
+        font-size: 12.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: block;
+        padding: 4px 0;
+        margin-bottom: 4px;
+        text-decoration: none;
+    }
+    .m-bonus-notice {
+        font-size: 10.5px;
+        color: #64748b;
+        text-align: center;
+        line-height: 1.4;
+        margin: 4px 0 0 0;
+    }
+
+    /* Slip Upload Section */
+    .m-upload-section {
+        margin-bottom: 18px;
+    }
+    .m-upload-card {
+        border: 1.5px dashed #cbd5e1;
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        position: relative;
+    }
+    .m-upload-icon-box {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #e0f2fe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0284c7;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+    .m-upload-title {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+        word-break: break-all;
+    }
+    .m-upload-status {
+        font-size: 11px;
+        color: #10b981;
+        margin: 2px 0 0 0;
+        font-weight: 600;
+    }
+
+    /* Summary Breakdown */
+    .m-summary-box {
+        margin-bottom: 18px;
+    }
+    .m-summary-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12.5px;
+        color: #64748b;
+        margin-bottom: 6px;
+    }
+    .m-summary-num {
+        font-weight: 600;
+        color: #334155;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-summary-num.bonus {
+        color: #f59e0b;
+        font-weight: 700;
+    }
+    .m-summary-divider {
+        height: 1px;
+        background: #e2e8f0;
+        margin: 8px 0;
+    }
+    .m-summary-row.total {
+        font-size: 15px;
+        font-weight: 800;
+        color: #0f172a;
+    }
+    .m-summary-row.total .m-summary-num {
+        font-size: 17px;
+        font-weight: 800;
+        color: #0f172a;
+    }
+
+    /* Submit Button */
+    .m-btn-submit {
+        width: 100%;
+        height: 46px;
+        background: #2563eb;
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Toast Notification */
+    .m-toast {
+        position: fixed;
+        bottom: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #ffffff;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 99999;
+        display: none;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<header>
+    <div class="wrap-header zerogridh">
+        <div class="wrap-content zerogrid">
+            <label id="navigation" class="left">
+                <img src="images/menu.png" width="36" height="21">
+            </label>
+            <div class="logo">
+                <a href="index.html" class="d-block">
+                    <img src="images/logo.png">
+                </a>
+            </div>
+            <div class="header-right1 d-flex align-items-center">
+                <div class="left-in-right"><a href="/index.php?page=login" class="btns btn-login">ចូល</a></div>
+                <div class="left-in-right">
+                    <a href="/index.php?page=register" class="btns btn-register">
+                        <span class="btn-register-blink">ចុះឈ្មោះ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Left Sidebar Navigation Drawer -->
+<nav class="left-nav">
+    <div class="left-nav__bg">
+        <ul>
+            <li class="ho side-item"><a href="index.html">ទំព័រដើម</a></li>
+            <li class="transfer side-item"><a class="text-white" href="deposit.html" style="color: #ffc107!important;">ដាក់ប្រាក់</a></li>
+            <li class="sports side-item"><a href="/index.php?page=online_football_betting">កីឡា</a></li>
+            <li class="live side-item"><a href="/index.php?page=live-casino">កាស៊ីណូ</a></li>
+            <li class="game side-item"><a href="/index.php?page=slots_lobby">ហ្គេមស្លត់</a></li>
+            <li class="pr side-item"><a href="/index.php?page=promotion">ការផ្តល់ជូន</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Mobile Deposit Page -->
+<div class="m-deposit-page">
+    <div class="m-deposit-container">
+        <div class="m-deposit-card">
+            
+            <!-- 1. Select Bank -->
+            <div class="m-section-label">ជ្រើសរើសធនាគារ</div>
+            <div class="m-bank-grid">
+                <!-- ACLEDA -->
+                <div class="m-bank-card active" data-bank="acleda" data-name="CHAB MAKARA" data-account="21 000 640731421">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo acleda">ACLEDA</div>
+                    <div class="m-bank-name">អេស៊ីលីដា</div>
+                </div>
+                <!-- Wing -->
+                <div class="m-bank-card" data-bank="wing" data-name="CHAB MAKARA" data-account="098 765 432">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo wing">Wing</div>
+                    <div class="m-bank-name">Wing Bank</div>
+                </div>
+                <!-- ABA -->
+                <div class="m-bank-card" data-bank="aba" data-name="CHAB MAKARA" data-account="001 234 567">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo aba">ABA</div>
+                    <div class="m-bank-name">ABA Mobile</div>
+                </div>
+            </div>
+
+            <!-- 2. Transfer Account Details -->
+            <div class="m-account-section">
+                <div class="m-section-label">ផ្ទេរប្រាក់ទៅគណនីនេះ:</div>
+                
+                <!-- Account Name -->
+                <div class="m-account-box">
+                    <div>
+                        <span class="m-account-label">ឈ្មោះគណនី</span>
+                        <span class="m-account-val" id="m-disp-name">CHAB MAKARA</span>
+                    </div>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-name', this)">ចម្លង</button>
+                </div>
+
+                <!-- Account Number -->
+                <div class="m-account-box">
+                    <div>
+                        <span class="m-account-label">លេខគណនី</span>
+                        <span class="m-account-val" id="m-disp-num">21 000 640731421</span>
+                    </div>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-num', this)">ចម្លង</button>
+                </div>
+            </div>
+
+            <!-- 3. Deposit Amount Section -->
+            <div class="m-amount-section">
+                <div class="m-section-label">ចំនួនទឹកប្រាក់</div>
+                <input type="number" id="m-amount-input" class="m-amount-input" value="10">
+                <div class="m-quick-grid">
+                    <button type="button" class="m-quick-btn" data-amt="1">1</button>
+                    <button type="button" class="m-quick-btn" data-amt="5">5</button>
+                    <button type="button" class="m-quick-btn active" data-amt="10">10</button>
+                    <button type="button" class="m-quick-btn" data-amt="50">50</button>
+                    <button type="button" class="m-quick-btn" data-amt="100">100</button>
+                </div>
+            </div>
+
+            <!-- 4. Promotion Box (Vertical Stacked List Matching Red Box) -->
+            <div class="m-bonus-wrapper">
+                <div class="m-bonus-header">
+                    <div class="m-bonus-header-left">
+                        <div class="m-bonus-icon">🎁</div>
+                        <div>
+                            <h4 class="m-bonus-title">ប្រាក់រង្វាន់បន្ថែម</h4>
+                            <p class="m-bonus-subtitle">ជ្រើសរើសប្រូម៉ូសិនមួយ មុនពេលដាក់ស្នើ</p>
+                        </div>
+                    </div>
+                    <span class="m-bonus-badge" id="m-bonus-count">1/23</span>
+                </div>
+
+                <div class="m-promo-list">
+                    <!-- Option 1: No Bonus -->
+                    <div class="m-promo-item" data-promo="0" data-percent="0">
+                        <div class="m-promo-left">
+                            <div class="m-radio"><div class="m-radio-dot"></div></div>
+                            <div>
+                                <div class="m-promo-name">មិនយកប្រាក់រង្វាន់</div>
+                                <div class="m-promo-desc">ដាក់ប្រាក់ដោយគ្មានលក្ខខណ្ឌ</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: 100% Welcome Bonus (Selected) -->
+                    <div class="m-promo-item active" data-promo="1" data-percent="100">
+                        <div class="m-promo-left">
+                            <div class="m-radio"><div class="m-radio-dot"></div></div>
+                            <div>
+                                <div class="m-promo-name">រង្វាន់ស្វាគមន៍ដំបូង</div>
+                                <div class="m-promo-desc">សម្រាប់ការដាក់ប្រាក់លើកដំបូង</div>
+                            </div>
+                        </div>
+                        <span class="m-promo-percent">100%</span>
+                    </div>
+
+                    <!-- Option 3: 20% Daily Bonus -->
+                    <div class="m-promo-item" data-promo="2" data-percent="20">
+                        <div class="m-promo-left">
+                            <div class="m-radio"><div class="m-radio-dot"></div></div>
+                            <div>
+                                <div class="m-promo-name">រង្វាន់ដាក់ប្រាក់ប្រចាំថ្ងៃ</div>
+                                <div class="m-promo-desc">ទទួលបានម្តងក្នុងមួយថ្ងៃ</div>
+                            </div>
+                        </div>
+                        <span class="m-promo-percent">20%</span>
+                    </div>
+
+                    <!-- Option 4 (Hidden by default / expandable): Sports -->
+                    <div class="m-promo-item m-extra-promo" data-promo="3" data-percent="10" style="display: none;">
+                        <div class="m-promo-left">
+                            <div class="m-radio"><div class="m-radio-dot"></div></div>
+                            <div>
+                                <div class="m-promo-name">រង្វាន់កីឡា</div>
+                                <div class="m-promo-desc">សម្រាប់ការភ្នាល់កីឡា</div>
+                            </div>
+                        </div>
+                        <span class="m-promo-percent">10%</span>
+                    </div>
+
+                    <!-- Option 5 (Hidden by default / expandable): Slots -->
+                    <div class="m-promo-item m-extra-promo" data-promo="4" data-percent="30" style="display: none;">
+                        <div class="m-promo-left">
+                            <div class="m-radio"><div class="m-radio-dot"></div></div>
+                            <div>
+                                <div class="m-promo-name">រង្វាន់ស្លុត</div>
+                                <div class="m-promo-desc">សម្រាប់ហ្គេមស្លុត</div>
+                            </div>
+                        </div>
+                        <span class="m-promo-percent">30%</span>
+                    </div>
+                </div>
+
+                <!-- Toggle Link -->
+                <a href="javascript:void(0)" class="m-bonus-toggle" id="m-btn-toggle-promos">មើលប្រូម៉ូសិនទាំងអស់ (23)</a>
+
+                <!-- Notice -->
+                <p class="m-bonus-notice">
+                    ចង់ទទួលបានការផ្តល់ជូននានា? សូមផ្ញើឈ្មោះគណនីធនាគាររបស់អ្នកជាមុនសិន ដើម្បីភ្ជាប់ទៅគណនីរបស់អ្នក។
+                </p>
+            </div>
+
+            <!-- 5. Slip Upload Section -->
+            <div class="m-upload-section">
+                <div class="m-section-label">វិក្កយបត្រផ្ទេរប្រាក់</div>
+                <div class="m-upload-card" onclick="document.getElementById('m-file-input').click()">
+                    <input type="file" id="m-file-input" accept="image/*" style="display: none;" onchange="mHandleFile(event)">
+                    <div class="m-upload-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div class="m-upload-title" id="m-file-name">photo_2026-02-13_15-42-16.jpg</div>
+                        <div class="m-upload-status" id="m-file-status">បានជ្រើសរើសរួចរាល់ ✓</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Summary Calculation -->
+            <div class="m-summary-box">
+                <div class="m-summary-row">
+                    <span>ប្រាក់ដាក់</span>
+                    <span class="m-summary-num" id="m-sum-deposit">10</span>
+                </div>
+                <div class="m-summary-row">
+                    <span>ប្រាក់រង្វាន់</span>
+                    <span class="m-summary-num bonus" id="m-sum-bonus">+10</span>
+                </div>
+                <div class="m-summary-divider"></div>
+                <div class="m-summary-row total">
+                    <span>សរុប</span>
+                    <span class="m-summary-num" id="m-sum-total">20</span>
+                </div>
+            </div>
+
+            <!-- 7. Submit Button -->
+            <button type="button" class="m-btn-submit" onclick="mSubmitDeposit()">
+                ដាក់ស្នើ
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="footer">
+    <div class="footer-link">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div class="box-footer-link">
+                        <img src="images/home.png">
+                        <div class="title-link-footer">ទំព័រដើម</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?page=login">
+                    <div class="box-footer-link">
+                        <img src="images/rewards.png">
+                        <div class="title-link-footer">រង្វាន់ផ្សេងៗ</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="deposit.html" class="active">
+                    <div class="box-footer-link">
+                        <img src="images/icon-deposit.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer" style="color: #ffc107;">ការដាក់ប្រាក់</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?page=center_withdrawal">
+                    <div class="box-footer-link">
+                        <img src="images/icon-transfer.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer">ការដកប្រាក់</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="openChatIcon();return false;">
+                    <div class="box-footer-link">
+                        <img src="images/support.png">
+                        <div class="title-link-footer" style="white-space: nowrap;">ទាក់ទងពួកយើង</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="m-toast" id="m-toast">បានចម្លងដោយជោគជ័យ!</div>
+
+<script>
+    let mBonusPercent = 100;
+
+    // Bank Selection
+    $('.m-bank-card').on('click', function() {
+        $('.m-bank-card').removeClass('active');
+        $(this).addClass('active');
+        $('#m-disp-name').text($(this).data('name'));
+        $('#m-disp-num').text($(this).data('account'));
+    });
+
+    // Copy to clipboard
+    function mCopyText(elementId, btn) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            $(btn).addClass('copied').text('បានចម្លង');
+            mShowToast('បានចម្លង: ' + text);
+            setTimeout(() => {
+                $(btn).removeClass('copied').text('ចម្លង');
+            }, 2000);
+        }).catch(() => {
+            mShowToast('បានចម្លង: ' + text);
+        });
+    }
+
+    function mShowToast(msg) {
+        $('#m-toast').text(msg).fadeIn(200);
+        setTimeout(() => {
+            $('#m-toast').fadeOut(300);
+        }, 2200);
+    }
+
+    // Amount pills
+    $('.m-quick-btn').on('click', function() {
+        $('.m-quick-btn').removeClass('active');
+        $(this).addClass('active');
+        $('#m-amount-input').val($(this).data('amt'));
+        mCalculate();
+    });
+
+    $('#m-amount-input').on('input', function() {
+        const val = $(this).val();
+        $('.m-quick-btn').removeClass('active');
+        $('.m-quick-btn').each(function() {
+            if ($(this).data('amt') == val) $(this).addClass('active');
+        });
+        mCalculate();
+    });
+
+    // Promotion Selection
+    $('.m-promo-item').on('click', function() {
+        $('.m-promo-item').removeClass('active');
+        $(this).addClass('active');
+        mBonusPercent = parseFloat($(this).data('percent')) || 0;
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+        mCalculate();
+    });
+
+    // Toggle Promos
+    let mExpanded = false;
+    $('#m-btn-toggle-promos').on('click', function() {
+        mExpanded = !mExpanded;
+        if (mExpanded) {
+            $('.m-extra-promo').slideDown(200);
+            $(this).text('បង្ហាញតិចជាងនេះ');
+        } else {
+            $('.m-extra-promo').slideUp(200);
+            $(this).text('មើលប្រូម៉ូសិនទាំងអស់ (23)');
+        }
+    });
+
+    // Calculation
+    function mCalculate() {
+        const amt = parseFloat($('#m-amount-input').val()) || 0;
+        const bonus = (amt * mBonusPercent) / 100;
+        const total = amt + bonus;
+
+        $('#m-sum-deposit').text(amt.toLocaleString());
+        $('#m-sum-bonus').text(bonus > 0 ? '+' + bonus.toLocaleString() : '+0');
+        $('#m-sum-total').text(total.toLocaleString());
+    }
+
+    // File Upload Handler
+    function mHandleFile(e) {
+        const file = e.target.files[0];
+        if (file) {
+            $('#m-file-name').text(file.name);
+            $('#m-file-status').text('បានជ្រើសរើសរួចរាល់ ✓');
+            mShowToast('បានផ្ទុកឡើង: ' + file.name);
+        }
+    }
+
+    // Submit
+    function mSubmitDeposit() {
+        const amt = parseFloat($('#m-amount-input').val()) || 0;
+        if (amt <= 0) {
+            mShowToast('សូមបញ្ចូលចំនួនទឹកប្រាក់!');
+            return;
+        }
+        alert('សំណើដាក់ប្រាក់ចំនួន $' + amt + ' ត្រូវបានផ្ញើដោយជោគជ័យ!');
+    }
+
+    // Mobile Navigation Drawer Toggle
+    $('#navigation').on('click', function() {
+        $('.left-nav').toggleClass('active');
+    });
+
+    // Initial calculation
+    mCalculate();
+</script>
+
+</body>
+</html>
