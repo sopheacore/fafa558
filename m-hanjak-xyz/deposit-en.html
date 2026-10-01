@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="manifest" href="/manifest.json">
@@ -32,7 +32,7 @@
     }
     .m-deposit-container {
         padding: 12px 14px;
-        max-width: 480px;
+        max-width: 520px;
         margin: 0 auto;
     }
     .m-deposit-card {
@@ -42,26 +42,198 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
-    /* Language Bar */
-    .m-lang-bar {
+    /* User Balance Card */
+    .m-user-balance-card {
+        background: linear-gradient(135deg, #001f74 0%, #0038a8 100%);
+        border-radius: 18px;
+        padding: 16px 18px;
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: space-between;
         margin-bottom: 12px;
-        gap: 6px;
+        box-shadow: 0 8px 24px rgba(0, 31, 116, 0.28);
+        color: #ffffff;
     }
-    .m-lang-pill {
+    .m-user-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .m-user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .m-user-avatar svg {
+        width: 100%;
+        height: 100%;
+    }
+    .m-user-name {
+        font-size: 17px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.2px;
+    }
+    .m-user-sub {
         font-size: 11.5px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-        text-decoration: none;
-        color: #64748b;
-        background: #e2e8f0;
-        transition: all 0.2s ease;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
     }
-    .m-lang-pill.active {
+    .m-user-right {
+        text-align: right;
+    }
+    .m-balance-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 2px;
+        display: block;
+    }
+    .m-balance-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.3px;
+        line-height: 1.1;
+    }
+    .m-balance-val span {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        margin-left: 2px;
+    }
+
+    /* Top Navigation Tabs */
+    .m-tab-nav {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .m-tab-btn {
+        border: none;
+        background: transparent;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #64748b;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .m-tab-btn.active {
         background: #2563eb;
         color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Sub Stage Filter Buttons in History */
+    .m-stage-filter-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        margin-bottom: 14px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .m-stage-filter-btn {
+        border: 1.5px solid #e2e8f0;
+        background: #f8fafc;
+        color: #475569;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-stage-filter-btn:hover {
+        border-color: #93c5fd;
+        background: #f0f7ff;
+    }
+    .m-stage-filter-btn.active {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* History Cards */
+    .m-history-card {
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: #ffffff;
+        transition: all 0.2s ease;
+    }
+    .m-history-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .m-history-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .m-stage-badge {
+        font-size: 10.5px;
+        font-weight: 800;
+        padding: 2.5px 8px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-stage-badge.auto {
+        background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+        color: #4338ca;
+        border: 1px solid #c7d2fe;
+    }
+    .m-stage-badge.manual {
+        background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        color: #047857;
+        border: 1px solid #a7f3d0;
+    }
+    .m-status-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 20px;
+    }
+    .m-status-badge.pending {
+        background: #fef3c7;
+        color: #b45309;
+    }
+    .m-status-badge.success {
+        background: #dcfce7;
+        color: #15803d;
+    }
+    .m-status-badge.rejected {
+        background: #fee2e2;
+        color: #b91c1c;
     }
 
     .m-section-label {
@@ -721,7 +893,35 @@
             <a href="deposit-en.html" class="m-lang-pill active">🇬🇧 English</a>
         </div>
 
-        <div class="m-deposit-card">
+        <!-- Top User Profile & Account Balance Card -->
+        <div class="m-user-balance-card">
+            <div class="m-user-left">
+                <div class="m-user-avatar">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#f8fafc"></circle>
+                        <circle cx="50" cy="38" r="16" fill="#fbbf24"></circle>
+                        <path d="M22 84C22 66.3269 34.536 52 50 52C65.464 52 78 66.3269 78 84" fill="#f59e0b"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="m-user-name" id="user-display-name">phanith29</h3>
+                    <p class="m-user-sub">Your Account</p>
+                </div>
+            </div>
+            <div class="m-user-right">
+                <span class="m-balance-label">Account Balance</span>
+                <div class="m-balance-val" id="user-balance-disp">0.20 <span>USD</span></div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation (Deposit vs History) -->
+        <div class="m-tab-nav">
+            <button type="button" class="m-tab-btn active" id="tab-deposit-btn" onclick="switchDepositTab('deposit')">Deposit</button>
+            <button type="button" class="m-tab-btn" id="tab-history-btn" onclick="switchDepositTab('history')">Deposit History</button>
+        </div>
+
+        <!-- 1. Deposit Form View -->
+        <div id="view-deposit" class="m-deposit-card">
             
             <!-- 1. Select Bank -->
             <div class="m-section-label">Select Bank</div>
@@ -842,6 +1042,168 @@
                 Submit Deposit
             </button>
 
+        </div>
+
+        <!-- 2. Deposit History View with Stage Filters (Auto vs Manual) -->
+        <div id="view-history" class="m-deposit-card" style="display: none;">
+            
+            <!-- Sub Stage Filter Buttons -->
+            <div class="m-stage-filter-bar">
+                <button type="button" class="m-stage-filter-btn active" onclick="filterDepositHistory('all', this)">
+                    <span>✨ All Stages</span>
+                </button>
+                <button type="button" class="m-stage-filter-btn" onclick="filterDepositHistory('auto', this)">
+                    <span>⚡ Auto</span>
+                </button>
+                <button type="button" class="m-stage-filter-btn" onclick="filterDepositHistory('manual', this)">
+                    <span>📝 Manual</span>
+                </button>
+            </div>
+
+            <!-- History Cards List -->
+            <div id="m-deposit-history-list">
+                
+                <!-- 1. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$50.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Bonus +$5.00</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-30 20:45</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-88914</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 2. Manual Deposit -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$100.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Welcome Bonus 100%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ACLEDA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-29 15:30</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-65421</span>
+                        <span style="color: #0284c7; font-weight: 600;">Slip Verified ✓</span>
+                    </div>
+                </div>
+
+                <!-- 3. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$20.00 USD</span>
+                        <span style="font-size: 11px; color: #94a3b8;">No Bonus</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>Wing Bank</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-28 11:15</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-54129</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 4. Manual Deposit (Rejected) -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge rejected">Rejected ✗</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$30.00 USD</span>
+                        <span style="font-size: 11px; color: #ef4444; font-weight: 600;">Unclear Slip Image</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-26 18:20</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #ef4444; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-44102</span>
+                        <span>Contact 24/7 Support</span>
+                    </div>
+                </div>
+
+                <!-- 5. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$15.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Slot Bonus 30%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-24 14:05</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-32981</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 6. Manual Deposit -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$200.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Casino 15%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ACLEDA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-22 09:40</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-29188</span>
+                        <span style="color: #0284c7; font-weight: 600;">Slip Verified ✓</span>
+                    </div>
+                </div>
+
+                <!-- 7. Auto Deposit (Pending) -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge pending">Pending ⌛</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$10.00 USD</span>
+                        <span style="font-size: 11px; color: #d97706; font-weight: 600;">Verifying QR</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>Wing Bank</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-20 22:10</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-19943</span>
+                        <span style="color: #d97706; font-weight: 600;">Awaiting Gateway Confirmation</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
@@ -1096,6 +1458,36 @@
             return;
         }
         alert('Deposit request of $' + amt + ' submitted successfully!');
+    }
+
+    // Tab Switching (Deposit vs History)
+    function switchDepositTab(tab) {
+        if (tab === 'deposit') {
+            $('#tab-deposit-btn').addClass('active');
+            $('#tab-history-btn').removeClass('active');
+            $('#view-deposit').show();
+            $('#view-history').hide();
+        } else {
+            $('#tab-history-btn').addClass('active');
+            $('#tab-deposit-btn').removeClass('active');
+            $('#view-deposit').hide();
+            $('#view-history').show();
+        }
+    }
+
+    // Stage Filtering in History (All vs Auto vs Manual)
+    function filterDepositHistory(stage, btn) {
+        $('.m-stage-filter-btn').removeClass('active');
+        $(btn).addClass('active');
+        if (stage === 'all') {
+            $('#m-deposit-history-list .m-history-card').fadeIn(150);
+        } else if (stage === 'auto') {
+            $('#m-deposit-history-list .m-history-card[data-stage="auto"]').fadeIn(150);
+            $('#m-deposit-history-list .m-history-card[data-stage="manual"]').hide();
+        } else if (stage === 'manual') {
+            $('#m-deposit-history-list .m-history-card[data-stage="manual"]').fadeIn(150);
+            $('#m-deposit-history-list .m-history-card[data-stage="auto"]').hide();
+        }
     }
 
     // Mobile Navigation Drawer Toggle

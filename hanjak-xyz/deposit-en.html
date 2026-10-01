@@ -703,12 +703,12 @@
     box-sizing: border-box;
   }
   .deposit-card-container {
-    max-width: 600px;
+    max-width: 860px;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    padding: 18px 22px;
+    padding: 18px 28px;
   }
 
   /* Top Header */
@@ -745,6 +745,117 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
+  }
+
+  /* Desktop Tabs Navigation */
+  .d-tab-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2px;
+  }
+  .d-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .d-tab-btn:hover {
+    color: #2563eb;
+  }
+  .d-tab-btn.active {
+    color: #2563eb;
+    border-bottom: 3px solid #2563eb;
+    margin-bottom: -4px;
+  }
+
+  /* Sub Stage Filter Buttons in History */
+  .d-stage-filter-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .d-stage-filter-btn {
+    border: 1.5px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-stage-filter-btn:hover {
+    border-color: #93c5fd;
+    background: #f0f7ff;
+  }
+  .d-stage-filter-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  }
+
+  /* History Table */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .history-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1.5px solid #e2e8f0;
+    font-size: 12px;
+  }
+  .history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+  }
+  .history-table tr:hover td {
+    background: #f8fafc;
+  }
+  .d-stage-badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .d-stage-badge.auto {
+    background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+  }
+  .d-stage-badge.manual {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    color: #047857;
+    border: 1px solid #a7f3d0;
   }
 
   /* Main Unified Compact Flow */
@@ -1373,7 +1484,14 @@
         </div>
       </div>
 
-      <div class="deposit-flow">
+      <!-- Desktop Navigation Tabs -->
+      <div class="d-tab-nav">
+        <button type="button" class="d-tab-btn active" id="d-tab-deposit-btn" onclick="dSwitchDepositTab('deposit')">Deposit</button>
+        <button type="button" class="d-tab-btn" id="d-tab-history-btn" onclick="dSwitchDepositTab('history')">History</button>
+      </div>
+
+      <!-- 1. Deposit Form View -->
+      <div id="d-view-deposit" class="deposit-flow">
         
         <!-- 1. Bank Selection -->
         <div class="bank-section">
@@ -1520,6 +1638,94 @@
           </button>
         </div>
 
+      </div>
+
+      <!-- 2. Deposit History Table View -->
+      <div id="d-view-history" style="display: none; padding-top: 6px;">
+        <div class="d-stage-filter-bar">
+          <button type="button" class="d-stage-filter-btn active" onclick="dFilterDepositHistory('all', this)">All</button>
+          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('auto', this)">⚡ Auto</button>
+          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('manual', this)">📝 Manual</button>
+        </div>
+
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Stage</th>
+              <th>Amount</th>
+              <th>Bonus</th>
+              <th>Bank</th>
+              <th>Status</th>
+              <th>Ref ID</th>
+            </tr>
+          </thead>
+          <tbody id="d-deposit-history-tbody">
+            <tr data-stage="auto">
+              <td>2026-09-30 20:45</td>
+              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$50.00 USD</strong></td>
+              <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$5.00 (Sport 10%)</span></td>
+              <td>ABA</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Success ✓</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-AUTO-88914</td>
+            </tr>
+            <tr data-stage="manual">
+              <td>2026-09-29 15:30</td>
+              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$100.00 USD</strong></td>
+              <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$100.00 (Welcome 100%)</span></td>
+              <td>ACLEDA</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Success ✓</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-MAN-65421</td>
+            </tr>
+            <tr data-stage="auto">
+              <td>2026-09-28 11:15</td>
+              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$20.00 USD</strong></td>
+              <td><span style="color: #94a3b8; font-size: 11.5px;">No Bonus</span></td>
+              <td>Wing Bank</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Success ✓</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-AUTO-54129</td>
+            </tr>
+            <tr data-stage="manual">
+              <td>2026-09-26 18:20</td>
+              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$30.00 USD</strong></td>
+              <td><span style="color: #ef4444; font-size: 11px; font-weight: 600;">Blurry slip</span></td>
+              <td>ABA</td>
+              <td><span style="background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Rejected ✗</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-MAN-44102</td>
+            </tr>
+            <tr data-stage="auto">
+              <td>2026-09-24 14:05</td>
+              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$15.00 USD</strong></td>
+              <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$4.50 (Slot 30%)</span></td>
+              <td>ABA</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Success ✓</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-AUTO-32981</td>
+            </tr>
+            <tr data-stage="manual">
+              <td>2026-09-22 09:40</td>
+              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$200.00 USD</strong></td>
+              <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$30.00 (Casino 15%)</span></td>
+              <td>ACLEDA</td>
+              <td><span style="background: #dcfce7; color: #15803d; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Success ✓</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-MAN-29188</td>
+            </tr>
+            <tr data-stage="auto">
+              <td>2026-09-20 22:10</td>
+              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$10.00 USD</strong></td>
+              <td><span style="color: #d97706; font-weight: 600; font-size: 11px;">Verifying QR...</span></td>
+              <td>Wing Bank</td>
+              <td><span style="background: #fef3c7; color: #b45309; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;">Pending ⌛</span></td>
+              <td style="color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px;">DEP-AUTO-19943</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>
@@ -1779,6 +1985,36 @@
     $("#preview-img").attr("src", "");
     $("#file-preview-view").hide();
     $("#upload-default-view").css("display", "flex");
+  }
+
+  // Desktop Tab Switching (Deposit Form vs History)
+  function dSwitchDepositTab(tab) {
+    if (tab === 'deposit') {
+      $('#d-tab-deposit-btn').addClass('active');
+      $('#d-tab-history-btn').removeClass('active');
+      $('#d-view-deposit').show();
+      $('#d-view-history').hide();
+    } else {
+      $('#d-tab-history-btn').addClass('active');
+      $('#d-tab-deposit-btn').removeClass('active');
+      $('#d-view-deposit').hide();
+      $('#d-view-history').show();
+    }
+  }
+
+  // Desktop History Stage Filter (All vs Auto vs Manual)
+  function dFilterDepositHistory(stage, btn) {
+    $('.d-stage-filter-btn').removeClass('active');
+    $(btn).addClass('active');
+    if (stage === 'all') {
+      $('#d-deposit-history-tbody tr').fadeIn(150);
+    } else if (stage === 'auto') {
+      $('#d-deposit-history-tbody tr[data-stage="auto"]').fadeIn(150);
+      $('#d-deposit-history-tbody tr[data-stage="manual"]').hide();
+    } else if (stage === 'manual') {
+      $('#d-deposit-history-tbody tr[data-stage="manual"]').fadeIn(150);
+      $('#d-deposit-history-tbody tr[data-stage="auto"]').hide();
+    }
   }
 
   // Submission
