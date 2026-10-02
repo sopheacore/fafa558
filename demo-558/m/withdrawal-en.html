@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<title>Withdrawal - 558fajio.xyz-3G</title>
+<meta name="Keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon-fafa558.png" type="image/x-icon">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_fafa558.css">
+<link rel="stylesheet" href="css/kh-content.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" async=""></script>
+<script src="js/main.js"></script>
+
+<style>
+    /* Scoped Mobile Withdrawal Page Styles (EN) */
+    body {
+        background-color: #ffffff;
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    }
+    .m-withdraw-page {
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+        background: #ffffff;
+        min-height: 100vh;
+        padding-top: 52px;
+        padding-bottom: 90px;
+    }
+    .m-withdraw-container {
+        padding: 14px 14px;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    /* Top User Profile Balance Card */
+    .m-user-balance-card {
+        background: linear-gradient(135deg, #7c1a8e 0%, #4a0459 100%);
+        border-radius: 20px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        box-shadow: 0 8px 24px rgba(74, 4, 89, 0.28);
+        color: #ffffff;
+    }
+    .m-user-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .m-user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .m-user-avatar svg {
+        width: 100%;
+        height: 100%;
+    }
+    .m-user-name {
+        font-size: 17px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.2px;
+    }
+    .m-user-sub {
+        font-size: 11.5px;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
+    }
+    .m-user-right {
+        text-align: right;
+    }
+    .m-balance-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 2px;
+        display: block;
+    }
+    .m-balance-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.3px;
+        line-height: 1.1;
+    }
+    .m-balance-val span {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        margin-left: 2px;
+    }
+
+    /* Top Navigation Tabs */
+    .m-tab-nav {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .m-tab-btn {
+        border: none;
+        background: transparent;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #475569;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    .m-tab-btn.active { background: #8a2be2;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Main Withdrawal Card */
+    .m-withdraw-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 20px 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .m-section-label {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Bank Cards List */
+    .m-bank-item {
+        border: 2px solid #2563eb;
+        background: #f8faff;
+        border-radius: 16px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-bank-item-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .m-bank-logo-badge {
+        width: 52px;
+        height: 42px;
+        background: #004f71;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 13.5px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        flex-shrink: 0;
+    }
+    .m-bank-logo-badge.acleda {
+        background: #002e6e;
+    }
+    .m-bank-logo-badge.wing {
+        background: #73be28;
+    }
+    .m-bank-title {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-subtitle {
+        font-size: 12px;
+        color: #64748b;
+        margin: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-check-circle {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    /* Dashed Add Bank Button */
+    .m-btn-add-bank {
+        width: 100%;
+        border: 1.5px dashed #cbd5e1;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #2563eb;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.2s ease;
+    }
+    .m-btn-add-bank:hover {
+        border-color: #3b82f6;
+        background: #f8faff;
+    }
+    .m-add-icon-circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    /* Notice Box */
+    .m-notice-box {
+        background: #fffbeb;
+        border: 1px solid #fef3c7;
+        border-radius: 12px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .m-notice-icon {
+        color: #d97706;
+        font-size: 16px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1.5px solid #d97706;
+        font-weight: bold;
+        font-family: serif;
+    }
+    .m-notice-text {
+        font-size: 12px;
+        color: #78350f;
+        margin: 0;
+        font-weight: 600;
+    }
+    .m-notice-text strong {
+        color: #92400e;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Amount Input Box */
+    .m-amount-wrapper {
+        border: 1.5px solid #dbeafe;
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 8px 12px 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        transition: all 0.2s ease;
+    }
+    .m-amount-wrapper:focus-within {
+        border-color: #2563eb;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .m-amount-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+    }
+    .m-currency-label {
+        font-size: 15px;
+        font-weight: 800;
+        color: #64748b;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-amount-field {
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        outline: none;
+        width: 100%;
+    }
+    .m-btn-withdraw-all {
+        border: none;
+        background: #e0e7ff;
+        color: #4338ca;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+    }
+    .m-btn-withdraw-all:hover {
+        background: #c7d2fe;
+    }
+
+    /* Submit Button */
+    .m-btn-submit-withdraw {
+        width: 100%;
+        height: 48px;
+        background: #cbd5e1;
+        color: #ffffff;
+        border: none;
+        border-radius: 14px;
+        font-size: 15.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+    .m-btn-submit-withdraw.ready {
+        background: #2563eb;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Modal Styles */
+    .m-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        padding: 16px;
+    }
+    .m-modal-box {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 22px 18px;
+        width: 100%;
+        max-width: 380px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .m-modal-title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 14px 0;
+        text-align: center;
+    }
+    .m-form-group {
+        margin-bottom: 12px;
+    }
+    .m-form-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #475569;
+        margin-bottom: 4px;
+        display: block;
+    }
+    .m-form-control {
+        width: 100%;
+        height: 42px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 0 12px;
+        font-size: 13.5px;
+        outline: none;
+        font-family: inherit;
+    }
+    .m-form-control:focus {
+        border-color: #2563eb;
+    }
+
+    /* History View Container */
+    #view-history {
+        display: none;
+    }
+    .m-history-card {
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: #ffffff;
+    }
+    .m-history-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .m-status-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 20px;
+    }
+    .m-status-badge.pending {
+        background: #fef3c7;
+        color: #b45309;
+    }
+    .m-status-badge.success {
+        background: #dcfce7;
+        color: #15803d;
+    }
+    .m-status-badge.rejected {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+    /* Toast Notification */
+    .m-toast {
+        position: fixed;
+        bottom: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #ffffff;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 999999;
+        display: none;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+    /* Header Lang Switch Button */
+    .btn-lang-switch {
+        background: linear-gradient(135deg, #1e40af, #2563eb);
+        color: #ffffff !important;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: 800;
+        margin-right: 6px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    }
+</style>
+<style>
+    header {
+        overflow: hidden;
+    }
+    header .wrap-header {
+        height: 50px;
+        min-height: 50px;
+        overflow: hidden;
+        padding: 4px 7px;
+    }
+    header .logo {
+        height: 42px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    header .logo a {
+        display: flex !important;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+    }
+    header .logo img {
+        width: 7.2rem !important;
+        margin-top: 0 !important;
+        object-fit: cover;
+        object-position: center 52%;
+    }
+    header .btn-login,
+    header .btn-register {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+<style>
+    nav .ho a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-home.png);}nav .ho a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-home-o.png);}
+    nav .transfer a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-transfer.png);}nav .transfer a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-transfer-o.png);}
+    nav .telegram-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-telegram.png);}nav .telegram-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-telegram-o.png);}
+    nav .facebook-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-facebook.png);}nav .facebook-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-facebook-o.png);background-position: 10px 8px;background-repeat: no-repeat;}
+    nav .achievement-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/achievement.png);}nav .achievement-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/achievement-o.png);background-position: 10px 8px;background-repeat: no-repeat;}
+    nav .faq a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq.png);}nav .faq a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq-o.png);}
+    nav .sports a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-sports.png);}nav .sports a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-sports-o.png);}
+    nav .live a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-live.png);}nav .live a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-live-o.png);}
+    nav .game a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-game.png);}nav .game a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-game-o.png);}
+    nav .fishing a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-fishing.png);}nav .fishing a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-fishing-o.png);}
+    nav .d a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-d.png);}nav .d a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-d-o.png);}
+    nav .number a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-number.png);}nav .number a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-number-o.png);}
+    nav .cockfight a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-cockfight.png);}nav .cockfight a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-cockfight-o.png);}
+    nav .rewards-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/reward.png);}nav .rewards-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/reward-o.png);}
+    nav .poker a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-poker.png);}nav .poker a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-poker-o.png);}
+    nav .pr a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-promotion.png);}nav .pr a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-promotion-o.png);}
+    nav .rtp-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-rtp.png);}nav .rtp-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-rtp-o.png);}
+    nav .con a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-con.png);}nav .con a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-con-o.png);}
+    nav .faq a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq.png);}nav .faq a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq-o.png);}
+    nav .join a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-join.png);}nav .join a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-join-o.png);}
+    nav .lang a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-language.png);}nav .lang a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-language-o.png);}
+    nav .mobile a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-mobile.png);}nav .mobile a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-mobile-o.png);}
+    nav .news a, nav .news a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-news.png);}
+    nav .tnc a, nav .tnc a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-tnc.png);}
+    nav .logout a, nav .logout a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-logout.png);}
+    nav .free-promo a, nav .free-promo a:hover {background-image: url('https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/free-promo.png');background-size: 32px;background-position: 10px;background-repeat: no-repeat;}
+</style>
+<style>
+    body { background: #ffffff !important; width: 100%; max-width: 450px; margin: 0 auto 70px auto !important; }
+    .m-deposit-page { background: #f8fafc !important; min-height: 100vh; padding-top: 54px; padding-bottom: 90px; }
+    .m-deposit-card { background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important; }
+    </style>
+</head>
+<body style="background:#fff; color:#222;">
+
+    
+    
+
+<!-- Mobile Header -->
+<header>
+    <div class="wrap-header zerogridh">
+        <div class="wrap-content zerogrid">
+            <label id="navigation" class="left">
+                <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/menu.png" width="36" height="21" />
+            </label>
+            <div class="logo">
+                <a href="index.html" data-tip="1" class="d-block">
+                                            <img src="https://banner-s2.api-c1.com/logos/fafa558/logo_20260912162341_8141.gif" />
+                                    </a>
+            </div>
+            <div class="header-right1 d-flex align-items-center">
+                                    <div class="left-in-right"><a href="login.html" class="btns btn-login">ចូល</a></div>
+                                        <div class="left-in-right">
+                        <a href="register.html" class="btns btn-register">
+                            <span class="btn-register-blink">ចុះឈ្មោះ</span>
+                        </a>
+                    </div>
+                                                </div>
+        </div>
+    </div>
+</header>
+
+<!-- Left Sidebar Navigation Drawer -->
+
+<nav class="left-nav">
+    <div class="left-nav__bg">
+        <ul>
+            <li class="ho side-item">
+                <a href="index.html">ទំព័រដើម</a>
+            </li>
+
+      <li class="transfer side-item">
+          <a class="text-white" href="deposit.html" style="display:flex;align-items:center;gap:10px;">
+              <span style="background:#10b981;color:#fff;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold;">+ ដាក់ប្រាក់</span>
+              <span>ការដាក់ប្រាក់ (Deposit)</span>
+          </a>
+      </li>
+      <li class="transfer side-item">
+          <a class="text-white" href="withdrawal.html" style="display:flex;align-items:center;gap:10px;">
+              <span style="background:#f59e0b;color:#000;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold;">- ដកប្រាក់</span>
+              <span>ការដកប្រាក់ (Withdrawal)</span>
+          </a>
+      </li>
+
+                            <li class="transfer side-item">
+                    <a class="text-white" href="login.html">កាបូបលុយខ្ញុំ</a>
+                </li>
+                            <li class="achievement-icon side-item">
+                    <a href="promotion.html">ប្រាក់រង្វាន់ពិសេស</a>
+                </li>
+                            <li class="faq side-item">
+                    <a href="news.html">ការជូនដំណឹង</a>
+                </li>
+                                        <li class="sports side-item">
+                                        <a href="sports.html" class="auth_only">កីឡា</a>
+                </li>
+                        <li class="live side-item">
+                <a href="casino.html" class="auth_only">កាស៊ីណូ</a>
+            </li>
+            <li class="game side-item">
+                <a href="slots.html" class="auth_only">ហ្គេមស្លត់</a>
+            </li>
+                            <li class="fishing side-item">
+                    <a href="login.html" class="auth_only">បាញ់ត្រី</a>
+                </li>
+                            <li class="d side-item">
+                    <a href="lottery.html" class="auth_only">ឆ្នោត</a>
+                </li>
+                        <li class="number side-item">
+                <a href="lottery.html" class="auth_only">ល្បែងលេខ</a>
+            </li>
+                            <li class="cockfight side-item">
+                    <a href="cockfight.html" class="auth_only">មាន់ជល់</a>
+                </li>
+                        <li class="rewards-icon side-item">
+                <a href="login.html">រង្វាន់ផ្សេងៗ</a>
+            </li>
+                            <li class="pr side-item">
+                    <a href="promotion.html">ការផ្តល់ជូន</a>
+                </li>
+                                        <li class="faq side-item">
+                    <a href="news.html">ពត៌មាន</a>
+                </li>
+                        <li class="faq side-item">
+                <a href="terms.html">ល័ក្ខខ័ណ្ឌ</a>
+            </li>
+            <li class="join side-item">
+                                <a href="affiliate.html">ក្លាយជាភ្នាក់ងារ </a>
+            </li>
+            <li class="con side-item">
+                                <a href="" target="_blank">ទំនាក់ទំនងយើងខ្ញុំ</a>
+            </li>
+                            <li class="mobile side-item">
+                    <a href="../index.html">
+                        កុំព្យូទ័រ                    </a>
+                </li>
+                                <li class="lang has-submenu kh side-item">
+                                        <a class="icon side-item" style="background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/kh.svg);" href="#">ភាសា</a>
+                    <ul>
+                                                        <li>
+                                    <a href="/index.php?lang=en" class="side-item">
+                                        <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/kh.svg" />
+                                        English                                    </a>
+                                </li>
+                                                        <li>
+                                    <a href="/index.php?lang=cn" class="side-item">
+                                        <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/cn.svg" />
+                                        简体中文                                    </a>
+                                </li>
+                                            </ul>
+                </li>
+            
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Mobile Withdrawal Page -->
+<div class="m-withdraw-page">
+    <div class="m-withdraw-container">
+    <div class="title-page" style="background:#8a2be2;color:#fff;font-size:15px;font-weight:700;padding:10px 14px;border-radius:8px;margin-bottom:12px;">Withdrawal</div>
+        
+        <!-- Top User Profile & Account Balance Card -->
+        <div class="m-user-balance-card">
+            <div class="m-user-left">
+                <div class="m-user-avatar">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#f8fafc"></circle>
+                        <circle cx="50" cy="38" r="16" fill="#fbbf24"></circle>
+                        <path d="M22 84C22 66.3269 34.536 52 50 52C65.464 52 78 66.3269 78 84" fill="#f59e0b"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="m-user-name" id="user-display-name">phanith29</h3>
+                    <p class="m-user-sub">Your Account</p>
+                </div>
+            </div>
+            <div class="m-user-right">
+                <span class="m-balance-label">Account Balance</span>
+                <div class="m-balance-val" id="user-balance-disp">0.20 <span>USD</span></div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation (Withdrawal vs History) -->
+        <div class="m-tab-nav">
+            <button type="button" class="m-tab-btn active" id="tab-withdraw-btn" onclick="switchWithdrawTab('withdraw')">Withdrawal</button>
+            <button type="button" class="m-tab-btn" id="tab-history-btn" onclick="switchWithdrawTab('history')">Withdrawal History</button>
+        </div>
+
+        <!-- 1. Withdrawal Form View -->
+        <div id="view-withdraw" class="m-withdraw-card">
+            
+            <!-- Bank Selection Section -->
+            <div class="m-section-label">Select Bank Account</div>
+            <div id="bank-accounts-container">
+                <!-- Selected Bank Card (ABA Default) -->
+                <div class="m-bank-item" id="bank-card-1">
+                    <div class="m-bank-item-left">
+                        <div class="m-bank-logo-badge">ABA</div>
+                        <div>
+                            <h4 class="m-bank-title">ABA BANK</h4>
+                            <p class="m-bank-subtitle">phanith · 213213520</p>
+                        </div>
+                    </div>
+                    <div class="m-bank-check-circle">✓</div>
+                </div>
+            </div>
+
+            <!-- Dashed Add Bank Button -->
+            <button type="button" class="m-btn-add-bank" onclick="openAddBankModal()">
+                <div class="m-add-icon-circle">+</div>
+                <span>Add Bank Account</span>
+            </button>
+
+            <!-- Selected Account Notice / Info -->
+            <div class="m-section-label">Selected Account Info</div>
+            <div class="m-notice-box">
+                <div class="m-notice-icon">i</div>
+                <p class="m-notice-text">Minimum withdrawal amount <strong>USD 1</strong></p>
+            </div>
+
+            <!-- Amount Section -->
+            <div class="m-section-label">Withdrawal Amount</div>
+            <div class="m-amount-wrapper">
+                <div class="m-amount-left">
+                    <span class="m-currency-label">USD</span>
+                    <input type="number" id="m-withdraw-amount" class="m-amount-field" placeholder="0.00" min="1" step="any" oninput="checkWithdrawReady()">
+                </div>
+                <button type="button" class="m-btn-withdraw-all" onclick="withdrawAll()">Withdraw All</button>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" class="m-btn-submit-withdraw" id="btn-submit-withdraw" onclick="submitWithdrawal()">
+                Submit
+            </button>
+
+        </div>
+
+        <!-- 2. Withdrawal History View -->
+        <div id="view-history" class="m-withdraw-card">
+            <div class="m-section-label" style="margin-bottom: 14px;">Withdrawal Records</div>
+            
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$100.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-30 18:25</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$50.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-29 21:10</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$20.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-28 14:20</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$150.00 USD</span>
+                    <span class="m-status-badge rejected">Rejected ✗</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ACLEDA BANK (..8821)</span>
+                    <span>2026-09-26 11:35</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #dc2626; font-weight: 600;">Account name mismatch</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$80.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-24 16:50</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$35.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>Wing Bank (..4109)</span>
+                    <span>2026-09-21 20:15</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$200.00 USD</span>
+                    <span class="m-status-badge rejected">Rejected ✗</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-18 13:40</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #dc2626; font-weight: 600;">Turnover requirement not met</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$50.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-15 09:45</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$120.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ABA BANK (..3520)</span>
+                    <span>2026-09-10 17:30</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+
+            <div class="m-history-card">
+                <div class="m-history-row" style="margin-bottom: 6px;">
+                    <span style="font-weight: 700; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">$65.00 USD</span>
+                    <span class="m-status-badge success">Successful ✓</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                    <span>ACLEDA BANK (..8821)</span>
+                    <span>2026-09-05 22:05</span>
+                </div>
+                <div class="m-history-row" style="font-size: 11.5px; color: #64748b; border-top: 1px dashed #e2e8f0; padding-top: 5px;">
+                    <span>Remark:</span>
+                    <span style="color: #0f172a; font-weight: 600;">Completed</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal: Add Bank Account -->
+<div class="m-modal-backdrop" id="modal-add-bank">
+    <div class="m-modal-box">
+        <h4 class="m-modal-title">Add Bank Account</h4>
+        <div class="m-form-group">
+            <label class="m-form-label">Bank</label>
+            <select id="new-bank-type" class="m-form-control">
+                <option value="ABA" data-class="aba">ABA BANK</option>
+                <option value="ACLEDA" data-class="acleda">ACLEDA BANK</option>
+                <option value="Wing" data-class="wing">Wing Bank</option>
+            </select>
+        </div>
+        <div class="m-form-group">
+            <label class="m-form-label">Account Name</label>
+            <input type="text" id="new-bank-name" class="m-form-control" placeholder="e.g. PHANITH">
+        </div>
+        <div class="m-form-group">
+            <label class="m-form-label">Account Number</label>
+            <input type="text" id="new-bank-account" class="m-form-control" placeholder="e.g. 001 234 567">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px;">
+            <button type="button" onclick="closeAddBankModal()" style="border: 1.5px solid #cbd5e1; background: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700; color: #64748b;">Cancel</button>
+            <button type="button" onclick="saveNewBank()" style="border: none; background: #2563eb; color: #ffffff; border-radius: 10px; padding: 10px; font-weight: 700;">Save</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Message -->
+<div class="m-toast" id="m-toast"></div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="footer">
+    <div class="footer-link">
+        <ul>
+                            <li>
+                    <a href="index.html">
+                        <div class="box-footer-link">
+                                                            <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/footer/home.png" />
+                                                        <div class="title-link-footer">ទំព័រដើម</div>
+                        </div>
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?page=login">
+                    <div class="box-footer-link">
+                        <img src="images/rewards.png">
+                        <div class="title-link-footer">Rewards</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="deposit.html">
+                    <div class="box-footer-link">
+                        <img src="images/icon-deposit.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer">Deposit</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="withdrawal-en.html" class="active">
+                    <div class="box-footer-link">
+                        <img src="images/icon-transfer.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer" style="color: #ffc107;">Withdrawal</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="openChatIcon();return false;">
+                    <div class="box-footer-link">
+                        <img src="images/support.png">
+                        <div class="title-link-footer" style="white-space: nowrap;">Contact Us</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const userBalance = 0.20;
+
+    function showToast(msg) {
+        $('#m-toast').text(msg).fadeIn(200);
+        setTimeout(() => {
+            $('#m-toast').fadeOut(300);
+        }, 2200);
+    }
+
+    function switchWithdrawTab(tab) {
+        if (tab === 'withdraw') {
+            $('#tab-withdraw-btn').addClass('active');
+            $('#tab-history-btn').removeClass('active');
+            $('#view-withdraw').show();
+            $('#view-history').hide();
+        } else {
+            $('#tab-history-btn').addClass('active');
+            $('#tab-withdraw-btn').removeClass('active');
+            $('#view-withdraw').hide();
+            $('#view-history').show();
+        }
+    }
+
+    function withdrawAll() {
+        $('#m-withdraw-amount').val(userBalance.toFixed(2));
+        checkWithdrawReady();
+    }
+
+    function checkWithdrawReady() {
+        const val = parseFloat($('#m-withdraw-amount').val()) || 0;
+        if (val >= 1) {
+            $('#btn-submit-withdraw').addClass('ready');
+        } else {
+            $('#btn-submit-withdraw').removeClass('ready');
+        }
+    }
+
+    function submitWithdrawal() {
+        const val = parseFloat($('#m-withdraw-amount').val()) || 0;
+        if (val < 1) {
+            showToast('Minimum withdrawal amount is USD 1.00!');
+            $('#m-withdraw-amount').focus();
+            return;
+        }
+        if (val > userBalance) {
+            showToast('Insufficient account balance!');
+            return;
+        }
+
+        alert('Withdrawal request for $' + val.toFixed(2) + ' submitted successfully!');
+        $('#m-withdraw-amount').val('');
+        checkWithdrawReady();
+    }
+
+    function openAddBankModal() {
+        $('#modal-add-bank').css('display', 'flex');
+    }
+
+    function closeAddBankModal() {
+        $('#modal-add-bank').hide();
+    }
+
+    function saveNewBank() {
+        const bType = $('#new-bank-type').val();
+        const bClass = $('#new-bank-type option:selected').data('class') || '';
+        const bName = $('#new-bank-name').val().trim() || 'PHANITH';
+        const bAcc = $('#new-bank-account').val().trim();
+
+        if (!bAcc) {
+            showToast('Please enter bank account number!');
+            return;
+        }
+
+        const newHtml = `
+            <div class="m-bank-item" style="border-color: #cbd5e1; background: #ffffff;" onclick="selectBank(this)">
+                <div class="m-bank-item-left">
+                    <div class="m-bank-logo-badge ${bClass}">${bType}</div>
+                    <div>
+                        <h4 class="m-bank-title">${bType} BANK</h4>
+                        <p class="m-bank-subtitle">${bName} · ${bAcc}</p>
+                    </div>
+                </div>
+                <div class="m-bank-check-circle" style="display:none;">✓</div>
+            </div>
+        `;
+        $('#bank-accounts-container').append(newHtml);
+        closeAddBankModal();
+        showToast('Bank account added successfully!');
+    }
+
+    function selectBank(elem) {
+        $('.m-bank-item').css({ 'border-color': '#cbd5e1', 'background': '#ffffff' });
+        $('.m-bank-check-circle').hide();
+        $(elem).css({ 'border-color': '#2563eb', 'background': '#f8faff' });
+        $(elem).find('.m-bank-check-circle').show();
+    }
+
+    // Mobile Navigation Drawer Toggle
+    $('#navigation').on('click', function() {
+        $('.left-nav').toggleClass('active');
+    });
+</script>
+
+<script src="js/demo_auth.js"></script>
+
+    <!-- Discrete Floating Switcher (Non-intrusive) -->
+    <a href="../index.html" id="clone-desktop-btn" style="position:fixed;bottom:15px;right:15px;z-index:99999;background:rgba(0,0,0,0.75);color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;gap:4px;">
+        <span>🖥️ Desktop</span>
+    </a>
+    
+</body>
+</html>

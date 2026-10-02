@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html lang="ca"><head>
+<!DOCTYPE html><html lang="ca"><head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="window-target" content="_top">
@@ -773,6 +773,8 @@ if(document.getElementById("datepicker1")){
           </div>
         </div>
         <div class="subnav"><a href="/kh/promotion" class="subnavbtn">ការផ្តល់ជូន</a></div>
+        <div class="subnav"><a href="/kh/challenges" class="subnavbtn">បេសកកម្មពិសេស</a></div>
+        <div class="subnav"><a href="/kh/rewards" class="subnavbtn">រង្វាន់</a></div>
         <div class="subnav"><a href="deposit.html" class="subnavbtn" style="color: #ffc107!important;">ដាក់ប្រាក់</a></div>
         <div class="subnav"><a href="withdrawal.html" class="subnavbtn">ដកប្រាក់</a></div>
       </div>
@@ -790,7 +792,7 @@ if(document.getElementById("datepicker1")){
     box-sizing: border-box;
   }
   .deposit-card-container {
-    max-width: 860px;
+    max-width: 100%;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 16px;
@@ -916,6 +918,7 @@ if(document.getElementById("datepicker1")){
     border-bottom: 1px solid #f1f5f9;
     color: #334155;
     vertical-align: middle;
+    white-space: nowrap;
   }
   .history-table tr:hover td {
     background: #f8fafc;
@@ -1647,7 +1650,7 @@ if(document.getElementById("datepicker1")){
               </div>
               <div class="cat-promo-hero-body">
                 <div class="cat-promo-tag-row">
-                  <span class="cat-promo-badge-tag">✨ ប្រូម៉ូសិនពិសេស</span>
+                  <span class="cat-promo-badge-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="display:inline;vertical-align:middle"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> ប្រូម៉ូសិនពិសេស</span>
                   <span class="cat-promo-badge" id="cat-promo-status">1/5</span>
                 </div>
                 <h4 class="cat-promo-title-text">ប្រូម៉ូសិនពិសេសពី <span id="cat-promo-name">កីឡា</span></h4>
@@ -1723,9 +1726,9 @@ if(document.getElementById("datepicker1")){
       <!-- 2. Deposit History Table View (Auto vs Manual Stages) -->
       <div id="d-view-history" style="display: none; padding-top: 6px;">
         <div class="d-stage-filter-bar">
-          <button type="button" class="d-stage-filter-btn active" onclick="dFilterDepositHistory('all', this)">✨ ទាំងអស់ (All)</button>
-          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('auto', this)">⚡ Auto</button>
-          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('manual', this)">📝 Manual</button>
+          <button type="button" class="d-stage-filter-btn active" onclick="dFilterDepositHistory('all', this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> ទាំងអស់ (All)</button>
+          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('auto', this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Auto</button>
+          <button type="button" class="d-stage-filter-btn" onclick="dFilterDepositHistory('manual', this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Manual</button>
         </div>
 
         <table class="history-table">
@@ -1743,7 +1746,7 @@ if(document.getElementById("datepicker1")){
           <tbody id="d-deposit-history-tbody">
             <tr data-stage="auto">
               <td>2026-09-30 20:45</td>
-              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><span class="d-stage-badge auto"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Auto</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$50.00 USD</strong></td>
               <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$5.00 (Sport 10%)</span></td>
               <td>ABA</td>
@@ -1752,7 +1755,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="manual">
               <td>2026-09-29 15:30</td>
-              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><span class="d-stage-badge manual"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Manual</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$100.00 USD</strong></td>
               <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$100.00 (Welcome 100%)</span></td>
               <td>ACLEDA</td>
@@ -1761,7 +1764,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="auto">
               <td>2026-09-28 11:15</td>
-              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><span class="d-stage-badge auto"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Auto</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$20.00 USD</strong></td>
               <td><span style="color: #94a3b8; font-size: 11.5px;">គ្មានប្រាក់រង្វាន់</span></td>
               <td>Wing Bank</td>
@@ -1770,7 +1773,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="manual">
               <td>2026-09-26 18:20</td>
-              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><span class="d-stage-badge manual"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Manual</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$30.00 USD</strong></td>
               <td><span style="color: #ef4444; font-size: 11px; font-weight: 600;">វិក្កយបត្រមិនច្បាស់លាស់</span></td>
               <td>ABA</td>
@@ -1779,7 +1782,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="auto">
               <td>2026-09-24 14:05</td>
-              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><span class="d-stage-badge auto"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Auto</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$15.00 USD</strong></td>
               <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$4.50 (Slot 30%)</span></td>
               <td>ABA</td>
@@ -1788,7 +1791,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="manual">
               <td>2026-09-22 09:40</td>
-              <td><span class="d-stage-badge manual">📝 Manual</span></td>
+              <td><span class="d-stage-badge manual"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Manual</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$200.00 USD</strong></td>
               <td><span style="color: #d97706; font-weight: 700; font-size: 11.5px;">+$30.00 (Casino 15%)</span></td>
               <td>ACLEDA</td>
@@ -1797,7 +1800,7 @@ if(document.getElementById("datepicker1")){
             </tr>
             <tr data-stage="auto">
               <td>2026-09-20 22:10</td>
-              <td><span class="d-stage-badge auto">⚡ Auto</span></td>
+              <td><span class="d-stage-badge auto"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Auto</span></td>
               <td><strong style="color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$10.00 USD</strong></td>
               <td><span style="color: #d97706; font-weight: 600; font-size: 11px;">កំពុងផ្ទៀងផ្ទាត់ QR</span></td>
               <td>Wing Bank</td>

@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<title>Deposit - 558fajio.xyz-3G</title>
+<meta name="Keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon-fafa558.png" type="image/x-icon">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_fafa558.css">
+<link rel="stylesheet" href="css/kh-content.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" async=""></script>
+<script src="js/main.js"></script>
+
+<style>
+    /* Scoped Mobile Deposit Page Styles (EN) */
+    .m-deposit-page {
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+        background: #ffffff;
+        min-height: 100vh;
+        padding-top: 54px;
+        padding-bottom: 90px;
+    }
+    .m-deposit-container {
+        padding: 12px 14px;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+    .m-deposit-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 20px 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* User Balance Card */
+    .m-user-balance-card {
+        background: linear-gradient(135deg, #7c1a8e 0%, #4a0459 100%);
+        border-radius: 18px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        box-shadow: 0 8px 24px rgba(74, 4, 89, 0.28);
+        color: #ffffff;
+    }
+    .m-user-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .m-user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .m-user-avatar svg {
+        width: 100%;
+        height: 100%;
+    }
+    .m-user-name {
+        font-size: 17px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 2px 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.2px;
+    }
+    .m-user-sub {
+        font-size: 11.5px;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
+    }
+    .m-user-right {
+        text-align: right;
+    }
+    .m-balance-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 2px;
+        display: block;
+    }
+    .m-balance-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.3px;
+        line-height: 1.1;
+    }
+    .m-balance-val span {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
+        margin-left: 2px;
+    }
+
+    /* Top Navigation Tabs */
+    .m-tab-nav {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .m-tab-btn {
+        border: none;
+        background: transparent;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #64748b;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .m-tab-btn.active { background: #8a2be2;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Sub Stage Filter Buttons in History */
+    .m-stage-filter-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        margin-bottom: 14px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .m-stage-filter-btn {
+        border: 1.5px solid #e2e8f0;
+        background: #f8fafc;
+        color: #475569;
+        font-size: 11.5px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-stage-filter-btn:hover {
+        border-color: #93c5fd;
+        background: #f0f7ff;
+    }
+    .m-stage-filter-btn.active {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* History Cards */
+    .m-history-card {
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        background: #ffffff;
+        transition: all 0.2s ease;
+    }
+    .m-history-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .m-history-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .m-stage-badge {
+        font-size: 10.5px;
+        font-weight: 800;
+        padding: 2.5px 8px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-stage-badge.auto {
+        background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+        color: #4338ca;
+        border: 1px solid #c7d2fe;
+    }
+    .m-stage-badge.manual {
+        background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        color: #047857;
+        border: 1px solid #a7f3d0;
+    }
+    .m-status-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 20px;
+    }
+    .m-status-badge.pending {
+        background: #fef3c7;
+        color: #b45309;
+    }
+    .m-status-badge.success {
+        background: #dcfce7;
+        color: #15803d;
+    }
+    .m-status-badge.rejected {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .m-section-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Bank Selector (3 in a row) */
+    .m-bank-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .m-bank-card {
+        position: relative;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 14px 6px 10px 6px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .m-bank-card.active {
+        border: 2px solid #2563eb;
+        background: #f8faff;
+    }
+    .m-bank-check {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 17px;
+        height: 17px;
+        background: #2563eb;
+        color: #ffffff;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .m-bank-card.active .m-bank-check {
+        display: flex;
+    }
+    .m-bank-logo {
+        width: 54px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6px;
+        font-weight: 800;
+        font-size: 12px;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-bank-logo.acleda {
+        background: #002e6e;
+    }
+    .m-bank-logo.wing {
+        background: #73be28;
+        font-size: 14px;
+    }
+    .m-bank-logo.aba {
+        background: #004f71;
+        font-size: 14px;
+    }
+    .m-bank-name {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #1e293b;
+        white-space: nowrap;
+    }
+
+    /* Transfer Account Details */
+    .m-account-section {
+        margin-bottom: 20px;
+    }
+    .m-account-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .m-account-label {
+        font-size: 11px;
+        color: #64748b;
+        display: block;
+        margin-bottom: 2px;
+    }
+    .m-account-val {
+        font-size: 14px;
+        font-weight: 800;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: 0.3px;
+    }
+    .m-btn-copy {
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        color: #2563eb;
+        border-radius: 8px;
+        padding: 5px 12px;
+        font-size: 11.5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-btn-copy:active, .m-btn-copy.copied {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+    }
+
+    /* Deposit Amount Section */
+    .m-amount-section {
+        margin-bottom: 20px;
+    }
+    .m-amount-input {
+        width: 100%;
+        height: 48px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 0 16px;
+        font-size: 18px;
+        font-weight: 800;
+        color: #0f172a;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin-bottom: 10px;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+    .m-amount-input:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .m-quick-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    .m-quick-btn {
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        color: #475569;
+        border-radius: 10px;
+        padding: 8px 4px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    .m-quick-btn.active {
+        border-color: #2563eb;
+        background: #2563eb;
+        color: #ffffff;
+    }
+
+    /* Category Related Promotions Box */
+    .m-category-promo-box {
+        border: 1.5px solid #dbeafe;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 14px 12px 12px 12px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+        position: relative;
+        overflow: hidden;
+    }
+    .m-cat-promo-hero-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 14px 14px 12px 14px;
+        background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+        border: 1px solid #e0edff;
+        border-radius: 14px;
+        margin-bottom: 12px;
+        position: relative;
+    }
+    .m-cat-promo-gift-wrap {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .m-cat-promo-glow-ring {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(37, 99, 235, 0.1) 70%, transparent 100%);
+        filter: blur(6px);
+        z-index: 1;
+    }
+    .m-cat-promo-gift-img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 4px 10px rgba(217, 119, 6, 0.28));
+    }
+    .m-cat-promo-hero-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .m-cat-promo-tag-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 5px;
+    }
+    .m-cat-promo-badge-tag {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #b45309;
+        background: #fef3c7;
+        border: 1px solid #fde68a;
+        padding: 2px 8px;
+        border-radius: 20px;
+    }
+    .m-cat-promo-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        color: #1d4ed8;
+        background: #dbeafe;
+        border: 1px solid #bfdbfe;
+        padding: 2px 8px;
+        border-radius: 20px;
+    }
+    .m-cat-promo-title {
+        font-size: 14.5px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 2px 0;
+        line-height: 1.3;
+    }
+    .m-cat-promo-title span {
+        color: #2563eb;
+        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .m-cat-promo-subtitle {
+        font-size: 11.5px;
+        color: #64748b;
+        margin: 0;
+        font-weight: 500;
+    }
+    .m-cat-providers-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+    .m-provider-pill {
+        font-size: 10.5px;
+        font-weight: 700;
+        color: #334155;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        padding: 4px 8px;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .m-cat-promo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .m-cat-promo-card {
+        border: 1.5px solid #e2e8f0;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-cat-promo-card.active {
+        border: 2px solid #2563eb;
+        background: #eff6ff;
+    }
+    .m-cat-promo-card-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .m-cat-promo-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    .m-cat-promo-desc {
+        font-size: 10px;
+        color: #64748b;
+    }
+    .m-cat-prov-badge {
+        font-size: 9.5px;
+        background: #e2e8f0;
+        color: #475569;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 4px;
+        font-weight: 600;
+    }
+    .m-cat-percent-badge {
+        font-size: 13px;
+        font-weight: 800;
+        color: #2563eb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-cat-percent-zero {
+        font-size: 12px;
+        font-weight: 700;
+        color: #94a3b8;
+    }
+
+    /* Bonus Wrapper */
+    .m-bonus-wrapper {
+        border: 1.5px solid #fef3c7;
+        background: #fffdfa;
+        border-radius: 16px;
+        padding: 14px 12px;
+        margin-bottom: 20px;
+    }
+    .m-bonus-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    .m-bonus-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .m-bonus-icon {
+        width: 32px;
+        height: 32px;
+        background: #fffbeb;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+    }
+    .m-bonus-title {
+        font-size: 13px;
+        font-weight: 800;
+        color: #92400e;
+        margin: 0;
+    }
+    .m-bonus-subtitle {
+        font-size: 10.5px;
+        color: #64748b;
+        margin: 0;
+    }
+    .m-bonus-badge {
+        font-size: 11px;
+        font-weight: 700;
+        color: #b45309;
+        background: #fef3c7;
+        padding: 3px 8px;
+        border-radius: 12px;
+    }
+    .m-promo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .m-promo-item {
+        border: 1.5px solid #e2e8f0;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .m-promo-item.active {
+        border: 2px solid #f59e0b;
+        background: #fffbeb;
+    }
+    .m-promo-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .m-radio {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1.5px solid #cbd5e1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .m-radio-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: transparent;
+    }
+    .m-promo-item.active .m-radio {
+        border-color: #f59e0b;
+    }
+    .m-promo-item.active .m-radio-dot {
+        background: #f59e0b;
+    }
+    .m-promo-name {
+        font-size: 12px;
+        font-weight: 700;
+        color: #1e293b;
+        white-space: nowrap;
+    }
+    .m-promo-desc {
+        font-size: 10px;
+        color: #64748b;
+        margin-top: 1px;
+    }
+    .m-promo-percent {
+        font-size: 14px;
+        font-weight: 800;
+        color: #2563eb;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        white-space: nowrap;
+    }
+
+    .m-bonus-toggle {
+        text-align: center;
+        color: #2563eb;
+        font-size: 12.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: block;
+        padding: 4px 0;
+        margin-bottom: 4px;
+        text-decoration: none;
+    }
+    .m-bonus-notice {
+        font-size: 10.5px;
+        color: #64748b;
+        text-align: center;
+        line-height: 1.4;
+        margin: 4px 0 0 0;
+    }
+
+    /* Slip Upload Section */
+    .m-upload-section {
+        margin-bottom: 18px;
+    }
+    .m-upload-card {
+        border: 1.5px dashed #cbd5e1;
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        position: relative;
+    }
+    .m-upload-icon-box {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #e0f2fe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0284c7;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+    .m-upload-title {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+        word-break: break-all;
+    }
+    .m-upload-status {
+        font-size: 11px;
+        color: #10b981;
+        margin: 2px 0 0 0;
+        font-weight: 600;
+    }
+
+    /* Summary Breakdown */
+    .m-summary-box {
+        margin-bottom: 18px;
+    }
+    .m-summary-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12.5px;
+        color: #64748b;
+        margin-bottom: 6px;
+    }
+    .m-summary-num {
+        font-weight: 600;
+        color: #334155;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .m-summary-num.bonus {
+        color: #f59e0b;
+        font-weight: 700;
+    }
+    .m-summary-divider {
+        height: 1px;
+        background: #e2e8f0;
+        margin: 8px 0;
+    }
+    .m-summary-row.total {
+        font-size: 15px;
+        font-weight: 800;
+        color: #0f172a;
+    }
+    .m-summary-row.total .m-summary-num {
+        font-size: 17px;
+        font-weight: 800;
+        color: #0f172a;
+    }
+
+    /* Submit Button */
+    .m-btn-submit {
+        width: 100%;
+        height: 46px;
+        background: #2563eb;
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Toast Notification */
+    .m-toast {
+        position: fixed;
+        bottom: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #ffffff;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 99999;
+        display: none;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+    /* Header Lang Switch Button */
+    .btn-lang-switch {
+        background: linear-gradient(135deg, #1e40af, #2563eb);
+        color: #ffffff !important;
+        border-radius: 6px;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: 800;
+        margin-right: 6px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    }
+</style>
+<style>
+    header {
+        overflow: hidden;
+    }
+    header .wrap-header {
+        height: 50px;
+        min-height: 50px;
+        overflow: hidden;
+        padding: 4px 7px;
+    }
+    header .logo {
+        height: 42px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    header .logo a {
+        display: flex !important;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+    }
+    header .logo img {
+        width: 7.2rem !important;
+        margin-top: 0 !important;
+        object-fit: cover;
+        object-position: center 52%;
+    }
+    header .btn-login,
+    header .btn-register {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+<style>
+    nav .ho a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-home.png);}nav .ho a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-home-o.png);}
+    nav .transfer a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-transfer.png);}nav .transfer a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-transfer-o.png);}
+    nav .telegram-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-telegram.png);}nav .telegram-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-telegram-o.png);}
+    nav .facebook-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-facebook.png);}nav .facebook-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-facebook-o.png);background-position: 10px 8px;background-repeat: no-repeat;}
+    nav .achievement-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/achievement.png);}nav .achievement-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/achievement-o.png);background-position: 10px 8px;background-repeat: no-repeat;}
+    nav .faq a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq.png);}nav .faq a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq-o.png);}
+    nav .sports a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-sports.png);}nav .sports a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-sports-o.png);}
+    nav .live a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-live.png);}nav .live a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-live-o.png);}
+    nav .game a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-game.png);}nav .game a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-game-o.png);}
+    nav .fishing a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-fishing.png);}nav .fishing a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-fishing-o.png);}
+    nav .d a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-d.png);}nav .d a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-d-o.png);}
+    nav .number a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-number.png);}nav .number a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-number-o.png);}
+    nav .cockfight a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-cockfight.png);}nav .cockfight a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-cockfight-o.png);}
+    nav .rewards-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/reward.png);}nav .rewards-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/reward-o.png);}
+    nav .poker a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-poker.png);}nav .poker a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-poker-o.png);}
+    nav .pr a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-promotion.png);}nav .pr a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-promotion-o.png);}
+    nav .rtp-icon a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-rtp.png);}nav .rtp-icon a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-rtp-o.png);}
+    nav .con a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-con.png);}nav .con a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-con-o.png);}
+    nav .faq a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq.png);}nav .faq a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-faq-o.png);}
+    nav .join a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-join.png);}nav .join a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-join-o.png);}
+    nav .lang a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-language.png);}nav .lang a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-language-o.png);}
+    nav .mobile a{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-mobile.png);}nav .mobile a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-mobile-o.png);}
+    nav .news a, nav .news a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-news.png);}
+    nav .tnc a, nav .tnc a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-tnc.png);}
+    nav .logout a, nav .logout a:hover{background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/icon-logout.png);}
+    nav .free-promo a, nav .free-promo a:hover {background-image: url('https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/sidebar/free-promo.png');background-size: 32px;background-position: 10px;background-repeat: no-repeat;}
+</style>
+<style>
+    body { background: #ffffff !important; width: 100%; max-width: 450px; margin: 0 auto 70px auto !important; }
+    .m-deposit-page { background: #f8fafc !important; min-height: 100vh; padding-top: 54px; padding-bottom: 90px; }
+    .m-deposit-card { background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 12px !important; box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important; }
+    </style>
+</head>
+<body style="background:#fff; color:#222;">
+
+    
+    
+
+<!-- Mobile Header -->
+<header>
+    <div class="wrap-header zerogridh">
+        <div class="wrap-content zerogrid">
+            <label id="navigation" class="left">
+                <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/menu.png" width="36" height="21" />
+            </label>
+            <div class="logo">
+                <a href="index.html" data-tip="1" class="d-block">
+                                            <img src="https://banner-s2.api-c1.com/logos/fafa558/logo_20260912162341_8141.gif" />
+                                    </a>
+            </div>
+            <div class="header-right1 d-flex align-items-center">
+                                    <div class="left-in-right"><a href="login.html" class="btns btn-login">ចូល</a></div>
+                                        <div class="left-in-right">
+                        <a href="register.html" class="btns btn-register">
+                            <span class="btn-register-blink">ចុះឈ្មោះ</span>
+                        </a>
+                    </div>
+                                                </div>
+        </div>
+    </div>
+</header>
+
+<!-- Left Sidebar Navigation Drawer -->
+
+<nav class="left-nav">
+    <div class="left-nav__bg">
+        <ul>
+            <li class="ho side-item">
+                <a href="index.html">ទំព័រដើម</a>
+            </li>
+
+      <li class="transfer side-item">
+          <a class="text-white" href="deposit.html" style="display:flex;align-items:center;gap:10px;">
+              <span style="background:#10b981;color:#fff;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold;">+ ដាក់ប្រាក់</span>
+              <span>ការដាក់ប្រាក់ (Deposit)</span>
+          </a>
+      </li>
+      <li class="transfer side-item">
+          <a class="text-white" href="withdrawal.html" style="display:flex;align-items:center;gap:10px;">
+              <span style="background:#f59e0b;color:#000;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:bold;">- ដកប្រាក់</span>
+              <span>ការដកប្រាក់ (Withdrawal)</span>
+          </a>
+      </li>
+
+                            <li class="transfer side-item">
+                    <a class="text-white" href="login.html">កាបូបលុយខ្ញុំ</a>
+                </li>
+                            <li class="achievement-icon side-item">
+                    <a href="promotion.html">ប្រាក់រង្វាន់ពិសេស</a>
+                </li>
+                            <li class="faq side-item">
+                    <a href="news.html">ការជូនដំណឹង</a>
+                </li>
+                                        <li class="sports side-item">
+                                        <a href="sports.html" class="auth_only">កីឡា</a>
+                </li>
+                        <li class="live side-item">
+                <a href="casino.html" class="auth_only">កាស៊ីណូ</a>
+            </li>
+            <li class="game side-item">
+                <a href="slots.html" class="auth_only">ហ្គេមស្លត់</a>
+            </li>
+                            <li class="fishing side-item">
+                    <a href="login.html" class="auth_only">បាញ់ត្រី</a>
+                </li>
+                            <li class="d side-item">
+                    <a href="lottery.html" class="auth_only">ឆ្នោត</a>
+                </li>
+                        <li class="number side-item">
+                <a href="lottery.html" class="auth_only">ល្បែងលេខ</a>
+            </li>
+                            <li class="cockfight side-item">
+                    <a href="cockfight.html" class="auth_only">មាន់ជល់</a>
+                </li>
+                        <li class="rewards-icon side-item">
+                <a href="login.html">រង្វាន់ផ្សេងៗ</a>
+            </li>
+                            <li class="pr side-item">
+                    <a href="promotion.html">ការផ្តល់ជូន</a>
+                </li>
+                                        <li class="faq side-item">
+                    <a href="news.html">ពត៌មាន</a>
+                </li>
+                        <li class="faq side-item">
+                <a href="terms.html">ល័ក្ខខ័ណ្ឌ</a>
+            </li>
+            <li class="join side-item">
+                                <a href="affiliate.html">ក្លាយជាភ្នាក់ងារ </a>
+            </li>
+            <li class="con side-item">
+                                <a href="" target="_blank">ទំនាក់ទំនងយើងខ្ញុំ</a>
+            </li>
+                            <li class="mobile side-item">
+                    <a href="../index.html">
+                        កុំព្យូទ័រ                    </a>
+                </li>
+                                <li class="lang has-submenu kh side-item">
+                                        <a class="icon side-item" style="background-image: url(https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/kh.svg);" href="#">ភាសា</a>
+                    <ul>
+                                                        <li>
+                                    <a href="/index.php?lang=en" class="side-item">
+                                        <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/kh.svg" />
+                                        English                                    </a>
+                                </li>
+                                                        <li>
+                                    <a href="/index.php?lang=cn" class="side-item">
+                                        <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/home/lang/cn.svg" />
+                                        简体中文                                    </a>
+                                </li>
+                                            </ul>
+                </li>
+            
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Mobile Deposit Page -->
+<div class="m-deposit-page">
+    <div class="m-deposit-container">
+    <div class="title-page" style="background:#8a2be2;color:#fff;font-size:15px;font-weight:700;padding:10px 14px;border-radius:8px;margin-bottom:12px;">Deposit</div>
+        
+
+
+        <!-- Top User Profile & Account Balance Card -->
+        <div class="m-user-balance-card">
+            <div class="m-user-left">
+                <div class="m-user-avatar">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#f8fafc"></circle>
+                        <circle cx="50" cy="38" r="16" fill="#fbbf24"></circle>
+                        <path d="M22 84C22 66.3269 34.536 52 50 52C65.464 52 78 66.3269 78 84" fill="#f59e0b"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="m-user-name" id="user-display-name">phanith29</h3>
+                    <p class="m-user-sub">Your Account</p>
+                </div>
+            </div>
+            <div class="m-user-right">
+                <span class="m-balance-label">Account Balance</span>
+                <div class="m-balance-val" id="user-balance-disp">0.20 <span>USD</span></div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation (Deposit vs History) -->
+        <div class="m-tab-nav">
+            <button type="button" class="m-tab-btn active" id="tab-deposit-btn" onclick="switchDepositTab('deposit')">Deposit</button>
+            <button type="button" class="m-tab-btn" id="tab-history-btn" onclick="switchDepositTab('history')">Deposit History</button>
+        </div>
+
+        <!-- 1. Deposit Form View -->
+        <div id="view-deposit" class="m-deposit-card">
+            
+            <!-- 1. Select Bank -->
+            <div class="m-section-label">Select Bank</div>
+            <div class="m-bank-grid">
+                <!-- ACLEDA -->
+                <div class="m-bank-card active" data-bank="acleda" data-name="CHAB MAKARA" data-account="21 000 640731421">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo acleda">ACLEDA</div>
+                    <div class="m-bank-name">ACLEDA Bank</div>
+                </div>
+                <!-- Wing -->
+                <div class="m-bank-card" data-bank="wing" data-name="CHAB MAKARA" data-account="098 765 432">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo wing">Wing</div>
+                    <div class="m-bank-name">Wing Bank</div>
+                </div>
+                <!-- ABA -->
+                <div class="m-bank-card" data-bank="aba" data-name="CHAB MAKARA" data-account="001 234 567">
+                    <div class="m-bank-check">✓</div>
+                    <div class="m-bank-logo aba">ABA</div>
+                    <div class="m-bank-name">ABA Mobile</div>
+                </div>
+            </div>
+
+            <!-- 2. Transfer Account Details -->
+            <div class="m-account-section">
+                <div class="m-section-label">Transfer To This Account:</div>
+                
+                <!-- Account Name -->
+                <div class="m-account-box">
+                    <div>
+                        <span class="m-account-label">Account Name</span>
+                        <span class="m-account-val" id="m-disp-name">CHAB MAKARA</span>
+                    </div>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-name', this)">Copy</button>
+                </div>
+
+                <!-- Account Number -->
+                <div class="m-account-box">
+                    <div>
+                        <span class="m-account-label">Account Number</span>
+                        <span class="m-account-val" id="m-disp-num">21 000 640731421</span>
+                    </div>
+                    <button type="button" class="m-btn-copy" onclick="mCopyText('m-disp-num', this)">Copy</button>
+                </div>
+            </div>
+
+            <!-- 3. Deposit Amount Section -->
+            <div class="m-amount-section">
+                <div class="m-section-label">Deposit Amount</div>
+                <input type="number" id="m-amount-input" class="m-amount-input" value="10">
+                <div class="m-quick-grid">
+                    <button type="button" class="m-quick-btn active" data-category="sport">Sports</button>
+                    <button type="button" class="m-quick-btn" data-category="slot">Slots</button>
+                    <button type="button" class="m-quick-btn" data-category="casino">Live Casino</button>
+                    <button type="button" class="m-quick-btn" data-category="cockfight">Cockfight</button>
+                </div>
+
+                <!-- Related Promotions for Selected Category -->
+                <div class="m-category-promo-box" id="m-category-promo-box">
+                    <div class="m-cat-promo-hero-card">
+                        <div class="m-cat-promo-gift-wrap">
+                            <div class="m-cat-promo-glow-ring"></div>
+                            <img src="images/gift-box-3d.svg" alt="Gift Bonus" class="m-cat-promo-gift-img">
+                        </div>
+                        <div class="m-cat-promo-hero-body">
+                            <div class="m-cat-promo-tag-row">
+                                <span class="m-cat-promo-badge-tag">✨ EXCLUSIVE BONUS</span>
+                                <span class="m-cat-promo-badge" id="m-cat-promo-status">1/5</span>
+                            </div>
+                            <h4 class="m-cat-promo-title">Special Promotions from <span id="m-cat-promo-name">Sports</span></h4>
+                            <p class="m-cat-promo-subtitle">Select a promotion before submitting deposit</p>
+                        </div>
+                    </div>
+                    <div class="m-cat-providers-row" id="m-cat-providers-row">
+                        <!-- Populated dynamically -->
+                    </div>
+                    <div class="m-cat-promo-list" id="m-cat-promo-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Slip Upload Section -->
+            <div class="m-upload-section">
+                <div class="m-section-label">Transfer Receipt / Slip</div>
+                <div class="m-upload-card" onclick="document.getElementById('m-file-input').click()">
+                    <input type="file" id="m-file-input" accept="image/*" style="display: none;" onchange="mHandleFile(event)">
+                    <div class="m-upload-icon-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div class="m-upload-title" id="m-file-name">Choose File</div>
+                        <div class="m-upload-status" id="m-file-status" style="color: #64748b; font-weight: normal;">Upload your payment receipt image here</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Summary Calculation -->
+            <div class="m-summary-box">
+                <div class="m-summary-row">
+                    <span>Deposit Amount</span>
+                    <span class="m-summary-num" id="m-sum-deposit">10</span>
+                </div>
+                <div class="m-summary-row">
+                    <span>Bonus Amount</span>
+                    <span class="m-summary-num bonus" id="m-sum-bonus">+10</span>
+                </div>
+                <div class="m-summary-divider"></div>
+                <div class="m-summary-row total">
+                    <span>Total Received</span>
+                    <span class="m-summary-num" id="m-sum-total">20</span>
+                </div>
+            </div>
+
+            <!-- 7. Submit Button -->
+            <button type="button" class="m-btn-submit" onclick="mSubmitDeposit()">
+                Submit Deposit
+            </button>
+
+        </div>
+
+        <!-- 2. Deposit History View with Stage Filters (Auto vs Manual) -->
+        <div id="view-history" class="m-deposit-card" style="display: none;">
+            
+            <!-- Sub Stage Filter Buttons -->
+            <div class="m-stage-filter-bar">
+                <button type="button" class="m-stage-filter-btn active" onclick="filterDepositHistory('all', this)">
+                    <span>✨ All Stages</span>
+                </button>
+                <button type="button" class="m-stage-filter-btn" onclick="filterDepositHistory('auto', this)">
+                    <span>⚡ Auto</span>
+                </button>
+                <button type="button" class="m-stage-filter-btn" onclick="filterDepositHistory('manual', this)">
+                    <span>📝 Manual</span>
+                </button>
+            </div>
+
+            <!-- History Cards List -->
+            <div id="m-deposit-history-list">
+                
+                <!-- 1. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$50.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Bonus +$5.00</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-30 20:45</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-88914</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 2. Manual Deposit -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$100.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Welcome Bonus 100%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ACLEDA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-29 15:30</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-65421</span>
+                        <span style="color: #0284c7; font-weight: 600;">Slip Verified ✓</span>
+                    </div>
+                </div>
+
+                <!-- 3. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$20.00 USD</span>
+                        <span style="font-size: 11px; color: #94a3b8;">No Bonus</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>Wing Bank</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-28 11:15</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-54129</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 4. Manual Deposit (Rejected) -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge rejected">Rejected ✗</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$30.00 USD</span>
+                        <span style="font-size: 11px; color: #ef4444; font-weight: 600;">Unclear Slip Image</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-26 18:20</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #ef4444; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-44102</span>
+                        <span>Contact 24/7 Support</span>
+                    </div>
+                </div>
+
+                <!-- 5. Auto Deposit -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$15.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Slot Bonus 30%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ABA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-24 14:05</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-32981</span>
+                        <span style="color: #10b981; font-weight: 600;">Instant Processing</span>
+                    </div>
+                </div>
+
+                <!-- 6. Manual Deposit -->
+                <div class="m-history-card" data-stage="manual">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge manual">📝 Manual</span>
+                        <span class="m-status-badge success">Success ✓</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$200.00 USD</span>
+                        <span style="font-size: 11px; font-weight: 700; color: #d97706; background: #fef3c7; padding: 2px 6px; border-radius: 6px;">Casino 15%</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>ACLEDA</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-22 09:40</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-MAN-29188</span>
+                        <span style="color: #0284c7; font-weight: 600;">Slip Verified ✓</span>
+                    </div>
+                </div>
+
+                <!-- 7. Auto Deposit (Pending) -->
+                <div class="m-history-card" data-stage="auto">
+                    <div class="m-history-row" style="margin-bottom: 6px;">
+                        <span class="m-stage-badge auto">⚡ Auto</span>
+                        <span class="m-status-badge pending">Pending ⌛</span>
+                    </div>
+                    <div class="m-history-row" style="margin-bottom: 4px;">
+                        <span style="font-size: 16px; font-weight: 800; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif;">+$10.00 USD</span>
+                        <span style="font-size: 11px; color: #d97706; font-weight: 600;">Verifying QR</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11.5px; color: #64748b; margin-bottom: 4px;">
+                        <span>Wing Bank</span>
+                        <span style="font-family: 'Plus Jakarta Sans', sans-serif;">2026-09-20 22:10</span>
+                    </div>
+                    <div class="m-history-row" style="font-size: 11px; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 5px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span>Ref: DEP-AUTO-19943</span>
+                        <span style="color: #d97706; font-weight: 600;">Awaiting Gateway Confirmation</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="footer">
+    <div class="footer-link">
+        <ul>
+                            <li>
+                    <a href="index.html">
+                        <div class="box-footer-link">
+                                                            <img src="https://d125olp98rg6ze.cloudfront.net/content/images/fafa558/footer/home.png" />
+                                                        <div class="title-link-footer">ទំព័រដើម</div>
+                        </div>
+                </a>
+            </li>
+            <li>
+                <a href="/en/rewards">
+                    <div class="box-footer-link">
+                        <img src="images/rewards.png">
+                        <div class="title-link-footer">Rewards</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="deposit-en.html" class="active">
+                    <div class="box-footer-link">
+                        <img src="images/icon-deposit.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer" style="color: #ffc107;">Deposit</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="withdrawal-en.html">
+                    <div class="box-footer-link">
+                        <img src="images/icon-transfer.png" style="width: 24px; height: 24px; margin: 0 auto 3px auto; display: block;">
+                        <div class="title-link-footer">Withdrawal</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="openChatIcon();return false;">
+                    <div class="box-footer-link">
+                        <img src="images/support.png">
+                        <div class="title-link-footer" style="white-space: nowrap;">Support</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="m-toast" id="m-toast">Copied successfully!</div>
+
+<script>
+    let mBonusPercent = 100;
+
+    // Bank Selection
+    $('.m-bank-card').on('click', function() {
+        $('.m-bank-card').removeClass('active');
+        $(this).addClass('active');
+        $('#m-disp-name').text($(this).data('name'));
+        $('#m-disp-num').text($(this).data('account'));
+    });
+
+    // Copy to clipboard
+    function mCopyText(elementId, btn) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            $(btn).addClass('copied').text('Copied');
+            mShowToast('Copied: ' + text);
+            setTimeout(() => {
+                $(btn).removeClass('copied').text('Copy');
+            }, 2000);
+        }).catch(() => {
+            mShowToast('Copied: ' + text);
+        });
+    }
+
+    function mShowToast(msg) {
+        $('#m-toast').text(msg).fadeIn(200);
+        setTimeout(() => {
+            $('#m-toast').fadeOut(300);
+        }, 2200);
+    }
+
+    // Category Promotions Data
+    const mCategoryPromotionsData = {
+        sport: {
+            name: "Sports",
+            providers: ["AFB1188 Sports", "SABA Sports", "SBO Sports", "Boxing"],
+            promos: [
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "sport_100", name: "Sports Welcome Bonus 100%", percent: 100, provider: "AFB1188, SABA, SBO", desc: "First deposit only" },
+                { id: "sport_10", name: "Daily Sports Deposit Bonus 10%", percent: 10, provider: "AFB1188, SABA, SBO", desc: "Once per day" },
+                { id: "sport_boxing", name: "Special Boxing Bonus 20%", percent: 20, provider: "Boxing", desc: "All boxing bets" },
+                { id: "sport_rebate", name: "Weekly Sports Rebate 0.5%", percent: 0.5, provider: "AFB1188, SABA, SBO", desc: "Weekly automatic rebate" }
+            ]
+        },
+        slot: {
+            name: "Slots",
+            providers: ["PP Slots", "PG Slots", "JOKER", "HABA", "CQ9", "Fish Hunter"],
+            promos: [
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "slot_100", name: "Slots Welcome Bonus 100%", percent: 100, provider: "PG, PP, JOKER, HABA", desc: "First deposit only" },
+                { id: "slot_30", name: "Daily Slots Bonus 30%", percent: 30, provider: "PG, PP, CQ9", desc: "Once per day" },
+                { id: "slot_fish", name: "Fish Hunter Bonus 15%", percent: 15, provider: "Fish Hunter", desc: "Every deposit" },
+                { id: "slot_rebate", name: "Daily Slot Rebate 1%", percent: 1, provider: "All Slots", desc: "Daily automatic rebate" }
+            ]
+        },
+        casino: {
+            name: "Live Casino",
+            providers: ["PP Casino", "DG99", "SEXY", "PLAY ACE", "ALLBET", "EVO", "OFA", "AFB", "GD"],
+            promos: [
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "casino_50", name: "Live Casino Welcome Bonus 50%", percent: 50, provider: "PP, DG99, SEXY, EVO", desc: "First deposit only" },
+                { id: "casino_15", name: "Live Casino Reload 15%", percent: 15, provider: "SEXY, DG99, OFA, GD", desc: "Every reload" },
+                { id: "casino_rebate", name: "Live Casino Rebate 0.8%", percent: 0.8, provider: "All Live Casino", desc: "Daily automatic rebate" }
+            ]
+        },
+        cockfight: {
+            name: "Cockfight",
+            providers: ["SV388 Cockfight", "RCB988"],
+            promos: [
+                { id: "0", name: "No Bonus (0%)", percent: 0, provider: "All Games", desc: "No turnover required" },
+                { id: "cock_100", name: "Cockfight Welcome Bonus 100%", percent: 100, provider: "SV388 Cockfight", desc: "First deposit only" },
+                { id: "cock_10", name: "Daily Cockfight Bonus 10%", percent: 10, provider: "SV388, RCB988", desc: "Once per day" },
+                { id: "cock_rebate", name: "Weekly Cockfight Rebate 0.5%", percent: 0.5, provider: "SV388 Cockfight", desc: "Weekly automatic rebate" }
+            ]
+        }
+    };
+
+    function mUpdateCategoryPromotions(category) {
+        const data = mCategoryPromotionsData[category] || mCategoryPromotionsData.sport;
+        $('#m-cat-promo-name').text(data.name);
+
+        // Render mobile provider pills
+        let providersHtml = "";
+        data.providers.forEach((prov) => {
+            providersHtml += `<span class="m-provider-pill">${prov}</span>`;
+        });
+        $('#m-cat-providers-row').html(providersHtml);
+
+        // Render mobile promo cards list
+        let cardsHtml = "";
+        data.promos.forEach((p, idx) => {
+            const isActive = idx === 0 ? "active" : "";
+            const percentBadge = p.percent > 0 
+                ? `<span class="m-cat-percent-badge">${p.percent}%</span>`
+                : `<span class="m-cat-percent-zero">0%</span>`;
+            const providerTag = p.provider && p.provider !== "All Games" 
+                ? `<span class="m-cat-prov-badge">${p.provider}</span>` 
+                : "";
+
+            cardsHtml += `
+                <div class="m-cat-promo-card ${isActive}" data-percent="${p.percent}" data-id="${p.id}">
+                    <div class="m-cat-promo-card-left">
+                        <div class="m-radio"><div class="m-radio-dot"></div></div>
+                        <div>
+                            <div class="m-cat-promo-name">${p.name} ${providerTag}</div>
+                            <div class="m-cat-promo-desc">${p.desc}</div>
+                        </div>
+                    </div>
+                    ${percentBadge}
+                </div>
+            `;
+        });
+        $('#m-cat-promo-list').html(cardsHtml);
+
+        const firstVal = parseFloat(data.promos[0].percent) || 0;
+        mBonusPercent = firstVal;
+        $('#m-cat-promo-status').text(`1/${data.promos.length}`);
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+
+        mCalculate();
+    }
+
+    // Category Selection
+    let mSelectedCategory = "sport";
+    $('.m-quick-btn').on('click', function() {
+        $('.m-quick-btn').removeClass('active');
+        $(this).addClass('active');
+        mSelectedCategory = $(this).data('category');
+        mUpdateCategoryPromotions(mSelectedCategory);
+    });
+
+    // Mobile Category Promo Card Click
+    $(document).on('click', '.m-cat-promo-card', function() {
+        $('.m-cat-promo-card').removeClass('active');
+        $(this).addClass('active');
+        mBonusPercent = parseFloat($(this).data('percent')) || 0;
+        const totalCount = $('.m-cat-promo-card').length;
+        const activeIdx = $('.m-cat-promo-card').index(this) + 1;
+        $('#m-cat-promo-status').text(`${activeIdx}/${totalCount}`);
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+        mCalculate();
+    });
+
+    $('#m-amount-input').on('input', function() {
+        mCalculate();
+    });
+
+    // Promotion Selection
+    $('.m-promo-item').on('click', function() {
+        $('.m-promo-item').removeClass('active');
+        $(this).addClass('active');
+        mBonusPercent = parseFloat($(this).data('percent')) || 0;
+        $('#m-bonus-count').text(mBonusPercent > 0 ? '1/23' : '0/23');
+        mCalculate();
+    });
+
+    // Toggle Promos
+    let mExpanded = false;
+    $('#m-btn-toggle-promos').on('click', function() {
+        mExpanded = !mExpanded;
+        if (mExpanded) {
+            $('.m-extra-promo').slideDown(200);
+            $(this).text('Show Less');
+        } else {
+            $('.m-extra-promo').slideUp(200);
+            $(this).text('View All Promotions (23)');
+        }
+    });
+
+    // Calculation
+    function mCalculate() {
+        const amt = parseFloat($('#m-amount-input').val()) || 0;
+        const bonus = (amt * mBonusPercent) / 100;
+        const total = amt + bonus;
+
+        $('#m-sum-deposit').text(amt.toLocaleString());
+        $('#m-sum-bonus').text(bonus > 0 ? '+' + bonus.toLocaleString() : '+0');
+        $('#m-sum-total').text(total.toLocaleString());
+    }
+
+    // File Upload Handler
+    function mHandleFile(e) {
+        const file = e.target.files[0];
+        if (file) {
+            $('#m-file-name').text(file.name);
+            $('#m-file-status').text('Selected successfully ✓').css({ 'color': '#10b981', 'font-weight': '600' });
+            mShowToast('Uploaded: ' + file.name);
+        }
+    }
+
+    // Submit
+    function mSubmitDeposit() {
+        const amt = parseFloat($('#m-amount-input').val()) || 0;
+        if (amt <= 0) {
+            mShowToast('Please enter deposit amount!');
+            return;
+        }
+        alert('Deposit request of $' + amt + ' submitted successfully!');
+    }
+
+    // Tab Switching (Deposit vs History)
+    function switchDepositTab(tab) {
+        if (tab === 'deposit') {
+            $('#tab-deposit-btn').addClass('active');
+            $('#tab-history-btn').removeClass('active');
+            $('#view-deposit').show();
+            $('#view-history').hide();
+        } else {
+            $('#tab-history-btn').addClass('active');
+            $('#tab-deposit-btn').removeClass('active');
+            $('#view-deposit').hide();
+            $('#view-history').show();
+        }
+    }
+
+    // Stage Filtering in History (All vs Auto vs Manual)
+    function filterDepositHistory(stage, btn) {
+        $('.m-stage-filter-btn').removeClass('active');
+        $(btn).addClass('active');
+        if (stage === 'all') {
+            $('#m-deposit-history-list .m-history-card').fadeIn(150);
+        } else if (stage === 'auto') {
+            $('#m-deposit-history-list .m-history-card[data-stage="auto"]').fadeIn(150);
+            $('#m-deposit-history-list .m-history-card[data-stage="manual"]').hide();
+        } else if (stage === 'manual') {
+            $('#m-deposit-history-list .m-history-card[data-stage="manual"]').fadeIn(150);
+            $('#m-deposit-history-list .m-history-card[data-stage="auto"]').hide();
+        }
+    }
+
+    // Mobile Navigation Drawer Toggle
+    $('#navigation').on('click', function() {
+        $('.left-nav').toggleClass('active');
+    });
+
+    // Initial calculation and promo setup
+    mUpdateCategoryPromotions("sport");
+    mCalculate();
+</script>
+
+<script src="js/demo_auth.js"></script>
+
+    <!-- Discrete Floating Switcher (Non-intrusive) -->
+    <a href="../index.html" id="clone-desktop-btn" style="position:fixed;bottom:15px;right:15px;z-index:99999;background:rgba(0,0,0,0.75);color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;gap:4px;">
+        <span>🖥️ Desktop</span>
+    </a>
+    
+</body>
+</html>

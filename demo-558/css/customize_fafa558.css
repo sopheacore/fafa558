@@ -1,0 +1,50 @@
+.sfooter{
+	background: #1c1c1c !important;
+}#HomeSmallBanners .simple-banner-item:before {
+    content: "";
+    background: #252525;
+    position: absolute;
+    width: 190px;
+    height: 65%;
+    margin-top: 90px;
+    padding: 0;
+}.home-games-button-play{
+	margin-top: 155px;
+    position: absolute;
+    top: 0;
+    width: 100px !important;
+    color: #fff;
+    text-align: center;
+    left: 50%;
+    margin-left: -50px;
+    padding: 3px 0;
+	background: linear-gradient(to top right, #8e4493, #ff8dff);
+}#mainthumb ul li{
+	position:relative;
+}.captchaString{
+	color:#333;
+}
+.ambassadorImg-fa {
+    background: url(../images/vilbol.png);
+    position: relative;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 11px;
+    left: 0px;
+    width: 500px;
+    height: 270px;
+}
+.ambassadorImg-mi-cpo {
+    background: url(../images/fafc.png);
+    position: relative;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 11px;
+    right: -5px;
+    width: 500px;
+    height: 270px;
+}
+
+.challenge-card .card-content{height: 213px;}
+#modalBody table tr td{border: 1px solid #000!important;padding: 5px!important;}
+#termsModal .modal-body{text-align: left!important;}
